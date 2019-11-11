@@ -35,8 +35,9 @@ void RemoveElement(Order *, int);
 void List(Ticket *, Order *);
 void Search(Ticket *, Order *, int, int);
 void Search(Order *, string);
-void Edit(Ticket *, int);
-void PlacesInARow(Ticket *, int);
+void Edit(Ticket *, Order *, int);
+void Edit(Order *, Ticket *, int);
+void PlacesInARow(Ticket *, Order *, int);
 void ConsoleCleaner();
 int EmptySpaceFinder(Ticket *);
 int EmptySpaceFinder(Order *);
@@ -59,9 +60,11 @@ int main() //TODO:Order->Ticket
         printf("5.Find by second name\n");
         printf("6.Edit ticket\n");
         printf("7.Empty places in a row\n");
-        printf("8.Exit\n");
+        printf("8.Move order to purchace\n");
+        printf("9.Exit\n");
         printf("Enter a command number: ");
         int x;
+        int k;
         cin >> x;
         switch (x)
         {
@@ -87,7 +90,6 @@ int main() //TODO:Order->Ticket
             }
             break;
         case 2:
-            int k;
             ConsoleCleaner();
             printf("\n----------------------------------------------------------------------------------\n");
             printf("Removing\n");
@@ -156,28 +158,54 @@ int main() //TODO:Order->Ticket
             cin >> tempSecondName;
             Search(orderList, tempSecondName);
             break;
-        case 6: //TODO:
-            cout << "Enter ticket number: ";
-            tempRow = NumGetter();
-            if (tempRow >= 1 && tempRow <= ticketLength)
+        case 6:
+            ConsoleCleaner();
+            printf("\n----------------------------------------------------------------------------------\n");
+            printf("Editing\n");
+            printf("Enter ticket's number: ");
+            k = NumGetter();
+            cout << "1.Edit a purchace\n";
+            cout << "2.Edit an order\n";
+            cout << "Enter a command number: ";
+            cin >> x;
+            switch (x)
             {
-                //Edit(myList, tempRow);
+            case 1:
+                if (k >= 1 && k <= ticketLength)
+                {
+                    Edit(myList, orderList, k);
+                }
+                else
+                {
+                    ConsoleCleaner();
+                    printf("Enter a valid ticket number!\n");
+                }
+                break;
+            case 2:
+                if (k >= 1 && k <= orderLength)
+                {
+                    Edit(orderList, myList, k);
+                }
+                else
+                {
+                    ConsoleCleaner();
+                    printf("Enter a valid ticket number!\n");
+                }
+                break;
             }
-            else
-            {
-                ConsoleCleaner();
-                printf("Enter a valid ticket number!\n");
-            }
+
             break;
-        case 7: //TODO:
+        case 7:
             cout << "Enter row number: ";
             tempRow = NumGetter();
             if (tempRow >= 1 && tempRow <= maxRow)
-                PlacesInARow(myList, tempRow);
+                PlacesInARow(myList, orderList, tempRow);
             else
                 printf("Enter a valid row number!\n");
             break;
-        case 8:
+        case 8://TODO:
+            break;
+        case 9:
             return 0;
         default:
             printf("Enter a valid command number!\n");
@@ -345,7 +373,7 @@ void RemoveElement(Order *list, int ind) //For orders
     return;
 }
 
-/*void Edit(Ticket *list, int ind)
+void Edit(Ticket *list, Order *orderList, int ind)
 {
     int cur = ticketHead;
     int tempRow, tempPlace;
@@ -356,7 +384,7 @@ void RemoveElement(Order *list, int ind) //For orders
     tempPlace = NumGetter();
     if (tempRow >= 1 && tempRow <= maxRow && tempPlace >= 1 && tempPlace <= maxPlace)
     {
-        if (AviabilityChecker(list, tempRow, tempPlace))
+        if (AviabilityChecker(list, orderList, tempRow, tempPlace))
         {
             if (ind != 1)
             {
@@ -366,18 +394,11 @@ void RemoveElement(Order *list, int ind) //For orders
                 }
                 list[cur].placeNum = tempPlace;
                 list[cur].rowNum = tempRow;
-                list[cur].secondName = tempSecondName;
             }
             if (ind == 1)
             {
-                if (list[cur].secondName != "")
-                {
-                    cout << "Enter second name: ";
-                    cin >> tempSecondName;
-                }
                 list[cur].placeNum = tempPlace;
                 list[cur].rowNum = tempRow;
-                list[cur].secondName = tempSecondName;
             }
             ConsoleCleaner();
         }
@@ -394,7 +415,55 @@ void RemoveElement(Order *list, int ind) //For orders
         cout << "Enter valid numbers!";
         printf("\n----------------------------------------------------------------------------------\n");
     }
-}*/
+}
+
+void Edit(Order *orderList, Ticket *list, int ind)
+{
+    int cur = orderHead;
+    int tempRow, tempPlace;
+    string tempSecondName = "";
+    cout << "Enter row number: ";
+    tempRow = NumGetter();
+    cout << "Enter place number: ";
+    tempPlace = NumGetter();
+    cout << "Enter second name: ";
+    cin >> tempSecondName;
+    if (tempRow >= 1 && tempRow <= maxRow && tempPlace >= 1 && tempPlace <= maxPlace)
+    {
+        if (AviabilityChecker(list, orderList, tempRow, tempPlace))
+        {
+            if (ind != 1)
+            {
+                for (int i = 1; i < ind; i++)
+                {
+                    cur = orderList[cur].nextInd;
+                }
+                orderList[cur].placeNum = tempPlace;
+                orderList[cur].rowNum = tempRow;
+                orderList[cur].secondName = tempSecondName;
+            }
+            if (ind == 1)
+            {
+                orderList[cur].placeNum = tempPlace;
+                orderList[cur].rowNum = tempRow;
+                orderList[cur].secondName = tempSecondName;
+            }
+            ConsoleCleaner();
+        }
+        else
+        {
+            ConsoleCleaner();
+            cout << "This place isn't available";
+            printf("\n----------------------------------------------------------------------------------\n");
+        }
+    }
+    else
+    {
+        ConsoleCleaner();
+        cout << "Enter valid numbers!";
+        printf("\n----------------------------------------------------------------------------------\n");
+    }
+}
 
 void Search(Ticket *list, Order *orderList, int rowNum, int placeNum)
 {
@@ -522,7 +591,7 @@ void Search(Order *list, string secondName)
     }
 }
 
-void PlacesInARow(Ticket *list, int rowNum)
+void PlacesInARow(Ticket *list, Order *orderList, int rowNum)
 {
     int remainingSeats = maxPlace;
     if (ticketHead != -1)
@@ -541,6 +610,25 @@ void PlacesInARow(Ticket *list, int rowNum)
             else
             {
                 ind = list[ind].nextInd;
+            }
+        }
+    }
+    if (orderHead != -1)
+    {
+        int ind = orderHead;
+        while (true)
+        {
+            if (orderList[ind].rowNum == rowNum)
+            {
+                remainingSeats--;
+            }
+            if (orderList[ind].nextInd == -1)
+            {
+                break;
+            }
+            else
+            {
+                ind = orderList[ind].nextInd;
             }
         }
     }
