@@ -33,8 +33,8 @@ void AddElement(Order *, Ticket *);
 void RemoveElement(Ticket *, int);
 void RemoveElement(Order *, int);
 void List(Ticket *, Order *);
-void Search(Ticket *, int, int);
-//void Search(Ticket *, string);
+void Search(Ticket *, Order *, int, int);
+void Search(Order *, string);
 void Edit(Ticket *, int);
 void PlacesInARow(Ticket *, int);
 void ConsoleCleaner();
@@ -42,7 +42,7 @@ int EmptySpaceFinder(Ticket *);
 int EmptySpaceFinder(Order *);
 int NumGetter();
 
-int main()
+int main() //TODO:Order->Ticket
 {
     Ticket myList[100];
     Order orderList[100];
@@ -66,6 +66,7 @@ int main()
         switch (x)
         {
         case 1:
+            printf("\n----------------------------------------------------------------------------------\n");
             cout << "1.Add a purchace\n";
             cout << "2.Add an order\n";
             cout << "Enter a command number: ";
@@ -79,12 +80,17 @@ int main()
                 AddElement(orderList, myList);
                 break;
             default:
+                ConsoleCleaner();
                 printf("Enter a valid command number!\n");
+                printf("\n----------------------------------------------------------------------------------\n");
                 break;
             }
             break;
-        case 2://TODO:
+        case 2:
             int k;
+            ConsoleCleaner();
+            printf("\n----------------------------------------------------------------------------------\n");
+            printf("Removing\n");
             printf("Enter ticket's number: ");
             k = NumGetter();
             cout << "1.Remove a purchace\n";
@@ -116,7 +122,9 @@ int main()
                 }
                 break;
             default:
+                ConsoleCleaner();
                 printf("Enter a valid command number!\n");
+                printf("\n----------------------------------------------------------------------------------\n");
                 break;
             }
 
@@ -125,20 +133,30 @@ int main()
             ConsoleCleaner();
             List(myList, orderList);
             break;
-        case 4://TODO:
+        case 4:
+            ConsoleCleaner();
+            printf("\n----------------------------------------------------------------------------------\n");
             cout << "Enter row number: ";
             tempRow = NumGetter();
             cout << "Enter place number: ";
             tempPlace = NumGetter();
             if (tempRow >= 1 && tempRow <= maxRow && tempPlace >= 1 && tempPlace <= maxPlace)
-                Search(myList, tempRow, tempPlace);
+                Search(myList, orderList, tempRow, tempPlace);
+            else
+            {
+                ConsoleCleaner();
+                printf("Enter a valid numbers!");
+                printf("\n----------------------------------------------------------------------------------\n");
+            }
             break;
-        case 5://TODO:
+        case 5:
+            ConsoleCleaner();
+            printf("\n----------------------------------------------------------------------------------\n");
             cout << "Enter second name: ";
             cin >> tempSecondName;
-            //Search(myList, tempSecondName);
+            Search(orderList, tempSecondName);
             break;
-        case 6://TODO:
+        case 6: //TODO:
             cout << "Enter ticket number: ";
             tempRow = NumGetter();
             if (tempRow >= 1 && tempRow <= ticketLength)
@@ -151,7 +169,7 @@ int main()
                 printf("Enter a valid ticket number!\n");
             }
             break;
-        case 7://TODO:
+        case 7: //TODO:
             cout << "Enter row number: ";
             tempRow = NumGetter();
             if (tempRow >= 1 && tempRow <= maxRow)
@@ -378,7 +396,7 @@ void RemoveElement(Order *list, int ind) //For orders
     }
 }*/
 
-void Search(Ticket *list, int rowNum, int placeNum)
+void Search(Ticket *list, Order *orderList, int rowNum, int placeNum)
 {
     bool checker = false;
     if (ticketHead != -1)
@@ -405,29 +423,72 @@ void Search(Ticket *list, int rowNum, int placeNum)
         if (checker)
         {
             ConsoleCleaner();
-            cout << "Ticket was found!\n";
+            cout << "Purchace was found!\n";
             cout << "Order: " << i;
             cout << "\nRow: " << list[ind].rowNum;
             cout << "\nPlace: " << list[ind].placeNum;
             cout << "\nNext element ind: " << list[ind].nextInd;
             printf("\n----------------------------------------------------------------------------------\n");
+            return;
         }
         if (!checker)
         {
             ConsoleCleaner();
-            cout << "Such a ticket wasn't found!";
+            cout << "Such a purchace wasn't found!";
+            printf("\n----------------------------------------------------------------------------------\n");
+        }
+    }
+
+    bool orderChecker = false;
+    if (orderHead != -1)
+    {
+        int ind = orderHead;
+        int i = 1;
+        while (true)
+        {
+            if (orderList[ind].rowNum == rowNum && orderList[ind].placeNum == placeNum)
+            {
+                orderChecker = true;
+                break;
+            }
+            if (orderList[ind].nextInd == -1)
+            {
+                break;
+            }
+            else
+            {
+                ind = orderList[ind].nextInd;
+                i++;
+            }
+        }
+        if (orderChecker)
+        {
+            ConsoleCleaner();
+            cout << "Order was found!\n";
+            cout << "Order: " << i;
+            cout << "\nRow: " << orderList[ind].rowNum;
+            cout << "\nPlace: " << orderList[ind].placeNum;
+            cout << "\nSecond name: " << orderList[ind].secondName;
+            cout << "\nNext element ind: " << orderList[ind].nextInd;
+            printf("\n----------------------------------------------------------------------------------\n");
+            return;
+        }
+        if (!orderChecker)
+        {
+            ConsoleCleaner();
+            cout << "Such an order wasn't found!";
             printf("\n----------------------------------------------------------------------------------\n");
         }
     }
 }
 
-/*void Search(Ticket *list, string secondName)
+void Search(Order *list, string secondName)
 {
     ConsoleCleaner();
     bool checker = false;
-    if (head != -1)
+    if (orderHead != -1)
     {
-        int ind = head;
+        int ind = orderHead;
         int i = 1;
         while (true)
         {
@@ -455,11 +516,11 @@ void Search(Ticket *list, int rowNum, int placeNum)
         if (!checker)
         {
             ConsoleCleaner();
-            cout << "Such a ticket wasn't found!";
+            cout << "Such an order wasn't found!";
             printf("\n----------------------------------------------------------------------------------\n");
         }
     }
-}*/
+}
 
 void PlacesInARow(Ticket *list, int rowNum)
 {
@@ -585,7 +646,7 @@ void List(Ticket *list, Order *orderList)
                 break;
             }
         }
-        cout << "Length: " << ticketLength;
+        cout << "Purchaces amount: " << ticketLength;
         printf("\n----------------------------------------------------------------------------------\n");
     }
 
