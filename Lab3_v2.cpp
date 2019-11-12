@@ -27,23 +27,23 @@ int orderHead = -1;
 int ticketLength = 0;
 int orderLength = 0;
 
-bool AviabilityChecker(Ticket *, Order *, int, int);
-void AddElement(Ticket *, Order *);
-void AddElement(Order *, Ticket *);
-void AddElement(Ticket *, Order);
-void RemoveElement(Ticket *, int);
-void RemoveElement(Order *, int);
-void OrderToTicket(Order *, Ticket *, int);
-void List(Ticket *, Order *);
-void Search(Ticket *, Order *, int, int);
-void Search(Order *, string);
-void Edit(Ticket *, Order *, int);
-void Edit(Order *, Ticket *, int);
-void PlacesInARow(Ticket *, Order *, int);
-void ConsoleCleaner();
-int EmptySpaceFinder(Ticket *);
-int EmptySpaceFinder(Order *);
-int NumGetter();
+bool AviabilityChecker(Ticket *, Order *, int, int); //Check the aviability of place
+void AddElement(Ticket *, Order *); //For purchaces
+void AddElement(Order *, Ticket *); //For orders
+void AddElement(Ticket *, Order); //For fast adding
+void RemoveElement(Ticket *, int); //For purchaces
+void RemoveElement(Order *, int); //For orders
+void OrderToTicket(Order *, Ticket *, int); //Moving an order element to purchace
+void List(Ticket *, Order *); //Output all elements
+void Search(Ticket *, Order *, int, int); //Find by place and row
+void Search(Order *, string); //Find by second name
+void Edit(Ticket *, Order *, int); //Edit purchace
+void Edit(Order *, Ticket *, int); //Edit order
+void PlacesInARow(Ticket *, Order *, int); //Display the number of empty seats in a row
+void ConsoleCleaner(); //Clean the console output
+int EmptySpaceFinder(Ticket *); //Find empty cell in Ticket massive
+int EmptySpaceFinder(Order *); //Find empty cell in Order massive
+int NumGetter(); //Get a number from user
 
 int main()
 {
