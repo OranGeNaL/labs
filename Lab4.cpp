@@ -6,12 +6,14 @@
 
 using namespace std;
 
-void ShowMatrix(int **, int);
+void ShowMatrix(float **, int);
 
 int main()
 {
     string inPath;
-    int N, matrixSize;
+    int N, matrixSize, lineSum, lineNumber, finalMatrixLineNumber;
+    bool diaIsntAZero = false;
+
     cout << "Input file mist be like:\n"
          << "not_zero_elements source_matrix_size\n"
          << "element element element\n";
@@ -29,9 +31,9 @@ int main()
     file >> N;
     file >> matrixSize;
 
-    int **mass = new int *[N];
+    float **mass = new float *[N];
     for (int i = 0; i < N; i++)
-        mass[i] = new int[3];
+        mass[i] = new float[3];
 
     int k = 0;
     while (!file.eof())
@@ -40,7 +42,7 @@ int main()
         {
             for (int j = 0; j < matrixSize; j++)
             {
-                int buf;
+                float buf;
                 file >> buf;
                 if (buf != 0)
                 {
@@ -53,10 +55,55 @@ int main()
         }
     }
 
+    cout << "Enter line number: ";
+    while (true)
+    {
+        cin >> lineNumber;
+        if (lineNumber > 0 && lineNumber <= matrixSize)
+            break;
+        else 
+            printf("Enter a valid number!\n");
+    }
+
+    for(int i = 0; i < N; i++)
+    {
+        if(mass[i][0] == mass[i][1] && mass[i][1] == lineNumber - 1)
+        {
+            printf("It just works!\n");
+            finalMatrixLineNumber = i;
+            diaIsntAZero = true;
+            break;
+        }
+    }
+
+    if(diaIsntAZero)
+    {
+        for(int i = 0; i < N; i++)
+        {
+            if(mass[i][0] == lineNumber - 1 && mass[i][0] != mass[i][1])
+            {
+                mass[i][2] = mass[i][2]/mass[finalMatrixLineNumber][2];
+            }
+        }
+    }
+
+    else if(!diaIsntAZero)
+    {
+        for(int i = 0; i < N; i++)
+        {
+            if(mass[i][0] == lineNumber - 1)
+            {
+                lineSum += mass[i][2];
+            }
+        }
+
+        cout << "Line summ: " << lineSum << endl;
+    }
+
     ShowMatrix(mass, N);
 }
 
-void ShowMatrix(int **matrix, int N)
+void ShowMatrix(float **matrix, int N)
 {
     for (int i = 0; i < N; i++)
     {
