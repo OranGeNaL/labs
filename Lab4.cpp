@@ -6,13 +6,15 @@
 
 using namespace std;
 
-void ShowMatrix(float **, int);
+void ShowInternalMatrix(float **, int);
+void ShowExternalMatrix(float **, int, int);
 
 int main()
 {
     string inPath;
     int N, matrixSize, lineSum, lineNumber, finalMatrixLineNumber;
     bool diaIsntAZero = false;
+    lineSum = 0;
 
     cout << "Input file mist be like:\n"
          << "not_zero_elements source_matrix_size\n"
@@ -54,6 +56,8 @@ int main()
             }
         }
     }
+
+    ShowExternalMatrix(mass, N, matrixSize);
 
     cout << "Enter line number: ";
     while (true)
@@ -100,16 +104,43 @@ int main()
         cout << "Line summ: " << lineSum << endl;
     }
 
-    ShowMatrix(mass, N);
+    ShowInternalMatrix(mass, N);
 }
 
-void ShowMatrix(float **matrix, int N)
+void ShowInternalMatrix(float **matrix, int N)
 {
     for (int i = 0; i < N; i++)
     {
         for (int j = 0; j < 3; j++)
         {
             cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void ShowExternalMatrix(float **mass, int N, int matrixSize)
+{
+    for(int i = 0; i < matrixSize; i++)
+    {
+        for(int j = 0; j < matrixSize; j++)
+        {
+            bool isntAZero = false;
+            int internalIndex = 0;
+            for(int k = 0; k < N; k++)
+            {
+                if(mass[k][0] == i && mass[k][1] == j)
+                {
+                    isntAZero = true;
+                    internalIndex = k;
+                    break;
+                }
+            }
+            if(!isntAZero)
+            {
+                cout << mass[internalIndex][2] << " ";
+            }
+            cout << 0 << " ";
         }
         cout << endl;
     }
