@@ -12,7 +12,7 @@ void ShowExternalMatrix(float **, int, int);
 int main()
 {
     string inPath;
-    int N, matrixSize, lineSum, lineNumber, finalMatrixLineNumber;
+    int N, matrixSize, lineSum, finalMatrixLineNumber;
     bool diaIsntAZero = false;
     lineSum = 0;
 
@@ -59,50 +59,109 @@ int main()
 
     ShowExternalMatrix(mass, N, matrixSize);
 
-    cout << "Enter line number: ";
     while (true)
     {
-        cin >> lineNumber;
-        if (lineNumber > 0 && lineNumber <= matrixSize)
-            break;
-        else
-            printf("Enter a valid number!\n");
-    }
+        printf("-------------------------------------------------------------------------\n");
+        bool elementIsFound = false;
+        int lineNumber, tableNumber;
+        int commandNumber;
+        cout << "1.Get element by its nums\n"
+             << "2.Do the second task\n"
+             << "3.Exit\n";
+        cout << "Enter command number: ";
+        cin >> commandNumber;
 
-    for (int i = 0; i < N; i++)
-    {
-        if (mass[i][0] == mass[i][1] && mass[i][1] == lineNumber - 1)
+        switch (commandNumber)
         {
-            printf("It just works!\n");
-            finalMatrixLineNumber = i;
-            diaIsntAZero = true;
-            break;
-        }
-    }
-
-    if (diaIsntAZero)
-    {
-        for (int i = 0; i < N; i++)
-        {
-            if (mass[i][0] == lineNumber - 1 && mass[i][0] != mass[i][1])
+        case 1:
+            printf("-------------------------------------------------------------------------\n");
+            cout << "Enter line number: ";
+            while (true)
             {
-                mass[i][2] = mass[i][2] / mass[finalMatrixLineNumber][2];
+                cin >> lineNumber;
+                if (lineNumber > 0 && lineNumber <= matrixSize)
+                    break;
+                else
+                    printf("Enter a valid number!\n");
             }
-        }
-        ShowExternalMatrix(mass, N, matrixSize);
-    }
-
-    else if (!diaIsntAZero)
-    {
-        for (int i = 0; i < N; i++)
-        {
-            if (mass[i][0] == lineNumber - 1)
+            cout << "Enter table number: ";
+            while (true)
             {
-                lineSum += mass[i][2];
+                cin >> tableNumber;
+                if (tableNumber > 0 && tableNumber <= matrixSize)
+                    break;
+                else
+                    printf("Enter a valid number!\n");
             }
-        }
+            for (int i = 0; i < N; i++)
+            {
+                if (mass[i][0] == lineNumber - 1 && mass[i][1] == tableNumber - 1)
+                {
+                    elementIsFound = true;
+                    cout << "Element with coords: " << lineNumber << " and " << tableNumber << " is " << mass[i][2] << endl;
+                }
+            }
+            if (!elementIsFound)
+            {
+                    cout << "Element with coords: " << lineNumber << " and " << tableNumber << " is " << 0 << endl;
+            }
+            break;
+        case 2:
+            printf("-------------------------------------------------------------------------\n");
+            cout << "Enter line number: ";
+            while (true)
+            {
+                cin >> lineNumber;
+                if (lineNumber > 0 && lineNumber <= matrixSize)
+                    break;
+                else
+                    printf("Enter a valid number!\n");
+            }
 
-        cout << "Line summ: " << lineSum << endl;
+            for (int i = 0; i < N; i++)
+            {
+                if (mass[i][0] == mass[i][1] && mass[i][1] == lineNumber - 1)
+                {
+                    //printf("It just works!\n");
+                    finalMatrixLineNumber = i;
+                    diaIsntAZero = true;
+                    break;
+                }
+            }
+
+            if (diaIsntAZero)
+            {
+                for (int i = 0; i < N; i++)
+                {
+                    if (mass[i][0] == lineNumber - 1 && mass[i][0] != mass[i][1])
+                    {
+                        mass[i][2] = mass[i][2] / mass[finalMatrixLineNumber][2];
+                    }
+                }
+                ShowExternalMatrix(mass, N, matrixSize);
+            }
+
+            else if (!diaIsntAZero)
+            {
+                for (int i = 0; i < N; i++)
+                {
+                    if (mass[i][0] == lineNumber - 1)
+                    {
+                        lineSum += mass[i][2];
+                    }
+                }
+
+                cout << "Line summ: " << lineSum << endl;
+            }
+            break;
+        case 3:
+            return 2;
+            break;
+        default:
+            printf("-------------------------------------------------------------------------\n");
+            cout << "Wrong command number!\n";
+            break;
+        }
     }
 
     //ShowInternalMatrix(mass, N);
