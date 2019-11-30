@@ -65,13 +65,13 @@ int main()
         cin >> lineNumber;
         if (lineNumber > 0 && lineNumber <= matrixSize)
             break;
-        else 
+        else
             printf("Enter a valid number!\n");
     }
 
-    for(int i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
-        if(mass[i][0] == mass[i][1] && mass[i][1] == lineNumber - 1)
+        if (mass[i][0] == mass[i][1] && mass[i][1] == lineNumber - 1)
         {
             printf("It just works!\n");
             finalMatrixLineNumber = i;
@@ -80,22 +80,23 @@ int main()
         }
     }
 
-    if(diaIsntAZero)
+    if (diaIsntAZero)
     {
-        for(int i = 0; i < N; i++)
+        for (int i = 0; i < N; i++)
         {
-            if(mass[i][0] == lineNumber - 1 && mass[i][0] != mass[i][1])
+            if (mass[i][0] == lineNumber - 1 && mass[i][0] != mass[i][1])
             {
-                mass[i][2] = mass[i][2]/mass[finalMatrixLineNumber][2];
+                mass[i][2] = mass[i][2] / mass[finalMatrixLineNumber][2];
             }
         }
+        ShowExternalMatrix(mass, N, matrixSize);
     }
 
-    else if(!diaIsntAZero)
+    else if (!diaIsntAZero)
     {
-        for(int i = 0; i < N; i++)
+        for (int i = 0; i < N; i++)
         {
-            if(mass[i][0] == lineNumber - 1)
+            if (mass[i][0] == lineNumber - 1)
             {
                 lineSum += mass[i][2];
             }
@@ -104,7 +105,7 @@ int main()
         cout << "Line summ: " << lineSum << endl;
     }
 
-    ShowInternalMatrix(mass, N);
+    //ShowInternalMatrix(mass, N);
 }
 
 void ShowInternalMatrix(float **matrix, int N)
@@ -121,26 +122,30 @@ void ShowInternalMatrix(float **matrix, int N)
 
 void ShowExternalMatrix(float **mass, int N, int matrixSize)
 {
-    for(int i = 0; i < matrixSize; i++)
+    for (int i = 0; i < matrixSize; i++)
     {
-        for(int j = 0; j < matrixSize; j++)
+        for (int j = 0; j < matrixSize; j++)
         {
             bool isntAZero = false;
             int internalIndex = 0;
-            for(int k = 0; k < N; k++)
+            for (int k = 0; k < N; k++)
             {
-                if(mass[k][0] == i && mass[k][1] == j)
+                if (mass[k][0] == i && mass[k][1] == j)
                 {
                     isntAZero = true;
                     internalIndex = k;
+
                     break;
                 }
             }
-            if(!isntAZero)
+            if (isntAZero)
             {
                 cout << mass[internalIndex][2] << " ";
             }
-            cout << 0 << " ";
+            else
+            {
+                cout << 0 << " ";
+            }
         }
         cout << endl;
     }
