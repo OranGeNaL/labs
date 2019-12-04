@@ -18,8 +18,7 @@ public:
 
     TreeElement(int treeHigh, bool isABrother = false, int level = 0)
     {
-       // cout << level << " ";
-        srand(time(0));
+        // cout << level << " ";
         elementValue = rand() % 300;
         elementLevel = level;
         bool hasAChild = true;
@@ -116,6 +115,7 @@ private:
 
 int main()
 {
+    srand(time(0));
     int switcher;
     int enteredValue;
     cout << "Enter a tree high: ";
