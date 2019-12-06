@@ -11,10 +11,10 @@ struct Element
 {
 public:
     int elValue;
-    bool keyLeft = false;
-    bool keyRight = false;
-    int leftSonInd;
-    int rightSonRight;
+    // bool keyLeft = false;
+    // bool keyRight = false;
+    int leftSonInd = 0;
+    int rightSonInd = 0;
 
     Element()
     {
@@ -23,6 +23,32 @@ public:
     Element(int value)
     {
         elValue = value;
+    }
+
+    bool Building(Element *mass, int ind, int value)
+    {
+        if (value < elValue)
+        {
+            if (!leftSonInd)
+            {
+                leftSonInd = ind;
+            }
+            else
+            {
+                mass[leftSonInd].Building(mass, ind, value);
+            }
+        }
+        else
+        {
+            if (!rightSonInd)
+            {
+                rightSonInd = ind;
+            }
+            else
+            {
+                mass[rightSonInd].Building(mass, ind, value);
+            }
+        }
     }
 
 private:
@@ -65,16 +91,46 @@ int main()
 
     Element *elementMass = new Element[N];
 
-    while(!file.eof())
+    for (int i = 0; i < N; i++)
     {
-        elementMass[k] = *new Element();
+        elementMass[i] = *new Element();
+    }
+
+    while (!file.eof())
+    {
         file >> elementMass[k].elValue;
         k++;
     }
 
-    for(int i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         cout << elementMass[i].elValue << " ";
     }
     cout << endl;
+
+    for (int i = 1; i < N; i++)
+    {
+        elementMass[0].Building(elementMass, i, elementMass[i].elValue);
+    }
+
+    for (int i = 0; i < N; i++)
+    {
+        if (!elementMass[i].leftSonInd)
+        {
+            cout << "Element's " << elementMass[i].elValue << " right child: " << elementMass[elementMass[i].leftSonInd].elValue;
+        }
+        else if (!elementMass[i].rightSonInd)
+        {
+            cout << "Element's " << elementMass[i].elValue << " left child: " << elementMass[elementMass[i].rightSonInd].elValue;
+        }
+        else if (!elementMass[i].rightSonInd && !elementMass[i].leftSonInd)
+        {
+            cout << "Element " << elementMass[i].elValue << " hasn't any child";
+        }
+        else
+        {
+            cout << "Element's " << elementMass[i].elValue << " children: " << elementMass[elementMass[i].leftSonInd].elValue << " and " << elementMass[elementMass[i].rightSonInd].elValue;
+        }
+        cout << endl;
+    }
 }
