@@ -1,12 +1,109 @@
 #include <iostream>
 #include <string.h>
 #include <string>
+#define MASS_LENGTH 1000
 
 using namespace std;
 
+struct Number
+{
+public:
+    int mass[MASS_LENGTH];
+
+    Number()
+    {
+        for (int i = 0; i < MASS_LENGTH; i++)
+        {
+            mass[i] = 0;
+        }
+    }
+
+    void Addition(Number secondOperand)
+    {
+        int excess = 0;
+        for (int i = MASS_LENGTH - 1; i >= 0; i--)
+        {
+            mass[i] += excess;
+            mass[i] += secondOperand.mass[i];
+            if (mass[i] > 9)
+            {
+                mass[i] -= 10;
+                excess = 1;
+            }
+            else
+            {
+                excess = 0;
+            }
+        }
+    }
+
+    void Multiplication(int value)
+    {
+        int excess = 0;
+        for (int i = MASS_LENGTH - 1; i >= 0; i--)
+        {
+            mass[i] = mass[i] * value;
+            mass[i] += excess;
+            excess = 0;
+            if (mass[i] > 9)
+            {
+                while (mass[i] > 9)
+                {
+                    mass[i] -= 10;
+                    excess += 1;
+                }
+            }
+            else
+            {
+                excess = 0;
+            }
+        }
+    }
+
+    void Equating(int value)
+    {
+        Clearing();
+        string valueInStr = to_string(value);
+        for (int i = valueInStr.length(); i >= 0; i--)
+        {
+            mass[MASS_LENGTH - i] = valueInStr[valueInStr.length() - i] - '0';
+        }
+    }
+
+    void Clearing()
+    {
+        for (int i = 0; i < MASS_LENGTH; i++)
+        {
+            mass[i] = 0;
+        }
+    }
+
+    string PrintValue()
+    {
+        bool isBegan = false;
+        string thisNumInStr = "";
+        for (int i = 0; i < MASS_LENGTH; i++)
+        {
+            if (isBegan)
+            {
+                thisNumInStr += to_string(mass[i]);
+                continue;
+            }
+            if (!isBegan && mass[i] != 0)
+            {
+                isBegan = true;
+                thisNumInStr += to_string(mass[i]);
+            }
+        }
+
+        return thisNumInStr;
+    }
+
+private:
+};
+
 string LengthFixer(string);
-long long int Converting(string);
-long long Exponentiation(int);
+Number Converting(string);
 
 int main()
 {
@@ -17,17 +114,32 @@ int main()
 
     inputData = LengthFixer(inputData);
 
+    Number totalValue = *new Number();
+    // Number secondNumber = *new Number();
+
+    //  number.Equating(25);
+    //  cout << number.PrintValue() << endl;
+
+    //  number.Multiplication(5);
+    //  cout << number.PrintValue() << endl;
+
+    // secondNumber.Equating(196);
+    // cout << secondNumber.PrintValue() << endl;
+
+    // number.Addition(secondNumber);
+    // cout << number.PrintValue() << endl;
+
     if (inputData == "err")
     {
         cout << "Введено неверное число\n";
+        return 0;
     }
-    else
-    {
-        cout << inputData << endl;
-    }
+    
+    totalValue = Converting(inputData);
 
-    long long int num = Converting(inputData);
-    cout << num << endl;
+    cout << "Total value is: " << totalValue.PrintValue() << endl;
+
+    return 0;
 }
 
 string LengthFixer(string data)
@@ -57,40 +169,26 @@ string LengthFixer(string data)
     return data;
 }
 
-long long int Converting(string data)
+Number Converting(string data)
 {
-    long long num = 0;
+    Number number = *new Number();
 
-    for (int i = data.length() - 1; i >= 0; i--)
+    for (int i = data.length(); i > 0; i--)
     {
-        long long a = (int)data[data.length() - 1 - i] - 48;
-        a = a * Exponentiation(i);
-        cout << a << endl;
-        cout << "2^" << i << " " << a << endl;
-        num += a;
-    }
-
-    return num;
-}
-
-long long Exponentiation(int i)
-{
-    long long a = 2;
-    if (i > 1)
-    {
-        for (int k = 2; k <= i; k++)
+        if (data[data.length() - i] != '0')
         {
-            a = a * 2;
+            Number coefficient = *new Number();
+            coefficient.Equating(1);
+            if(data.length() - i != data.length())
+            {
+                for(int j = 1; j <= i - 1; j++)
+                {
+                    coefficient.Multiplication(2);
+                }
+            }
+            number.Addition(coefficient);
         }
-        return a;
     }
-    else if(i == 1)
-    {
-        return 2;
-    }
-    else if(i == 0)
-    {
-        return 1;
-    }
-    return 0;
+
+    return number;
 }
