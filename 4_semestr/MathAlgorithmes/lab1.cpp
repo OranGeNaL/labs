@@ -15,19 +15,19 @@ public:
     BitVector(std::string _U, std::string _set)
     {
         size = _U.length();
-        for(int i = 0; i < _set.length(); i++)
+        for (int i = 0; i < _set.length(); i++)
         {
-            int index = - 1;
-            for(int j = 0; j < _U.length(); j++)
+            int index = -1;
+            for (int j = 0; j < _U.length(); j++)
             {
-                if(_set[i] == _U[j])
+                if (_set[i] == _U[j])
                 {
                     index = j;
                     break;
                 }
             }
 
-            if(index > 0)
+            if (index >= 0)
             {
                 SetBit(index, 1);
             }
@@ -51,6 +51,16 @@ public:
         }
     }
 
+    std::string GetBinary()
+    {
+        std::string result = "";
+        for (int i = 0; i < size; i++)
+        {
+            result += std::to_string(GetBit(i));
+        }
+        return result;
+    }
+
     unsigned long GetBit(int index)
     {
         unsigned long tempVector = 1;
@@ -60,16 +70,57 @@ public:
         return tempVector;
     }
 
+    BitVector Union(BitVector _secondOperand)
+    {
+        BitVector result;
+        result.size = size;
+        result.vector = vector | _secondOperand.vector;
+        return result;
+    }
+
+    BitVector Intersection(BitVector _secondOperand)
+    {
+        BitVector result;
+        result.size = size;
+        result.vector = vector & _secondOperand.vector;
+        return result;
+    }
+
+    BitVector Addition()
+    {
+        BitVector result;
+        result.size = size;
+        result.vector = ~vector;
+        return result;
+    }
+
+    BitVector Substraction(BitVector _secondOperand)
+    {
+        BitVector result;
+        result.size = size;
+        result.vector = vector & _secondOperand.Addition().vector;
+        return result;
+    }
+
     std::string PrintSet(std::string U)
     {
-        
+        std::string result = "";
+        for (int i = 0; i < size; i++)
+        {
+            if (GetBit(i))
+            {
+                result += U[i];
+            }
+        }
+
+        return result;
     }
 };
 
 int main()
 {
     std::ifstream file;
-    std::string filePath;
+    std::string filePath = "source";
     std::string U = "";
     int readMarker = 0;
     BitVector A, B, C;
@@ -86,10 +137,10 @@ int main()
         return 1;
     }
 
-    while (true)
+    while (readMarker < 4)
     {
         file >> readElement;
-        if(readElement == "|")
+        if (readElement == "|")
         {
             readMarker++;
             continue;
@@ -109,7 +160,16 @@ int main()
             C = *new BitVector(U, readElement);
             break;
         }
-
-
     }
+
+    std::cout << A.PrintSet(U) << "\n"
+              << B.PrintSet(U) << "\n"
+              << C.PrintSet(U) << std::endl;
+
+    BitVector BnC, AoC, result;
+    BnC = B.Intersection(C);
+    AoC = A.Union(C).Addition();
+    result = AoC.Substraction(BnC);
+
+    std::cout << "Result is: " << result.PrintSet(U) << std::endl;
 }
