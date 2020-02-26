@@ -121,6 +121,7 @@ int main()
 {
     std::ifstream file;
     std::string filePath = "source";
+    //  /home/orangenal/source
     std::string U = "";
     int readMarker = 0;
     BitVector A, B, C;
@@ -162,9 +163,9 @@ int main()
         }
     }
 
-    std::cout << A.PrintSet(U) << "\n"
-              << B.PrintSet(U) << "\n"
-              << C.PrintSet(U) << std::endl;
+    std::cout << A.PrintSet(U) << " " << A.GetBinary() << "\n"
+              << B.PrintSet(U) << " " << B.GetBinary() << "\n"
+              << C.PrintSet(U) << " " << C.GetBinary() << std::endl;
 
     BitVector BnC, AoC, result;
     BnC = B.Intersection(C);
