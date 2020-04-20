@@ -27,6 +27,11 @@ namespace Lab1
             ChordNTangents(0.8, 1.8, 0.00001);
         }
 
+        private void SimpleIterations_Click(object sender, EventArgs e)
+        {
+            SimpleIterationsFunc(0.8, 0.00001, -0.77);
+        }
+
         private void HalfDivide(double a, double b, double accuracy)
         {
             double c, fA, fB, fC;
@@ -95,6 +100,26 @@ namespace Lab1
             MessageBox.Show("На этом промежутке корня нет.");
         }
 
+        private void SimpleIterationsFunc(double a, double accuracy, double lambda)
+        {
+            double xK = a;
+            double xK1 = a, fX, phiX = 0;
+            int k = 1;
+            string answer = "";
+
+            while(Math.Abs(phiX - xK) > accuracy)
+            {
+                xK = xK1;
+                fX = Math.Sin((xK + 3) * (xK + 3) / 2) / 2 + Math.Log(xK + 2) / 2 - 1;
+                phiX = xK + fX * (1 / lambda);
+                xK1 = phiX;
+                answer += "Итерация " + k + ": " + xK.ToString() + "\n";
+                k++;
+            }
+            MessageBox.Show(answer);
+            MessageBox.Show("Корень равен: " + xK.ToString());
+        }
+
         private double CountFunc(double x)
         {
             double result = Math.Sin(Math.Pow(x + 3, 2) / 2) / 2 + Math.Log(x + 2) / 2 - 1;
@@ -106,5 +131,6 @@ namespace Lab1
             double result = (x + 3) / 2 * Math.Cos(Math.Pow(x + 3, 2) / 2) + 1 / (2 * (x + 2));
             return result;
         }
+
     }
 }
