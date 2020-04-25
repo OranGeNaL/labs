@@ -1,0 +1,10 @@
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab2\Programm\SLAU\bin\Debug\SLAU.exe.config
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab2\Programm\SLAU\bin\Debug\SLAU.exe
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab2\Programm\SLAU\bin\Debug\SLAU.pdb
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab2\Programm\SLAU\obj\Debug\SLAU.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab2\Programm\SLAU\obj\Debug\SLAU.Form1.resources
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab2\Programm\SLAU\obj\Debug\SLAU.Properties.Resources.resources
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab2\Programm\SLAU\obj\Debug\SLAU.csproj.GenerateResource.cache
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab2\Programm\SLAU\obj\Debug\SLAU.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab2\Programm\SLAU\obj\Debug\SLAU.exe
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab2\Programm\SLAU\obj\Debug\SLAU.pdb
