@@ -1,0 +1,10 @@
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab3\program\bin\Debug\program.exe.config
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab3\program\bin\Debug\program.exe
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab3\program\bin\Debug\program.pdb
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab3\program\obj\Debug\program.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab3\program\obj\Debug\program.Form1.resources
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab3\program\obj\Debug\program.Properties.Resources.resources
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab3\program\obj\Debug\program.csproj.GenerateResource.cache
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab3\program\obj\Debug\program.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab3\program\obj\Debug\program.exe
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab3\program\obj\Debug\program.pdb
