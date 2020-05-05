@@ -1,0 +1,11 @@
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab4\Lab4\bin\Debug\Lab4.exe.config
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab4\Lab4\bin\Debug\Lab4.exe
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab4\Lab4\bin\Debug\Lab4.pdb
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab4\Lab4\obj\Debug\Lab4.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab4\Lab4\obj\Debug\Lab4.Form1.resources
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab4\Lab4\obj\Debug\Lab4.Form2.resources
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab4\Lab4\obj\Debug\Lab4.Properties.Resources.resources
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab4\Lab4\obj\Debug\Lab4.csproj.GenerateResource.cache
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab4\Lab4\obj\Debug\Lab4.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab4\Lab4\obj\Debug\Lab4.exe
+C:\Users\pshen\Documents\GitHub\labs\4_semestr\VichMath\Lab4\Lab4\obj\Debug\Lab4.pdb
