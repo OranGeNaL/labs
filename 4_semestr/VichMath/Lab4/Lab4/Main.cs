@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,9 @@ namespace Lab4
         public static double[,] couples;
         public static double convertCoef = 1;
 
-
         public static List<Dot> dots = new List<Dot>();
         public static List<Line> lines = new List<Line>();
+        public static List<Curve> curves = new List<Curve>();
 
         public static double GetMinX()
         {
@@ -87,6 +88,20 @@ namespace Lab4
         {
             firstPoint = new Dot(_x1, _y1);
             secondPoint = new Dot(_x2, _y2);
+        }
+    }
+
+    class Curve
+    {
+        public List<Dot> dots = new List<Dot>();
+        public Point[] ConvertToPoints()
+        {
+            Point[] points = new Point[dots.Count];
+            for(int i = 0; i < dots.Count; i++)
+            {
+                points[i] = new Point(dots[i].x, dots[i].y);
+            }
+            return points;
         }
     }
 

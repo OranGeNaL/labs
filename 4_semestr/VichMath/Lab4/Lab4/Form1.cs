@@ -29,11 +29,29 @@ namespace Lab4
         {
             Main.dots.Clear();
             Main.lines.Clear();
+            Main.curves.Clear();
             Main.couples = new double[1, 1];
             Main.numOfCouples = 0;
             Graphic.scale = 100;
             label1.Text = "Импортируйте пары значений";
             RefreshForm();
+        }
+
+        double LagrangeCount(double x)
+        {
+            double Lx = 0;
+            for(int i = 0; i < Main.numOfCouples; i++)
+            {
+                double pI = Main.couples[i, 1];
+                for(int j = 0; j < Main.numOfCouples; j++)
+                {
+                    if (j == i)
+                        continue;
+                    pI = pI * (x - Main.couples[j, 0]) / (Main.couples[i, 0] - Main.couples[j, 0]);
+                }
+                Lx += pI;
+            }
+            return Lx;
         }
 
         private void importButton_Click(object sender, EventArgs e)
@@ -151,6 +169,11 @@ namespace Lab4
             {
                 graphics.DrawRectangle(new Pen(Color.Green, 2), i.x - 1, i.y - 1, 3, 3);
             }
+
+            foreach (Curve i in Main.curves) // Отрисовка кривых
+            {
+                graphics.DrawCurve(new Pen(Color.Red, 1), i.ConvertToPoints());
+            }
         }
 
         private void refreshButton_Click(object sender, EventArgs e)
@@ -213,6 +236,23 @@ namespace Lab4
                 i++;
             }
             MessageBox.Show(result);
+        }
+
+        private void lagrangeButton_Click(object sender, EventArgs e)
+        {
+            if(Main.numOfCouples == 0)
+            {
+                MessageBox.Show("Сначала импортируйте пары значений!");
+                return;
+            }
+            Curve curve = new Curve();
+            for(double i = Main.GetMinX() - 1; i < Main.GetMaxX() + 1; i += 1 / (double)Graphic.scale)
+            {
+                curve.dots.Add(new Dot(i, LagrangeCount(i)));
+            }
+            
+            Main.curves.Add(curve);
+            RefreshForm();
         }
     }
 }

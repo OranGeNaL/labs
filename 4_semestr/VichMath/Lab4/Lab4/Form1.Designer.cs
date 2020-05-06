@@ -36,6 +36,7 @@
             this.clearButton = new System.Windows.Forms.Button();
             this.shouDotsButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lagrangeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // importButton
@@ -122,11 +123,23 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Импортируйте пары значений";
             // 
+            // lagrangeButton
+            // 
+            this.lagrangeButton.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lagrangeButton.Location = new System.Drawing.Point(692, 236);
+            this.lagrangeButton.Name = "lagrangeButton";
+            this.lagrangeButton.Size = new System.Drawing.Size(132, 70);
+            this.lagrangeButton.TabIndex = 8;
+            this.lagrangeButton.Text = "Полином Лагранжа";
+            this.lagrangeButton.UseVisualStyleBackColor = true;
+            this.lagrangeButton.Click += new System.EventHandler(this.lagrangeButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 523);
+            this.Controls.Add(this.lagrangeButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.shouDotsButton);
             this.Controls.Add(this.clearButton);
@@ -152,6 +165,7 @@
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button shouDotsButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button lagrangeButton;
     }
 }
 
