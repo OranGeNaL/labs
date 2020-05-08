@@ -12,7 +12,7 @@ namespace Lab4
     {
         public static string sourcePath;
         public static int numOfCouples = 0;
-        public static double[,] couples;
+        public static double[,] couples; // Пары значений couples[*, 0] - x и couples[*, 1] - y
         public static double convertCoef = 1;
 
         public static List<Dot> dots = new List<Dot>();
@@ -39,6 +39,25 @@ namespace Lab4
                     res = couples[i, 0];
             }
             return res;
+        }
+
+        public static int Factorial(int k)
+        {
+            if (k == 0)
+                return 1;
+            else if (k == 1)
+                return 1;
+            else if (k > 0)
+            {
+                int result = 1;
+                for (int i = 1; i <= k; i++)
+                {
+                    result *= i;
+                }
+                return result;
+            }
+            else
+                return 0;
         }
     }
 

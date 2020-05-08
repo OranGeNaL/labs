@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Threading;
 using System.Globalization;
+using System.Windows.Forms.VisualStyles;
 
 namespace Lab4
 {
@@ -52,6 +53,44 @@ namespace Lab4
                 Lx += pI;
             }
             return Lx;
+        }
+
+        double ThrNewton(double x)
+        {
+            double[] temp = new double[Main.numOfCouples];
+            double[] temp1 = new double[Main.numOfCouples];
+            for(int i = 0; i < Main.numOfCouples; i++)
+            {
+                temp1[i] = 1;
+            }
+            for (int i = 0; i < Main.numOfCouples; i++)
+            {
+                temp[i] = Main.couples[i, 1];
+            }
+
+            double res = temp[0];
+            int inter = 0;
+            int c = Main.numOfCouples - 1;
+            int count = 1;
+
+            for(int i = 1; i < Main.numOfCouples; i++)
+            {
+                for(int j = 0; j < c; j++)
+                {
+                    temp[j] = (temp[j + 1] - temp[j]) / (Main.couples[j + 1 + inter, 0] - Main.couples[j, 0]);
+                }
+                inter++;
+                c--;
+                for(int j = 0; j < count; j++)
+                {
+                    temp1[i] *= (x - Main.couples[j, 0]);
+                }
+                count++;
+                temp1[i] *= temp[0];
+                res += temp1[i];
+            }
+            //MessageBox.Show("x: " + x.ToString() + " y: " + res.ToString());
+            return res;
         }
 
         private void importButton_Click(object sender, EventArgs e)
@@ -253,6 +292,52 @@ namespace Lab4
             
             Main.curves.Add(curve);
             RefreshForm();
+        }
+
+        private void newtonButton_Click(object sender, EventArgs e)
+        {
+            if (Main.numOfCouples == 0)
+            {
+                MessageBox.Show("Сначала импортируйте пары значений!");
+                return;
+            }
+            Curve curve = new Curve();
+            for (double i = Main.GetMinX() - 1; i < Main.GetMaxX() + 1; i += 1 / (double)Graphic.scale)
+            {
+                Dot dot = new Dot(i, ThrNewton(i));
+
+                if (dot.x > 10000)
+                    dot.x = 10000;
+                if (dot.x < -10000)
+                    dot.x = -10000;
+                if (dot.y > 10000)
+                    dot.y = 10000;
+                if (dot.y < -10000)
+                    dot.y = -10000;
+
+                curve.dots.Add(dot);
+            }
+
+            Main.curves.Add(curve);
+            RefreshForm();
+        }
+
+        private void countButton_Click(object sender, EventArgs e)
+        {
+            if (Main.numOfCouples == 0)
+            {
+                MessageBox.Show("Сначала импортируйте пары значений!");
+                return;
+            }
+            try
+            {
+            double x = double.Parse(textBox1.Text);
+            label1.Text = "y: " + LagrangeCount(x).ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Введено неверное число!");
+            }
         }
     }
 }

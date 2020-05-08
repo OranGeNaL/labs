@@ -37,6 +37,9 @@
             this.shouDotsButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lagrangeButton = new System.Windows.Forms.Button();
+            this.newtonButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.countButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // importButton
@@ -134,11 +137,43 @@
             this.lagrangeButton.UseVisualStyleBackColor = true;
             this.lagrangeButton.Click += new System.EventHandler(this.lagrangeButton_Click);
             // 
+            // newtonButton
+            // 
+            this.newtonButton.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.newtonButton.Location = new System.Drawing.Point(692, 313);
+            this.newtonButton.Name = "newtonButton";
+            this.newtonButton.Size = new System.Drawing.Size(132, 79);
+            this.newtonButton.TabIndex = 9;
+            this.newtonButton.Text = "Полином Ньютона";
+            this.newtonButton.UseVisualStyleBackColor = true;
+            this.newtonButton.Click += new System.EventHandler(this.newtonButton_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(543, 146);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(281, 20);
+            this.textBox1.TabIndex = 10;
+            // 
+            // countButton
+            // 
+            this.countButton.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.countButton.Location = new System.Drawing.Point(543, 173);
+            this.countButton.Name = "countButton";
+            this.countButton.Size = new System.Drawing.Size(142, 57);
+            this.countButton.TabIndex = 11;
+            this.countButton.Text = "Посчитать в заданной точке";
+            this.countButton.UseVisualStyleBackColor = true;
+            this.countButton.Click += new System.EventHandler(this.countButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 523);
+            this.Controls.Add(this.countButton);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.newtonButton);
             this.Controls.Add(this.lagrangeButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.shouDotsButton);
@@ -166,6 +201,9 @@
         private System.Windows.Forms.Button shouDotsButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button lagrangeButton;
+        private System.Windows.Forms.Button newtonButton;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button countButton;
     }
 }
 
