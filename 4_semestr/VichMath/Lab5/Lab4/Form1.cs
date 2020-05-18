@@ -70,6 +70,34 @@ namespace Lab4
             return result;
         }
 
+        double SimpsonMethod(double a, double b, double h)
+        {
+            double res = 0;
+
+            res += Main.CountFunc(a) + Main.CountFunc(b);
+
+            double sum = 0;
+
+            for(int i = 2; i < (b - a) / h; i += 2)
+            {
+                double x = a + h * i;
+                sum += Main.CountFunc(x);
+            }
+            res += 2 * sum;
+
+            sum = 0;
+
+            for(int i = 1; i < (b - a) / h; i += 2)
+            {
+                double x = a + h * i;
+                sum += Main.CountFunc(x);
+            }
+            res += 4 * sum;
+            res *= h / 3;
+
+            return res;
+        }
+
         private void importButton_Click(object sender, EventArgs e)
         {
             string fileText = "";
@@ -281,6 +309,22 @@ namespace Lab4
                 b = double.Parse(textBoxB.Text);
                 h = double.Parse(textBoxN.Text);
                 label1.Text = "S: " + TrapMethod(a, b, h).ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Введены неверные значения!");
+            }
+        }
+
+        private void simpsonButton_Click(object sender, EventArgs e)
+        {
+            double a, b, h;
+            try
+            {
+                a = double.Parse(textBoxA.Text);
+                b = double.Parse(textBoxB.Text);
+                h = double.Parse(textBoxN.Text);
+                label1.Text = "S: " + SimpsonMethod(a, b, h).ToString();
             }
             catch
             {

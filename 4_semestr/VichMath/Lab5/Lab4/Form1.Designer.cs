@@ -46,6 +46,7 @@
             this.blable = new System.Windows.Forms.Label();
             this.Nlabel = new System.Windows.Forms.Label();
             this.integralButton = new System.Windows.Forms.Button();
+            this.simpsonButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // importButton
@@ -168,6 +169,7 @@
             this.textBoxA.Name = "textBoxA";
             this.textBoxA.Size = new System.Drawing.Size(34, 20);
             this.textBoxA.TabIndex = 14;
+            this.textBoxA.Text = "-1";
             // 
             // textBoxB
             // 
@@ -175,6 +177,7 @@
             this.textBoxB.Name = "textBoxB";
             this.textBoxB.Size = new System.Drawing.Size(34, 20);
             this.textBoxB.TabIndex = 15;
+            this.textBoxB.Text = "1";
             // 
             // textBoxN
             // 
@@ -182,6 +185,7 @@
             this.textBoxN.Name = "textBoxN";
             this.textBoxN.Size = new System.Drawing.Size(34, 20);
             this.textBoxN.TabIndex = 16;
+            this.textBoxN.Text = "0,05";
             // 
             // alable
             // 
@@ -221,11 +225,23 @@
             this.integralButton.UseVisualStyleBackColor = true;
             this.integralButton.Click += new System.EventHandler(this.integralButton_Click);
             // 
+            // simpsonButton
+            // 
+            this.simpsonButton.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.simpsonButton.Location = new System.Drawing.Point(518, 176);
+            this.simpsonButton.Name = "simpsonButton";
+            this.simpsonButton.Size = new System.Drawing.Size(167, 50);
+            this.simpsonButton.TabIndex = 21;
+            this.simpsonButton.Text = "Метод Симпсона";
+            this.simpsonButton.UseVisualStyleBackColor = true;
+            this.simpsonButton.Click += new System.EventHandler(this.simpsonButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 523);
+            this.Controls.Add(this.simpsonButton);
             this.Controls.Add(this.integralButton);
             this.Controls.Add(this.Nlabel);
             this.Controls.Add(this.blable);
@@ -272,6 +288,7 @@
         private System.Windows.Forms.Label blable;
         private System.Windows.Forms.Label Nlabel;
         private System.Windows.Forms.Button integralButton;
+        private System.Windows.Forms.Button simpsonButton;
     }
 }
 
