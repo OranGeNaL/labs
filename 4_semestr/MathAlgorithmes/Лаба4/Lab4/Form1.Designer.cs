@@ -37,7 +37,7 @@
             // 
             // nTextBox
             // 
-            this.nTextBox.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nTextBox.Location = new System.Drawing.Point(10, 57);
             this.nTextBox.Name = "nTextBox";
             this.nTextBox.Size = new System.Drawing.Size(100, 26);
@@ -46,7 +46,7 @@
             // 
             // mTextBox
             // 
-            this.mTextBox.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.mTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.mTextBox.Location = new System.Drawing.Point(126, 57);
             this.mTextBox.Name = "mTextBox";
             this.mTextBox.Size = new System.Drawing.Size(100, 26);
@@ -55,7 +55,7 @@
             // 
             // generateButton
             // 
-            this.generateButton.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.generateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.generateButton.Location = new System.Drawing.Point(12, 104);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(214, 50);
@@ -67,20 +67,20 @@
             // nLabel
             // 
             this.nLabel.AutoSize = true;
-            this.nLabel.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nLabel.Location = new System.Drawing.Point(12, 34);
             this.nLabel.Name = "nLabel";
-            this.nLabel.Size = new System.Drawing.Size(83, 20);
+            this.nLabel.Size = new System.Drawing.Size(80, 20);
             this.nLabel.TabIndex = 3;
             this.nLabel.Text = "Вершины";
             // 
             // mLabel
             // 
             this.mLabel.AutoSize = true;
-            this.mLabel.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.mLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.mLabel.Location = new System.Drawing.Point(131, 34);
             this.mLabel.Name = "mLabel";
-            this.mLabel.Size = new System.Drawing.Size(46, 20);
+            this.mLabel.Size = new System.Drawing.Size(44, 20);
             this.mLabel.TabIndex = 4;
             this.mLabel.Text = "Дуги";
             // 
@@ -88,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(238, 172);
             this.Controls.Add(this.mLabel);
             this.Controls.Add(this.nLabel);
             this.Controls.Add(this.generateButton);

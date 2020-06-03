@@ -25,6 +25,7 @@ namespace Lab4
             string NStr = "N: ";
             string iStr = "i: ";
             string jStr = "j: ";
+            string Mstr = "m: ";
 
             try
             {
@@ -57,11 +58,12 @@ namespace Lab4
                     NStr += "| " + N.ToString();
                     iStr += "| " + (i + 1).ToString();
                     jStr += "| " + (j + 1).ToString();
+                    Mstr += "| " + M.ToString();
                 }
 
                 MessageBox.Show("Матрица смежности:\n" + PrintMatrix(matrix));
                 MessageBox.Show("Таблица работы алгоритма:\n" + kStr +
-                    "\n" + NStr + "\n" + iStr + "\n" + jStr);
+                    "\n" + NStr + "\n" + iStr + "\n" + jStr + "\n" + Mstr);
             }
             catch
             {
