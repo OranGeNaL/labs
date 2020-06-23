@@ -19,7 +19,7 @@ namespace Lab1
 
         private void halfDivide_Click(object sender, EventArgs e)
         {
-            HalfDivide(0.2, 1.8, 0.00001);
+            HalfDivide(0.5, 0.9, 0.05);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -122,7 +122,8 @@ namespace Lab1
 
         private double CountFunc(double x)
         {
-            double result = Math.Sin(Math.Pow(x + 3, 2) / 2) / 2 + Math.Log(x + 2) / 2 - 1;
+            //double result = Math.Sin(Math.Pow(x + 3, 2) / 2) / 2 + Math.Log(x + 2) / 2 - 1;
+            double result = Math.Pow(x, 2) - 0.55;
             return result;
         }
 

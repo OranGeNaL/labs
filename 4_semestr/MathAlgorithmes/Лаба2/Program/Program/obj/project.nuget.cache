@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "VdpNTmyQRugXMhn5p8iibQu2k65dDefpLuWPi4rd47X3ovUcwgVmDGCVEHlhiZz9/SxjmKyOzAiU/OLBGiJwSg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\4_semestr\\MathAlgorithmes\\Лаба2\\Program\\Program\\Program.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pshen\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

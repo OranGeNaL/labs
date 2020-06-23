@@ -44,6 +44,7 @@ namespace Lab4
             for(int i = 0; i < Main.numOfCouples; i++)
             {
                 double pI = Main.couples[i, 1];
+
                 for(int j = 0; j < Main.numOfCouples; j++)
                 {
                     if (j == i)
