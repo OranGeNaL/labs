@@ -1,0 +1,6 @@
+create table Kafedra(Kaf_name varchar(80), Kaf_ID integer primary key);
+create table Value(Val_name varchar(80), Val_ID integer primary key);
+create table Kategoria(Kateg_name varchar(30), Kateg_ID integer primary key);
+create table _Year(Year_ID integer primary key);
+create table Chislennost(Colichestvo real, Kaf_ID integer, Val_ID integer, Kateg_ID integer, Year_ID integer, primary key(Kaf_ID, Val_ID, Kateg_ID, Year_ID));
+

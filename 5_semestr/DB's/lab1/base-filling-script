@@ -1,0 +1,13 @@
+-- insert into Kafedra values('Программное обеспечение вычислительной техники и автоматизированных систем', 1);
+-- insert into Value values('Количество преподавателей', 1);
+-- insert into Value values('В т.ч. преподавателей с учеными степенями и званиями', 2);
+-- insert into Value values('Из них профессоров(по должности докторов наук)', 3);
+-- insert into Value values('Доцентов(кандидатов наук)', 4);
+-- insert into Value values('Доля преподавателей с учеными степенями и званиями, %', 5);
+-- insert into Kategoria values('штатных', 1);
+-- insert into Kategoria values('совместителей', 2);
+insert into _Year values(1995);
+insert into _Year values(1996);
+insert into _Year values(1997);
+insert into _Year values(1998);
+insert into _Year values(1999);
