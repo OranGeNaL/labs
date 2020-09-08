@@ -1,0 +1,13 @@
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab1\Prog\Prog\bin\Debug\netcoreapp3.1\Prog.exe
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab1\Prog\Prog\bin\Debug\netcoreapp3.1\Prog.deps.json
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab1\Prog\Prog\bin\Debug\netcoreapp3.1\Prog.runtimeconfig.json
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab1\Prog\Prog\bin\Debug\netcoreapp3.1\Prog.runtimeconfig.dev.json
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab1\Prog\Prog\bin\Debug\netcoreapp3.1\Prog.dll
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab1\Prog\Prog\bin\Debug\netcoreapp3.1\Prog.pdb
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab1\Prog\Prog\obj\Debug\netcoreapp3.1\Prog.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab1\Prog\Prog\obj\Debug\netcoreapp3.1\Prog.AssemblyInfoInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab1\Prog\Prog\obj\Debug\netcoreapp3.1\Prog.AssemblyInfo.cs
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab1\Prog\Prog\obj\Debug\netcoreapp3.1\Prog.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab1\Prog\Prog\obj\Debug\netcoreapp3.1\Prog.dll
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab1\Prog\Prog\obj\Debug\netcoreapp3.1\Prog.pdb
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab1\Prog\Prog\obj\Debug\netcoreapp3.1\Prog.genruntimeconfig.cache

@@ -1,0 +1,13 @@
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab2\OOP-lab2\OOP-lab2\obj\Debug\netcoreapp3.1\OOP-lab2.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab2\OOP-lab2\OOP-lab2\obj\Debug\netcoreapp3.1\OOP-lab2.AssemblyInfoInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab2\OOP-lab2\OOP-lab2\obj\Debug\netcoreapp3.1\OOP-lab2.AssemblyInfo.cs
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab2\OOP-lab2\OOP-lab2\obj\Debug\netcoreapp3.1\OOP-lab2.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab2\OOP-lab2\OOP-lab2\bin\Debug\netcoreapp3.1\OOP-lab2.exe
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab2\OOP-lab2\OOP-lab2\bin\Debug\netcoreapp3.1\OOP-lab2.deps.json
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab2\OOP-lab2\OOP-lab2\bin\Debug\netcoreapp3.1\OOP-lab2.runtimeconfig.json
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab2\OOP-lab2\OOP-lab2\bin\Debug\netcoreapp3.1\OOP-lab2.runtimeconfig.dev.json
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab2\OOP-lab2\OOP-lab2\bin\Debug\netcoreapp3.1\OOP-lab2.dll
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab2\OOP-lab2\OOP-lab2\bin\Debug\netcoreapp3.1\OOP-lab2.pdb
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab2\OOP-lab2\OOP-lab2\obj\Debug\netcoreapp3.1\OOP-lab2.dll
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab2\OOP-lab2\OOP-lab2\obj\Debug\netcoreapp3.1\OOP-lab2.pdb
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\lab2\OOP-lab2\OOP-lab2\obj\Debug\netcoreapp3.1\OOP-lab2.genruntimeconfig.cache
