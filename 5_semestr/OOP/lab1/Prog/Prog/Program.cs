@@ -11,6 +11,13 @@ namespace Prog
             string name = Console.ReadLine();
             Console.Write("Введите возраст: ");
             int age = int.Parse(Console.ReadLine());
+            Pers(name, age);
+            Console.ReadKey();
+            //Console.Beep();
+        }
+
+        static void Pers(string name, int age)
+        {
             Person person = new Person(name, age);
         }
     }
