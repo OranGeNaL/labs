@@ -1,0 +1,10 @@
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\Interfaces\Practice2\Practice2\bin\Debug\Practice2.exe.config
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\Interfaces\Practice2\Practice2\bin\Debug\Practice2.exe
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\Interfaces\Practice2\Practice2\bin\Debug\Practice2.pdb
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\Interfaces\Practice2\Practice2\obj\Debug\Practice2.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\Interfaces\Practice2\Practice2\obj\Debug\Practice2.Form1.resources
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\Interfaces\Practice2\Practice2\obj\Debug\Practice2.Properties.Resources.resources
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\Interfaces\Practice2\Practice2\obj\Debug\Practice2.csproj.GenerateResource.cache
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\Interfaces\Practice2\Practice2\obj\Debug\Practice2.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\Interfaces\Practice2\Practice2\obj\Debug\Practice2.exe
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\Interfaces\Practice2\Practice2\obj\Debug\Practice2.pdb
