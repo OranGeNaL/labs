@@ -110,8 +110,50 @@ namespace Prog
             return res;
         }
 
-        public static ListContainer<T> operator >>(ListContainer<T> listContainer, T Value)
+        public static ListNode<T> operator >= ( ListContainer<T> container, int node) // Выталкивание с конца
         {
+            return container.PopBack();
+        }
+
+
+        public static ListNode<T> operator <=(ListContainer<T> container, int node)
+        {
+            return null;
+        }
+
+        public static ListNode<T> operator >(ListContainer<T> container, int node) // Выталкивание с начала
+        {
+            return container.PopForward();
+        }
+
+        public static ListNode<T> operator <(ListContainer<T> container, int node)
+        {
+            return null;
+        }
+
+        public static ListNode<T> operator <=(ListContainer<T> container, T node) // Вставка в конец
+        {
+            //return container.PopBack();
+            container.Append(node);
+            return null;
+        }
+
+        public static ListNode<T> operator>=(ListContainer<T> container, T node)
+        {
+            //return container.PopBack();
+            container.Append(node);
+            return null;
+        }
+
+        public static ListNode<T> operator >(ListContainer<T> container, T node)  // Вставка в начало
+        {
+            container.Insert(node);
+            return null;
+        }
+
+        public static ListNode<T> operator <(ListContainer<T> container, T node)
+        {
+            container.Insert(node);
             return null;
         }
     }

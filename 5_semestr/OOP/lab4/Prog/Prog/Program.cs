@@ -17,20 +17,20 @@ namespace Prog
                 {
                     case 1:
                         Console.Write("Введите данные для сохранения >>> ");
-                        list.Insert(Console.ReadLine());
+                        var i = list < Console.ReadLine();
                         break;
                     case 2:
                         Console.Write("Введите данные для сохранения >>> ");
-                        list.Append(Console.ReadLine());
+                        var j = list <= Console.ReadLine();
                         break;
                     case 3:
                         Console.WriteLine(list.ToString());
                         break;
                     case 4:
-                        Console.WriteLine("{0} вытолкнуто из начала.", list.PopForward().ToString());
+                        Console.WriteLine("{0} вытолкнуто из начала.", list > 0);
                         break;
                     case 5:
-                        Console.WriteLine("{0} вытолкнуто из конца.", list.PopBack().ToString());
+                        Console.WriteLine("{0} вытолкнуто из конца.", list >= 0);
                         break;
                     default:
                         break;
