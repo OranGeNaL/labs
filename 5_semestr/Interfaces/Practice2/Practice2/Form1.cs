@@ -412,5 +412,221 @@ namespace Practice2
                 RefreshAverage();
             }
         }
+        
+        //Пятое испытание
+        private void button8_Click(object sender, EventArgs e)
+        {
+            button7.Focus();
+            Thread thread = new Thread(new ThreadStart(FifthIsp));//TODO
+            thread.Start();
+        }
+
+        private void FifthIsp()
+        {
+            Main.timeStamps.Clear();
+            Random rand = new Random();
+            for (int i = 1; i <= int.Parse(textBox5.Text); i++)
+            {
+                Thread.Sleep(rand.Next(2000, 5000));
+                int k = rand.Next(0, 3);
+
+                if (k == 0)
+                {
+                    int lamp = rand.Next(1, 7);
+                    switch (lamp)
+                    {
+                        case 1:
+                            panel14.BackColor = Color.Red;
+                            break;
+                        case 2:
+                            panel15.BackColor = Color.Red;
+                            break;
+                        case 3:
+                            panel16.BackColor = Color.Red;
+                            break;
+                        case 4:
+                            panel17.BackColor = Color.Red;
+                            break;
+                        case 5:
+                            panel18.BackColor = Color.Red;
+                            break;
+                        case 6:
+                            panel19.BackColor = Color.Red;
+                            break;
+                    }
+                    Main.startTime = DateTime.Now;
+                    Thread.Sleep(1000);
+                }
+
+                else if(k == 1)
+                {
+                    WriteTextSafe(rand.Next(0, 10).ToString(), label8);
+
+                    Main.startTime = DateTime.Now;
+                    Thread.Sleep(1000);
+                }
+
+                else
+                {
+                    int lNum = rand.Next(0, 10);
+                    int rNum = rand.Next(0, 10);
+
+                    int bebs = rand.Next(0, 3);
+                    switch(bebs)
+                    {
+                        case 0:
+                            Main.solve = lNum + rNum;
+                            Main.genSolve = rand.Next(Main.solve - 2, Main.solve + 2);
+                            WriteTextSafe(string.Format("{0} + {1} = {2}", lNum, rNum, Main.genSolve), label11);
+                            break;
+                        case 1:
+                            Main.solve = lNum - rNum;
+                            Main.genSolve = rand.Next(Main.solve - 2, Main.solve + 2);
+                            WriteTextSafe(string.Format("{0} - {1} = {2}", lNum, rNum, Main.genSolve), label11);
+                            break;
+                        case 3:
+                            Main.solve = lNum * rNum;
+                            Main.genSolve = rand.Next(Main.solve - 2, Main.solve + 2);
+                            WriteTextSafe(string.Format("{0} * {1} = {2}", lNum, rNum, Main.genSolve), label11);
+                            break;
+                    }
+
+                    Main.startTime = DateTime.Now;
+                    Thread.Sleep(2500);
+                }
+
+            }
+        }
+
+        //Обработка панелей последнего испытания
+        #region
+        private void panel14_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (panel14.BackColor == Color.Red)
+            {
+                Main.pressTime = DateTime.Now;
+                panel14.BackColor = Color.Silver;
+
+                Main.timeStamps.Add(new TimeStamp(Main.pressTime.Subtract(Main.startTime).TotalMilliseconds));
+
+                RefreshStats();
+                RefreshAverage();
+            }
+        }
+
+        private void panel15_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (panel15.BackColor == Color.Red)
+            {
+                Main.pressTime = DateTime.Now;
+                panel15.BackColor = Color.Silver;
+
+                Main.timeStamps.Add(new TimeStamp(Main.pressTime.Subtract(Main.startTime).TotalMilliseconds));
+
+                RefreshStats();
+                RefreshAverage();
+            }
+        }
+
+        private void panel16_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (panel16.BackColor == Color.Red)
+            {
+                Main.pressTime = DateTime.Now;
+                panel16.BackColor = Color.Silver;
+
+                Main.timeStamps.Add(new TimeStamp(Main.pressTime.Subtract(Main.startTime).TotalMilliseconds));
+
+                RefreshStats();
+                RefreshAverage();
+            }
+        }
+
+        private void panel17_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (panel17.BackColor == Color.Red)
+            {
+                Main.pressTime = DateTime.Now;
+                panel17.BackColor = Color.Silver;
+
+                Main.timeStamps.Add(new TimeStamp(Main.pressTime.Subtract(Main.startTime).TotalMilliseconds));
+
+                RefreshStats();
+                RefreshAverage();
+            }
+        }
+
+        private void panel18_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (panel18.BackColor == Color.Red)
+            {
+                Main.pressTime = DateTime.Now;
+                panel18.BackColor = Color.Silver;
+
+                Main.timeStamps.Add(new TimeStamp(Main.pressTime.Subtract(Main.startTime).TotalMilliseconds));
+
+                RefreshStats();
+                RefreshAverage();
+            }
+        }
+
+        private void panel19_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (panel19.BackColor == Color.Red)
+            {
+                Main.pressTime = DateTime.Now;
+                panel19.BackColor = Color.Silver;
+
+                Main.timeStamps.Add(new TimeStamp(Main.pressTime.Subtract(Main.startTime).TotalMilliseconds));
+
+                RefreshStats();
+                RefreshAverage();
+            }
+        }
+        #endregion
+
+        private void button7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            label3.Text = "Нажата клавиша: " + e.KeyChar;
+            if (e.KeyChar.ToString() == label8.Text)
+            {
+                Main.pressTime = DateTime.Now;
+
+                Main.timeStamps.Add(new TimeStamp(Main.pressTime.Subtract(Main.startTime).TotalMilliseconds));
+                label8.Text = "-";
+                RefreshStats();
+                RefreshAverage();
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (Main.solve == Main.genSolve)
+            {
+                Main.pressTime = DateTime.Now;
+
+                Main.timeStamps.Add(new TimeStamp(Main.pressTime.Subtract(Main.startTime).TotalMilliseconds));
+                label11.Text = "-";
+                RefreshStats();
+                RefreshAverage();
+            }
+
+            button7.Focus();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (Main.solve != Main.genSolve)
+            {
+                Main.pressTime = DateTime.Now;
+
+                Main.timeStamps.Add(new TimeStamp(Main.pressTime.Subtract(Main.startTime).TotalMilliseconds));
+                label11.Text = "-";
+                RefreshStats();
+                RefreshAverage();
+            }
+
+            button7.Focus();
+        }
     }
 }

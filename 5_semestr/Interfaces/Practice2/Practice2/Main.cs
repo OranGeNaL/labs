@@ -13,6 +13,8 @@ namespace Practice2
 
 
         public static bool waiting = false;
+        public static int solve = 0;
+        public static int genSolve = -200;
         public static DateTime startTime = DateTime.Now;
         public static DateTime pressTime = DateTime.Now;
 
