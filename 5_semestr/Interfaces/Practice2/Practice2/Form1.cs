@@ -484,7 +484,7 @@ namespace Practice2
                             Main.genSolve = rand.Next(Main.solve - 2, Main.solve + 2);
                             WriteTextSafe(string.Format("{0} - {1} = {2}", lNum, rNum, Main.genSolve), label11);
                             break;
-                        case 3:
+                        case 2:
                             Main.solve = lNum * rNum;
                             Main.genSolve = rand.Next(Main.solve - 2, Main.solve + 2);
                             WriteTextSafe(string.Format("{0} * {1} = {2}", lNum, rNum, Main.genSolve), label11);
