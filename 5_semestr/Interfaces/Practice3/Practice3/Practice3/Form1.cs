@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -19,8 +20,21 @@ namespace Practice3
 
         public int[] sizes = { 5, 10, 20, 40, 70, 100 };
         public int sizesCount = 0;
-        public int[] spaces = { 0, 50, 100, 150, 200, 300};
+        public int[] spaces = { 0, 50, 100, 150, 200, 300 };
         public int spacesCount = 0;
+
+        public Dictionary<string, Point> buttonPositions = new Dictionary<string, Point>
+        {
+            ["LU"] = new Point(0, 0),
+            ["CU"] = new Point(900, 0),
+            ["RU"] = new Point(1860, 0),
+            ["LC"] = new Point(0, 450),
+            ["CC"] = new Point(900, 450),
+            ["RC"] = new Point(1860, 450),
+            ["LD"] = new Point(0, 905),
+            ["CD"] = new Point(900, 905),
+            ["RD"] = new Point(1860, 905)
+        };
 
         public bool firstIsGoing;
         public int firstCounter = 0;
@@ -43,6 +57,18 @@ namespace Practice3
         {
             button2.Focus();
             StartTimer += OnTimerStart;
+        }
+
+        private void WriteToFile(List<float> list, string message)
+        {
+            StreamWriter streamWriter = new StreamWriter("log.txt", true);
+            string text = "";
+            text += DateTime.Now.ToString("F") + " | " + message + "\n";
+            for(int i = 1; i <= list.Count; i++)
+                text += list[i - 1] + "\n";
+            text += "---------------------------------------";
+            streamWriter.WriteLine(text);
+            streamWriter.Close();
         }
 
         private void button2_KeyDown(object sender, KeyEventArgs e)
@@ -169,6 +195,7 @@ namespace Practice3
                 {
                     task1.Abort();
                     firstIsGoing = false;
+                    WriteToFile(firstResults, "Опыт 1.3");
                 }
             }
             else if (firstIsGoing && firstCounter < int.Parse(textBox2.Text))
@@ -190,10 +217,11 @@ namespace Practice3
                     task1 = new Thread(new ThreadStart(StartTracking));
                     task1.Start();
                 }
-            }
-            else
-            {
-                firstIsGoing = false;
+                else
+                {
+                    firstIsGoing = false;
+                    WriteToFile(firstResults, "Опыт 1 | Размер: " + textBox3.Text + " | Расстояние: " + textBox1.Text);
+                }
             }
         }
 
@@ -227,7 +255,7 @@ namespace Practice3
             if (e.KeyCode.ToString() == "Space")
             {
                 secondCounter = 0;
-                firstResults.Clear();
+                secondMistakes = 0;
                 secondIsGoing = true;
                 task1 = new Thread(new ThreadStart(StartTracking));
                 task1.Start();
@@ -262,9 +290,12 @@ namespace Practice3
                     task1 = new Thread(new ThreadStart(StartTracking));
                     task1.Start();
                 }
+                else
+                {
+                    secondIsGoing = false;
+                    WriteToFile(secondResults, "Опыт 2 | Размер: " + textBox6.Text + " | Расстояние: " + textBox5.Text + " | Ошибок: " + secondMistakes);
+                }
             }
-            else
-                secondIsGoing = false;
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -321,9 +352,12 @@ namespace Practice3
                     task1 = new Thread(new ThreadStart(StartTracking));
                     task1.Start();
                 }
+                else
+                {
+                    thirdIsGoing = false;
+                    WriteToFile(thirdResults, "Опыт 3 | Кнопка: " + button6.BackColor.ToString() + " | Фон: " + tabPage3.BackColor.ToString());
+                }
             }
-            else
-                thirdIsGoing = false;
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
@@ -499,6 +533,199 @@ namespace Practice3
         private void radioButton32_CheckedChanged(object sender, EventArgs e)
         {
             tabPage3.BackColor = Color.FromArgb(255, 255, 0);
+        }
+        #endregion
+
+
+        //Обработка четвёртого опыта
+        #region
+        bool inLeft = true;
+        string buttonPos = "LU";
+        int fourthCounter = 0;
+        bool fourthIsGoing = false;
+        public List<float> fourthResults = new List<float>();
+
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (fourthIsGoing && fourthCounter < int.Parse(textBox11.Text))
+            {
+                fourthResults.Add(ticks / 10f);
+                fourthCounter++;
+                ticks = 0;
+                timer1.Stop();
+                waitForMove = true;
+
+                if (radioButton33.Checked)
+                {
+                    if (inLeft)
+                    {
+                        button8.Location = new Point(tabPage4.Width - button8.Width, 0);
+                        MoveCursorTo(new Point(tabsX + tabControl1.Location.X + button8.Location.X + button8.Size.Width - 400, tabsY + tabControl1.Location.Y + button8.Location.Y));
+                    }
+                    else
+                    {
+                        button8.Location = new Point(0, 0);
+                        MoveCursorTo(new Point(tabsX + tabControl1.Location.X + button8.Location.X + button8.Size.Width + 400, tabsY + tabControl1.Location.Y + button8.Location.Y));
+                    }
+                    inLeft = !inLeft;
+                }
+
+                if (radioButton34.Checked)
+                {
+                    if (buttonPos[0] == 'L' || buttonPos[0] == 'C')
+                        MoveCursorTo(new Point(tabsX + tabControl1.Location.X + button8.Location.X + button8.Size.Width + 400, tabsY + tabControl1.Location.Y + button8.Location.Y));
+                    else
+                        MoveCursorTo(new Point(tabsX + tabControl1.Location.X + button8.Location.X + button8.Size.Width - 400, tabsY + tabControl1.Location.Y + button8.Location.Y));
+                }
+
+
+                label19.Text = "";
+                for (int i = 1; i <= fourthResults.Count; i++)
+                    label19.Text += i + ". " + fourthResults[i - 1] + "\n";
+
+                if (int.Parse(textBox11.Text) - fourthCounter != 0)
+                {
+                    task1.Abort();
+                    task1 = new Thread(new ThreadStart(StartTracking));
+                    task1.Start();
+                }
+                else
+                {
+                    fourthIsGoing = false;
+                    if (radioButton33.Checked)
+                        WriteToFile(fourthResults, "Опыт 4.1");
+                    if (radioButton34.Checked)
+                        WriteToFile(fourthResults, "Опыт 4.2");
+                }
+            }
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+            if (fourthIsGoing && secondCounter < int.Parse(textBox11.Text))
+            {
+                if (radioButton33.Checked)
+                {
+                    if (inLeft)
+                    {
+                        MoveCursorTo(new Point(tabsX + tabControl1.Location.X + button8.Location.X + button8.Size.Width + 400, tabsY + tabControl1.Location.Y + button8.Location.Y));
+                    }
+                    else
+                    {
+                        MoveCursorTo(new Point(tabsX + tabControl1.Location.X + button8.Location.X + button8.Size.Width - 400, tabsY + tabControl1.Location.Y + button8.Location.Y));
+                    }
+                }
+
+                if (radioButton34.Checked)
+                {
+                    if (buttonPos[0] == 'L' || buttonPos[0] == 'C')
+                        MoveCursorTo(new Point(tabsX + tabControl1.Location.X + button8.Location.X + button8.Size.Width + 400, tabsY + tabControl1.Location.Y + button8.Location.Y));
+                    else
+                        MoveCursorTo(new Point(tabsX + tabControl1.Location.X + button8.Location.X + button8.Size.Width - 400, tabsY + tabControl1.Location.Y + button8.Location.Y));
+                }
+            }
+        }
+
+        private void button7_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "Space")
+            {
+                button8.Size = new Size(30, 70);
+                ticks = 0;
+                fourthCounter = 0;
+                fourthIsGoing = true;
+                inLeft = true;
+                fourthResults.Clear();
+                task1 = new Thread(new ThreadStart(StartTracking));
+                task1.Start();
+
+                //button4.Size = new Size(int.Parse(textBox6.Text), int.Parse(textBox6.Text));
+                if (radioButton33.Checked)
+                {
+                    button8.Size = new Size(30, tabPage4.Height);
+                    button8.Location = new Point(0, 0);
+
+                    if (inLeft)
+                    {
+                        MoveCursorTo(new Point(tabsX + tabControl1.Location.X + button8.Location.X + button8.Size.Width + 400, tabsY + tabControl1.Location.Y + button8.Location.Y));
+                    }
+                }
+                if (radioButton34.Checked)
+                {
+                    if (buttonPos[0] == 'L' || buttonPos[0] == 'C')
+                        MoveCursorTo(new Point(tabsX + tabControl1.Location.X + button8.Location.X + button8.Size.Width + 400, tabsY + tabControl1.Location.Y + button8.Location.Y));
+                    else
+                        MoveCursorTo(new Point(tabsX + tabControl1.Location.X + button8.Location.X + button8.Size.Width - 400, tabsY + tabControl1.Location.Y + button8.Location.Y));
+                }
+            }
+        }
+        #endregion
+
+        //Смена стороны
+        #region
+        private void radioButton35_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonPos = radioButton35.Text;
+            button8.Location = buttonPositions[buttonPos];
+        }
+
+        private void radioButton36_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonPos = radioButton36.Text;
+            button8.Location = buttonPositions[buttonPos];
+        }
+
+        private void radioButton37_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonPos = radioButton37.Text;
+            button8.Location = buttonPositions[buttonPos];
+        }
+
+        private void radioButton38_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonPos = radioButton38.Text;
+            button8.Location = buttonPositions[buttonPos];
+        }
+
+        private void radioButton39_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonPos = radioButton39.Text;
+            button8.Location = buttonPositions[buttonPos];
+        }
+
+        private void radioButton40_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonPos = radioButton40.Text;
+            button8.Location = buttonPositions[buttonPos];
+        }
+
+        private void radioButton41_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonPos = radioButton41.Text;
+            button8.Location = buttonPositions[buttonPos];
+        }
+
+        private void radioButton42_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonPos = radioButton42.Text;
+            button8.Location = buttonPositions[buttonPos];
+        }
+
+        private void radioButton43_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonPos = radioButton43.Text;
+            button8.Location = buttonPositions[buttonPos];
         }
         #endregion
     }
