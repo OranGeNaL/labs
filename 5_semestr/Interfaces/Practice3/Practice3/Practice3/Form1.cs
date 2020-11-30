@@ -63,9 +63,14 @@ namespace Practice3
         {
             StreamWriter streamWriter = new StreamWriter("log.txt", true);
             string text = "";
+            float sum = 0;
             text += DateTime.Now.ToString("F") + " | " + message + "\n";
-            for(int i = 1; i <= list.Count; i++)
+            for (int i = 1; i <= list.Count; i++)
+            {
                 text += list[i - 1] + "\n";
+                sum += list[i - 1];
+            }
+            text += "Среднее время: " + sum / list.Count + "\n";
             text += "---------------------------------------";
             streamWriter.WriteLine(text);
             streamWriter.Close();
