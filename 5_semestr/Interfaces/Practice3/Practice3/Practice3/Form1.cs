@@ -263,6 +263,7 @@ namespace Practice3
                 secondMistakes = 0;
                 secondIsGoing = true;
                 task1 = new Thread(new ThreadStart(StartTracking));
+                secondResults.Clear();
                 task1.Start();
 
                 sizesCount = 0;
