@@ -576,12 +576,12 @@ namespace Practice3
                 {
                     if (inLeft)
                     {
-                        button8.Location = new Point(tabPage4.Width - button8.Width, 0);
+                        button8.Location = new Point(tabPage4.Width - button8.Width - int.Parse(textBox10.Text), 0);
                         MoveCursorTo(new Point(tabsX + tabControl1.Location.X + button8.Location.X + button8.Size.Width - 400, tabsY + tabControl1.Location.Y + button8.Location.Y));
                     }
                     else
                     {
-                        button8.Location = new Point(0, 0);
+                        button8.Location = new Point(int.Parse(textBox10.Text), 0);
                         MoveCursorTo(new Point(tabsX + tabControl1.Location.X + button8.Location.X + button8.Size.Width + 400, tabsY + tabControl1.Location.Y + button8.Location.Y));
                     }
                     inLeft = !inLeft;
@@ -660,7 +660,7 @@ namespace Practice3
                 if (radioButton33.Checked)
                 {
                     button8.Size = new Size(30, tabPage4.Height);
-                    button8.Location = new Point(0, 0);
+                    button8.Location = new Point(int.Parse(textBox10.Text), 0);
 
                     if (inLeft)
                     {

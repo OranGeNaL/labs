@@ -1,0 +1,32 @@
+Form1:
+    void Updade()
+    List<IWidget> widgets
+    AddWidgetButton addButton
+SettingsForm:
+IWidget:
+    void CreateComponents()
+    void UpdateAppearance()
+    void Initialize()
+    void Process()
+    void Stop
+
+    Guid ID
+    string Name
+WeatherWidget : IWidget:
+    только необходимые для виджета элементы управления
+CurrencyWidget : IWidget:
+    только необходимые для виджета элементы управления
+ClockTypeOne : IWidget:
+    только необходимые для виджета элементы управления
+WeatherResponse:
+    включает структуру, повторяющую ответ JSON от API сервиса OpenWeatherMap
+CurrencyResponse:
+    включает структуру, повторяющую ответ JSON от API сервиса OpenExchange
+SafeWriter:
+    содержит методы для безопасной записи данных из одного потока в другой
+Settings:
+    содержит настройки, используемые в программе
+SettingsObject:
+    содержит те настройки, что необходимо записать в файл, и служит для записи
+Animator:
+    содержит методы, позволяющие анимировать изменение свойтв объектов, с помощью кривых Безъе

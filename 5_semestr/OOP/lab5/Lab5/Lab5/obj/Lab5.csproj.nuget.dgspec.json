@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pshen\\Documents\\GitHub\\labs\\5_semestr\\OOP\\lab2\\OOP-lab2\\OOP-lab2\\OOP-lab2.csproj": {}
+    "C:\\Users\\pshen\\Documents\\GitHub\\labs\\5_semestr\\OOP\\lab5\\Lab5\\Lab5\\Lab5.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pshen\\Documents\\GitHub\\labs\\5_semestr\\OOP\\lab2\\OOP-lab2\\OOP-lab2\\OOP-lab2.csproj": {
+    "C:\\Users\\pshen\\Documents\\GitHub\\labs\\5_semestr\\OOP\\lab5\\Lab5\\Lab5\\Lab5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\5_semestr\\OOP\\lab2\\OOP-lab2\\OOP-lab2\\OOP-lab2.csproj",
-        "projectName": "OOP-lab2",
-        "projectPath": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\5_semestr\\OOP\\lab2\\OOP-lab2\\OOP-lab2\\OOP-lab2.csproj",
+        "projectUniqueName": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\5_semestr\\OOP\\lab5\\Lab5\\Lab5\\Lab5.csproj",
+        "projectName": "Lab5",
+        "projectPath": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\5_semestr\\OOP\\lab5\\Lab5\\Lab5\\Lab5.csproj",
         "packagesPath": "C:\\Users\\pshen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\5_semestr\\OOP\\lab2\\OOP-lab2\\OOP-lab2\\obj\\",
+        "outputPath": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\5_semestr\\OOP\\lab5\\Lab5\\Lab5\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
