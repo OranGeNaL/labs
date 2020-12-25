@@ -14,7 +14,15 @@ namespace Practice4
     public partial class Form1 : Form
     {
         List<CustomPanel> panels = new List<CustomPanel>();
-        List<string> times = new List<string>();
+        List<double> times = new List<double>();
+
+        Color[] colors = new Color[4]
+        {
+            Color.White,
+            Color.Black,
+            Color.Green,
+            Color.Red
+        };
 
 
         int PanelsNum = 2;
@@ -56,6 +64,12 @@ namespace Practice4
                 i.panel.Visible = true;
         }
 
+        private void NumByOrder(List<CustomPanel> panels)
+        {
+            for (int i = 0; i < panels.Count; i++)
+                panels[i].SetText((i + 1).ToString());
+        }
+
         private void MixContent(List<CustomPanel> panels, int n)
         {
             List<int> values = new List<int>();
@@ -89,7 +103,23 @@ namespace Practice4
                         clicked = true;
                         label2.Text = "YEP";
                         label2.ForeColor = Color.Green;
-                        times.Add(clickTime.Subtract(startTime).TotalMilliseconds.ToString());
+                        times.Add(clickTime.Subtract(startTime).TotalMilliseconds);
+                    }
+                }
+                //label1.Text = GetRandomValue().ToString();
+            }
+
+            if (radioButton2.Checked)
+            {
+                if (isGoing)
+                {
+                    if (panelSender.ForeColor == colors[tryNum])
+                    {
+                        clickTime = DateTime.Now;
+                        clicked = true;
+                        label2.Text = "YEP";
+                        label2.ForeColor = Color.Green;
+                        times.Add(clickTime.Subtract(startTime).TotalMilliseconds);
                     }
                 }
                 //label1.Text = GetRandomValue().ToString();
@@ -101,6 +131,18 @@ namespace Practice4
             return random.Next(1, PanelsNum + 1);
         }
 
+        private void SetTarget(List<CustomPanel> panels, int n, int targetNum)
+        {
+            foreach (var i in panels)
+                i.SetDefault();
+
+            int target = random.Next(0, n);
+
+            panels[target].label.Font = new Font("Times", 18, FontStyle.Underline);
+            panels[target].label.ForeColor = colors[targetNum];
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             isGoing = true;
@@ -108,15 +150,27 @@ namespace Practice4
             button3.Enabled = true;
             button2.Enabled = false;
 
-            if(radioButton1.Checked)
+            radioButton1.Enabled = false;
+            radioButton2.Enabled = false;
+
+            if (radioButton1.Checked)
             {
                 PanelsNum = 2;
+                label1.Text = GetRandomValue().ToString();
+            }
+
+            if (radioButton2.Checked)
+            {
+                PanelsNum = 2;
+                NumByOrder(panels);
+                ShowNPanels(panels, PanelsNum);
+
+                SetTarget(panels, PanelsNum, tryNum);
             }
 
             times.Clear();
 
             startTime = DateTime.Now;
-            label1.Text = GetRandomValue().ToString();
             MoveCursorTo(new Point(200, (PanelsNum * 50 + 50) / 2 + 50));
         }
 
@@ -129,14 +183,17 @@ namespace Practice4
                 if (tryNum == maxTryNum)
                 {
                     tryNum = 0;
+                    WriteToFile(times, "Панелей: " + PanelsNum.ToString());
+                    times.Clear();
                     PanelsNum++;
-                    times.Add(PanelsNum.ToString());
                     if (PanelsNum > MaxPanelsNum)
                     {
                         isGoing = false;
-                        WriteToFile(times);
                         button2.Enabled = true;
                         button3.Enabled = false;
+
+                        radioButton1.Enabled = true;
+                        radioButton2.Enabled = true;
                     }
                 }
                 if(isGoing)
@@ -151,6 +208,40 @@ namespace Practice4
                     MoveCursorTo(new Point(200, (PanelsNum * 50 + 50) / 2 + 50));
                 }
             }
+
+            if (radioButton2.Checked && isGoing && clicked)
+            {
+                clicked = false;
+                tryNum++;
+                if (tryNum == maxTryNum - 1)
+                {
+                    tryNum = 0;
+                    PanelsNum++;
+                    //times.Add(PanelsNum.ToString());
+                    WriteToFile(times, "Панелей: " + PanelsNum.ToString());
+                    times.Clear();
+                    if (PanelsNum > MaxPanelsNum)
+                    {
+                        isGoing = false;
+                        button2.Enabled = true;
+                        button3.Enabled = false;
+
+                        radioButton1.Enabled = true;
+                        radioButton2.Enabled = true;
+                    }
+                }
+                if (isGoing)
+                {
+                    label2.Text = "-";
+                    label2.ForeColor = Color.Black;
+
+                    ShowNPanels(panels, PanelsNum);
+                    SetTarget(panels, PanelsNum, tryNum);
+                    startTime = DateTime.Now;
+                    //label1.Text = GetRandomValue().ToString();
+                    MoveCursorTo(new Point(200, (PanelsNum * 50 + 50) / 2 + 50));
+                }
+            }
             //label2.Text = times.Last<double>().ToString();
         }
 
@@ -159,6 +250,9 @@ namespace Practice4
             isGoing = false;
             button2.Enabled = true;
             button3.Enabled = false;
+
+            radioButton1.Enabled = true;
+            radioButton2.Enabled = true;
             tryNum = 0;
             PanelsNum = 2;
             label1.Text = "-";
@@ -171,17 +265,17 @@ namespace Practice4
             Cursor.Position = point;
         }
 
-        public void WriteToFile(List<string> list)
+        public void WriteToFile(List<double> list, string message)
         {
             StreamWriter streamWriter = new StreamWriter("log.txt", true);
-            string text = "";
-            //float sum = 0;
+            string text = message + "\n";
+            double sum = 0;
             for (int i = 0; i < list.Count; i++)
             {
-                text += list[i] + "\n";
-                //sum += list[i - 1];
+                text += Math.Round((list[i] / 1000), 3).ToString() + "\n";
+                sum += list[i];
             }
-            //text += "Среднее время: " + sum / list.Count + "\n";
+            text += "Среднее время: " + Math.Round(sum / list.Count / 1000, 3) + "\n";
             text += "---------------------------------------";
             streamWriter.WriteLine(text);
             streamWriter.Close();

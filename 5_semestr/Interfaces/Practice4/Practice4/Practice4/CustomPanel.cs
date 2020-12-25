@@ -53,5 +53,12 @@ namespace Practice4
         {
             label.Text = text;
         }
+
+        public void SetDefault()
+        {
+            label.ForeColor = Color.Blue;
+            label.Font = new Font("Times", 12, FontStyle.Underline);
+
+        }
     }
 }
