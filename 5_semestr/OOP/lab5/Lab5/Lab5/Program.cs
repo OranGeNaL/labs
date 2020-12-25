@@ -18,7 +18,7 @@ namespace Lab5
         static void FirstProg()
         {
             List<long> firstList = new List<long>();          /*1*/
-            for(int i = 0; i < 5; i++)
+            for(int i = 0; i < 8; i++)
             {
                 Console.Write("Введите значение: ");
                 firstList.Add(long.Parse(Console.ReadLine()));
@@ -43,7 +43,7 @@ namespace Lab5
             }
 
             Console.WriteLine("Из первого контейнера будут удалено два элемента после первого, и добавлены все элементы из второго!");/*6*/
-            firstList.RemoveRange(1, 2);
+            firstList.RemoveRange(2, 3);
             firstList.AddRange(secondList);
 
             PrintSimpleList<long>(firstList);
@@ -54,14 +54,11 @@ namespace Lab5
         static void SecondProg()
         {
             List<Human> firstList = new List<Human>();          /*1*/
-            for (int i = 0; i < 5; i++)
-            {
-                Console.Write("Введите имя: ");
-                string _name = Console.ReadLine();
-                Console.Write("Введите возраст: ");
-                int _age = int.Parse(Console.ReadLine());
-                firstList.Add(new Human(_name, _age));
-            }
+            firstList.Add(new Human("Данил", 20));
+            firstList.Add(new Human("Никита", 19));
+            firstList.Add(new Human("Денис", 22));
+            firstList.Add(new Human("Валентин", 23));
+            firstList.Add(new Human("Артём", 23));
             PrintSimpleList<Human>(firstList);                /*2*/
 
             Console.WriteLine("Будут удалены 5 и 2 элементы.");/*3*/
@@ -79,14 +76,11 @@ namespace Lab5
                 Console.WriteLine("    {0}", firstList[i].ToString());
 
             List<Human> secondList = new List<Human>();        /*5*/
-            for (int i = 0; i < 5; i++)
-            {
-                Console.Write("Введите имя: ");
-                string _name = Console.ReadLine();
-                Console.Write("Введите возраст: ");
-                int _age = int.Parse(Console.ReadLine());
-                secondList.Add(new Human(_name, _age));
-            }
+            secondList.Add(new Human("Екатерина", 20));
+            secondList.Add(new Human("Анна", 19));
+            secondList.Add(new Human("Марина", 22));
+            secondList.Add(new Human("Ольга", 23));
+            secondList.Add(new Human("Анастасия", 23));
 
             Console.WriteLine("Из первого контейнера будут удалено два элемента после первого, и добавлены все элементы из второго!");/*6*/
             firstList.RemoveRange(1, 2);
@@ -99,16 +93,13 @@ namespace Lab5
 
         static void ThirdProg()
         {
-            Deque<Human> deque = new Deque<Human>(); /*1*/
-            List<Human> list = new List<Human>();
+            Deque<Human> deque = new Deque<Human>(); 
+            List<Human> list = new List<Human>();/*1*/
 
             list.Add(new Human("Данил", 20));
             list.Add(new Human("Никита", 19));
             list.Add(new Human("Денис", 22));
 
-            /*deque.AddFirst(new Human("Данил", 20));
-            deque.AddFirst(new Human("Никита", 19));
-            deque.AddFirst(new Human("Денис", 22));*/
 
             foreach (var i in list)
                 Console.WriteLine(i.ToString());

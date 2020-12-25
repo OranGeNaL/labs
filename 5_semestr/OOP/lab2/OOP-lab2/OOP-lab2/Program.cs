@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace OOP_lab2
 {
@@ -6,6 +7,7 @@ namespace OOP_lab2
     {
         static void Main(string[] args)
         {
+            /*
             bool a = true;
             while(a)
             {
@@ -53,6 +55,15 @@ namespace OOP_lab2
                 }
 
             }
+            */
+
+            List<Human> list = new List<Human>();
+            list.Add(new Human("Данил", 20));
+            list.Add(new Prepod("Максим", 35, "ПО"));
+            list.Add(new Student("Никита", 20, "ПО(аб)-81"));
+
+            foreach (var i in list)
+                i.WhoAmI();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace OOP_lab2
         public string Name { get; private set; }
         public int Age { get; private set; }
         
-        public void WhoAmI()
+        public virtual void WhoAmI()
         {
             Console.WriteLine("Меня зовут: {0}, Мне {1} лет.", Name, Age);
         }
