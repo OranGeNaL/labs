@@ -1,0 +1,6 @@
+pragma foreign_keys=on;
+CREATE TABLE Kafedra(Kaf_name varchar(80) UNIQUE NOT NULL, Kaf_ID integer primary key);
+CREATE TABLE Value(Val_name varchar(80) UNIQUE NOT NULL, Val_ID integer primary key);
+CREATE TABLE Kategoria(Kateg_name varchar(30) UNIQUE NOT NULL, Kateg_ID integer primary key);
+CREATE TABLE _Year(Year_ID integer primary key);
+CREATE TABLE Chislennost(Colichestvo real, Kaf_ID integer REFERENCES Kafedra, Val_ID integer REFERENCES Value, Kateg_ID integer REFERENCES Kategoria, Year_ID integer REFERENCES _Year, primary key(Kaf_ID, Val_ID, Kateg_ID, Year_ID));
