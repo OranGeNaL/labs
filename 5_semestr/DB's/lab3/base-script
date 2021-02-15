@@ -11,8 +11,8 @@ CREATE TABLE _Year(Year_ID integer primary key);
 --Chisl_ID integer primary key);
 CREATE TABLE Chislennost(Chisl_ID integer primary key,
 Kolichestvo real,
-Kaf_ID integer REFERENCES Kafedra,
-Val_ID integer REFERENCES Value,
-Kateg_ID integer REFERENCES Kategoria,
-Year_ID integer REFERENCES _Year,
+Kaf_ID integer REFERENCES Kafedra ON DELETE CASCADE,
+Val_ID integer REFERENCES Value ON DELETE CASCADE,
+Kateg_ID integer REFERENCES Kategoria ON DELETE CASCADE,
+Year_ID integer REFERENCES _Year ON DELETE CASCADE,
 UNIQUE (Kaf_ID, Val_ID, Kateg_ID, Year_ID));

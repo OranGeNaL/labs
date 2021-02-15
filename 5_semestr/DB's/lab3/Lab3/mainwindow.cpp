@@ -21,7 +21,8 @@ int MainWindow::initDB()
     db = QSqlDatabase::addDatabase("QSQLITE");
 
     //QString filename = "/home/orangenal/Документы/labs/5_semestr/DB's/lab2/Lab2/base3-02.db";
-    QString filename = "/home/orangenal/Документы/labs/5_semestr/DB's/lab3/base-new-un.db";
+    //QString filename = "/home/orangenal/Документы/labs/5_semestr/DB's/lab3/Lab3/base-new-un.db";
+    QString filename = "/home/orangenal/Документы/labs/5_semestr/DB's/lab3/Lab3/base-cascade";
 
     db.setDatabaseName(filename);
     if (QFileInfo::exists(filename))
@@ -72,44 +73,142 @@ int MainWindow::initDB()
     ui->ChislennostView->show();
     Chislennost = new QSqlRelationalTableModel(0, db);
     Chislennost->setTable("Chislennost");
-    //Chislennost->select();
-    Chislennost->setRelation(2, QSqlRelation("Kafedra", "Kaf_ID", "Kaf_name"));
+
+    /*Chislennost->setRelation(2, QSqlRelation("Kafedra", "Kaf_ID", "Kaf_name"));
     Chislennost->setRelation(3, QSqlRelation("Value", "Val_ID", "Val_name"));
     Chislennost->setRelation(4, QSqlRelation("Kategoria", "Kateg_ID", "Kateg_name"));
 
-    ui->ChislennostView->setItemDelegate(new QSqlRelationalDelegate(ui->ChislennostView));
+    ui->ChislennostView->setItemDelegate(new QSqlRelationalDelegate(ui->ChislennostView));*/
     ui->ChislennostView->setModel(Chislennost);
     ui->ChislennostView->setColumnHidden(0, true);
+    ui->ChislennostView->setColumnHidden(2, true);
+    ui->ChislennostView->setColumnHidden(3, true);
+    ui->ChislennostView->setColumnHidden(4, true);
     Chislennost->setEditStrategy(QSqlTableModel::OnManualSubmit);
 
-    Kafedra_SUB = new QSqlQueryModel(0);
-    ui->KafedraRefView->setModel(Kafedra_SUB);
+//    Kafedra_SUB = new QSqlQueryModel(0);
+//    ui->KafedraRefView->setModel(Kafedra_SUB);
 
-    Value_SUB = new QSqlQueryModel(0);
-    ui->ValueRefView->setModel(Value_SUB);
+//    Value_SUB = new QSqlQueryModel(0);
+//    ui->ValueRefView->setModel(Value_SUB);
 
-    Kategoria_SUB = new QSqlQueryModel(0);
-    ui->KategoriaRefView->setModel(Kategoria_SUB);
+//    Kategoria_SUB = new QSqlQueryModel(0);
+//    ui->KategoriaRefView->setModel(Kategoria_SUB);
 
-    Year_SUB = new QSqlQueryModel(0);
-    ui->YearRefView->setModel(Year_SUB);
+//    Year_SUB = new QSqlQueryModel(0);
+//    ui->YearRefView->setModel(Year_SUB);
 
+    initCB();
+    updateFilter();
     UpdateDB();
 
     return 0;
 }
 
+bool MainWindow::warningDialog()
+{
+    QMessageBox msgBox;
+    msgBox.setText("Удаление");
+    msgBox.setInformativeText("Возможна потеря данных. Продолжить?");
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::Yes);
+    msgBox.setEscapeButton(QMessageBox::No);
+    int ret = msgBox.exec();
+
+    return ret == QMessageBox::Yes;
+}
+
+void MainWindow::fillRecord(QSqlRecord &record)
+{
+    int curKaf, curVal, curKat;
+    int ind;
+
+    ind = ui->cbChooseKaf->currentIndex();
+    curKaf = Kafedra->record(ind).field("Kaf_ID").value().toInt();
+
+    ind = ui->cbChooseVal->currentIndex();
+    curVal = Value->record(ind).field("Val_ID").value().toInt();
+
+    ind = ui->cbChooseKat->currentIndex();
+    curKat = Kategoria->record(ind).field("Kateg_ID").value().toInt();
+
+    record = Chislennost->record();
+
+    record.setValue("Kaf_ID", curKaf);
+    record.setValue("Val_ID", curVal);
+    record.setValue("Kateg_ID", curKat);
+}
+
+void MainWindow::initCB()
+{
+    ui->cbChooseKaf->setModel(Kafedra);
+    ui->cbChooseKaf->setModelColumn(0);
+    ui->cbChooseKaf->setCurrentIndex(0);
+
+    ui->cbChooseVal->setModel(Value);
+    ui->cbChooseVal->setModelColumn(0);
+    ui->cbChooseVal->setCurrentIndex(0);
+
+    ui->cbChooseKat->setModel(Kategoria);
+    ui->cbChooseKat->setModelColumn(0);
+    ui->cbChooseKat->setCurrentIndex(0);
+}
+
+bool MainWindow::testCB()
+{
+    bool b = true;
+    b = b && (ui->cbChooseKaf->currentIndex() >= 0);
+    b = b && (ui->cbChooseVal->currentIndex() >= 0);
+    b = b && (ui->cbChooseKat->currentIndex() >= 0);
+
+    return b;
+}
+
+void MainWindow::updateFilter()
+{
+    if(!testCB())
+    {
+        Chislennost->setFilter("");
+        return;
+    }
+
+    QString stKaf, stVal, stKat;
+    QString stFilter;
+    int ind;
+
+
+
+    ind = ui->cbChooseKaf->currentIndex();
+    stKaf = Kafedra->record(ind).field("Kaf_ID").value().toString();
+
+    ind = ui->cbChooseVal->currentIndex();
+    stVal = Value->record(ind).field("Val_ID").value().toString();
+
+    ind = ui->cbChooseKat->currentIndex();
+    stKat = Kategoria->record(ind).field("Kateg_ID").value().toString();
+
+    stFilter = "(Kaf_ID=" + stKaf + ") and ";
+    stFilter += "(Val_ID=" + stVal + ") and ";
+    stFilter += "(Kateg_ID=" + stKat + ")";
+
+//    QMessageBox msgBox;
+//    msgBox.setText(stFilter);
+//    msgBox.exec();
+
+    Chislennost->setFilter(stFilter);
+}
+
 void MainWindow::UpdateDB()
 {
-    Kafedra_SUB->setQuery("SELECT * FROM Kafedra");
-    Value_SUB->setQuery("SELECT * FROM Value");
-    Kategoria_SUB->setQuery("SELECT * FROM Kategoria");
-    Year_SUB->setQuery("SELECT * FROM _Year");
+//    Kafedra_SUB->setQuery("SELECT * FROM Kafedra");
+//    Value_SUB->setQuery("SELECT * FROM Value");
+//    Kategoria_SUB->setQuery("SELECT * FROM Kategoria");
+//    Year_SUB->setQuery("SELECT * FROM _Year");
 
     Chislennost->select();
-    Chislennost->relationModel(2)->select();
+    /*Chislennost->relationModel(2)->select();
     Chislennost->relationModel(3)->select();
-    Chislennost->relationModel(4)->select();
+    Chislennost->relationModel(4)->select();*/
 }
 
 //Kafedra page
@@ -121,6 +220,8 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
+    if(!warningDialog()) return;
+
     int _Row;
     if (ui->KafedraView->selectionModel()->currentIndex().isValid())
     {
@@ -156,6 +257,8 @@ void MainWindow::on_pushButton_6_clicked()
 
 void MainWindow::on_pushButton_8_clicked()
 {
+    if(!warningDialog()) return;
+
     int _Row;
     if (ui->ValueView->selectionModel()->currentIndex().isValid())
     {
@@ -191,6 +294,8 @@ void MainWindow::on_pushButton_10_clicked()
 
 void MainWindow::on_pushButton_12_clicked()
 {
+    if(!warningDialog()) return;
+
     int _Row;
     if (ui->KategoriaView->selectionModel()->currentIndex().isValid())
     {
@@ -226,6 +331,8 @@ void MainWindow::on_pushButton_14_clicked()
 
 void MainWindow::on_pushButton_16_clicked()
 {
+    if(!warningDialog()) return;
+
     int _Row;
     if (ui->YearView->selectionModel()->currentIndex().isValid())
     {
@@ -256,6 +363,9 @@ void MainWindow::on_pushButton_13_clicked()
 void MainWindow::on_pushButton_18_clicked()
 {
     QSqlRecord rec;
+    if(!testCB()) return;
+
+    fillRecord(rec);
     Chislennost->insertRecord(-1, rec);
 }
 
@@ -288,4 +398,34 @@ void MainWindow::on_pushButton_19_clicked()
 void MainWindow::on_pushButton_17_clicked()
 {
     Chislennost->revertAll();
+}
+
+//void MainWindow::on_cbChooseKaf_currentIndexChanged(const QString &arg1)
+//{
+//    updateFilter();
+//}
+
+//void MainWindow::on_cbChooseVal_currentIndexChanged(const QString &arg1)
+//{
+//    updateFilter();
+//}
+
+//void MainWindow::on_cbChooseKat_currentIndexChanged(const QString &arg1)
+//{
+//    updateFilter();
+//}
+
+void MainWindow::on_cbChooseKaf_currentIndexChanged(int index)
+{
+    updateFilter();
+}
+
+void MainWindow::on_cbChooseVal_currentIndexChanged(int index)
+{
+    updateFilter();
+}
+
+void MainWindow::on_cbChooseKat_currentIndexChanged(int index)
+{
+    updateFilter();
 }

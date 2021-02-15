@@ -17,7 +17,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     int initDB();
+    void initCB();
     void UpdateDB();
+    bool testCB();
+    void updateFilter();
+    void fillRecord(QSqlRecord &record);
+    bool warningDialog();
 
 private slots:
     void on_pushButton_clicked();
@@ -59,6 +64,18 @@ private slots:
     void on_pushButton_19_clicked();
 
     void on_pushButton_17_clicked();
+
+    void on_cbChooseKaf_currentIndexChanged(const QString &arg1);
+
+    void on_cbChooseVal_currentIndexChanged(const QString &arg1);
+
+    void on_cbChooseKat_currentIndexChanged(const QString &arg1);
+
+    void on_cbChooseKaf_currentIndexChanged(int index);
+
+    void on_cbChooseVal_currentIndexChanged(int index);
+
+    void on_cbChooseKat_currentIndexChanged(int index);
 
 private:
     Ui::MainWindow *ui;

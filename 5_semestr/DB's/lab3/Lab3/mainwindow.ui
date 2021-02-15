@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="KafedraPage">
      <attribute name="title">
@@ -302,9 +302,9 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>10</y>
-        <width>571</width>
-        <height>451</height>
+        <y>70</y>
+        <width>401</width>
+        <height>391</height>
        </rect>
       </property>
      </widget>
@@ -360,43 +360,33 @@
        <string>Удалить</string>
       </property>
      </widget>
-     <widget class="QTableView" name="KafedraRefView">
+     <widget class="QComboBox" name="cbChooseKaf">
       <property name="geometry">
        <rect>
-        <x>590</x>
-        <y>10</y>
-        <width>371</width>
-        <height>251</height>
+        <x>10</x>
+        <y>20</y>
+        <width>421</width>
+        <height>25</height>
        </rect>
       </property>
      </widget>
-     <widget class="QTableView" name="YearRefView">
+     <widget class="QComboBox" name="cbChooseVal">
       <property name="geometry">
        <rect>
-        <x>590</x>
-        <y>270</y>
-        <width>371</width>
-        <height>191</height>
+        <x>450</x>
+        <y>20</y>
+        <width>221</width>
+        <height>25</height>
        </rect>
       </property>
      </widget>
-     <widget class="QTableView" name="ValueRefView">
+     <widget class="QComboBox" name="cbChooseKat">
       <property name="geometry">
        <rect>
-        <x>970</x>
-        <y>10</y>
-        <width>371</width>
-        <height>251</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QTableView" name="KategoriaRefView">
-      <property name="geometry">
-       <rect>
-        <x>970</x>
-        <y>270</y>
-        <width>371</width>
-        <height>191</height>
+        <x>690</x>
+        <y>20</y>
+        <width>221</width>
+        <height>25</height>
        </rect>
       </property>
      </widget>

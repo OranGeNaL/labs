@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -57,10 +58,9 @@ public:
     QPushButton *pushButton_18;
     QPushButton *pushButton_19;
     QPushButton *pushButton_20;
-    QTableView *KafedraRefView;
-    QTableView *YearRefView;
-    QTableView *ValueRefView;
-    QTableView *KategoriaRefView;
+    QComboBox *cbChooseKaf;
+    QComboBox *cbChooseVal;
+    QComboBox *cbChooseKat;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -150,7 +150,7 @@ public:
         ChislennostPage->setObjectName(QString::fromUtf8("ChislennostPage"));
         ChislennostView = new QTableView(ChislennostPage);
         ChislennostView->setObjectName(QString::fromUtf8("ChislennostView"));
-        ChislennostView->setGeometry(QRect(10, 10, 571, 451));
+        ChislennostView->setGeometry(QRect(10, 70, 401, 391));
         pushButton_17 = new QPushButton(ChislennostPage);
         pushButton_17->setObjectName(QString::fromUtf8("pushButton_17"));
         pushButton_17->setGeometry(QRect(330, 470, 80, 25));
@@ -163,18 +163,15 @@ public:
         pushButton_20 = new QPushButton(ChislennostPage);
         pushButton_20->setObjectName(QString::fromUtf8("pushButton_20"));
         pushButton_20->setGeometry(QRect(110, 470, 80, 25));
-        KafedraRefView = new QTableView(ChislennostPage);
-        KafedraRefView->setObjectName(QString::fromUtf8("KafedraRefView"));
-        KafedraRefView->setGeometry(QRect(590, 10, 371, 251));
-        YearRefView = new QTableView(ChislennostPage);
-        YearRefView->setObjectName(QString::fromUtf8("YearRefView"));
-        YearRefView->setGeometry(QRect(590, 270, 371, 191));
-        ValueRefView = new QTableView(ChislennostPage);
-        ValueRefView->setObjectName(QString::fromUtf8("ValueRefView"));
-        ValueRefView->setGeometry(QRect(970, 10, 371, 251));
-        KategoriaRefView = new QTableView(ChislennostPage);
-        KategoriaRefView->setObjectName(QString::fromUtf8("KategoriaRefView"));
-        KategoriaRefView->setGeometry(QRect(970, 270, 371, 191));
+        cbChooseKaf = new QComboBox(ChislennostPage);
+        cbChooseKaf->setObjectName(QString::fromUtf8("cbChooseKaf"));
+        cbChooseKaf->setGeometry(QRect(10, 20, 421, 25));
+        cbChooseVal = new QComboBox(ChislennostPage);
+        cbChooseVal->setObjectName(QString::fromUtf8("cbChooseVal"));
+        cbChooseVal->setGeometry(QRect(450, 20, 221, 25));
+        cbChooseKat = new QComboBox(ChislennostPage);
+        cbChooseKat->setObjectName(QString::fromUtf8("cbChooseKat"));
+        cbChooseKat->setGeometry(QRect(690, 20, 221, 25));
         tabWidget->addTab(ChislennostPage, QString());
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -187,7 +184,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(4);
+        tabWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
