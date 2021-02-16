@@ -1,0 +1,13 @@
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\ValyaLab1\bin\Debug\netcoreapp3.1\ValyaLab1.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\ValyaLab1\bin\Debug\netcoreapp3.1\ValyaLab1.deps.json
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\ValyaLab1\bin\Debug\netcoreapp3.1\ValyaLab1.runtimeconfig.json
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\ValyaLab1\bin\Debug\netcoreapp3.1\ValyaLab1.runtimeconfig.dev.json
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\ValyaLab1\bin\Debug\netcoreapp3.1\ValyaLab1.dll
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\ValyaLab1\bin\Debug\netcoreapp3.1\ValyaLab1.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\ValyaLab1\obj\Debug\netcoreapp3.1\ValyaLab1.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\ValyaLab1\obj\Debug\netcoreapp3.1\ValyaLab1.AssemblyInfoInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\ValyaLab1\obj\Debug\netcoreapp3.1\ValyaLab1.AssemblyInfo.cs
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\ValyaLab1\obj\Debug\netcoreapp3.1\ValyaLab1.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\ValyaLab1\obj\Debug\netcoreapp3.1\ValyaLab1.dll
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\ValyaLab1\obj\Debug\netcoreapp3.1\ValyaLab1.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\ValyaLab1\obj\Debug\netcoreapp3.1\ValyaLab1.genruntimeconfig.cache

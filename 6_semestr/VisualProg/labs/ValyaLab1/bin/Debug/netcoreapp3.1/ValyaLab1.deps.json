@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "ValyaLab1/1.0.0": {
+        "runtime": {
+          "ValyaLab1.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ValyaLab1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
