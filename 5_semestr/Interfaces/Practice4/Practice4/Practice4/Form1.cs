@@ -216,9 +216,9 @@ namespace Practice4
                 if (tryNum == maxTryNum - 1)
                 {
                     tryNum = 0;
+                    WriteToFile(times, "Панелей: " + PanelsNum.ToString());
                     PanelsNum++;
                     //times.Add(PanelsNum.ToString());
-                    WriteToFile(times, "Панелей: " + PanelsNum.ToString());
                     times.Clear();
                     if (PanelsNum > MaxPanelsNum)
                     {

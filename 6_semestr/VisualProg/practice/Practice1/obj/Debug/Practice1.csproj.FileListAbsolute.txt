@@ -1,0 +1,9 @@
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice1\bin\Debug\Practice1.exe.config
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice1\bin\Debug\Practice1.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice1\bin\Debug\Practice1.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice1\obj\Debug\Practice1.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice1\obj\Debug\Practice1.Properties.Resources.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice1\obj\Debug\Practice1.csproj.GenerateResource.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice1\obj\Debug\Practice1.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice1\obj\Debug\Practice1.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice1\obj\Debug\Practice1.pdb

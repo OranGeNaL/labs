@@ -1,0 +1,13 @@
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\Examen\Examen\bin\Debug\netcoreapp3.1\Examen.exe
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\Examen\Examen\bin\Debug\netcoreapp3.1\Examen.deps.json
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\Examen\Examen\bin\Debug\netcoreapp3.1\Examen.runtimeconfig.json
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\Examen\Examen\bin\Debug\netcoreapp3.1\Examen.runtimeconfig.dev.json
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\Examen\Examen\bin\Debug\netcoreapp3.1\Examen.dll
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\Examen\Examen\bin\Debug\netcoreapp3.1\Examen.pdb
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\Examen\Examen\obj\Debug\netcoreapp3.1\Examen.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\Examen\Examen\obj\Debug\netcoreapp3.1\Examen.AssemblyInfoInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\Examen\Examen\obj\Debug\netcoreapp3.1\Examen.AssemblyInfo.cs
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\Examen\Examen\obj\Debug\netcoreapp3.1\Examen.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\Examen\Examen\obj\Debug\netcoreapp3.1\Examen.dll
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\Examen\Examen\obj\Debug\netcoreapp3.1\Examen.pdb
+C:\Users\pshen\Documents\GitHub\labs\5_semestr\OOP\Examen\Examen\obj\Debug\netcoreapp3.1\Examen.genruntimeconfig.cache
