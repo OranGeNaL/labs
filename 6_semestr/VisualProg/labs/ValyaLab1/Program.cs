@@ -8,7 +8,8 @@ namespace ValyaLab1
         {
             //First();
             //Second();
-            Third();
+            while(true)
+                Third();
         }
 
         static void First()
@@ -59,21 +60,25 @@ namespace ValyaLab1
 
             int N = 0;
             double r = Math.Sqrt(x * x + y * y);
-            double phi = Math.Acos(x / r);
+            double phi = 0;
+            if (r != 0)
+            {
+                phi = Math.Acos(x / r);
+            }
 
-            if(r > 12)
+            if (r >= 12)
             {
                 N = 4;
-            } else if ((phi >= 0 && phi <= Math.PI/2) || (phi >= Math.PI && phi <= Math.PI*3.0/2) )
+            } else if ((phi >= 0 && phi <= Math.PI/2) || (phi > Math.PI && phi <= Math.PI*3.0/2) )
             {
                 if (y > 0)
                     N = 2;
                 else
                     N = 3;
             }
-            else if (phi > Math.PI/2 && phi < Math.PI)
+            else if (phi > Math.PI/2 && phi <= Math.PI)
             {
-                if (y < 0)
+                if (y <= 0)
                     N = 2;
                 else
                     N = 1;

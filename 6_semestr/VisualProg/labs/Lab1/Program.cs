@@ -47,13 +47,13 @@ namespace Lab1
             double x = double.Parse(Console.ReadLine());
             double y = double.Parse(Console.ReadLine());
 
-            if(Math.Sqrt(x*x + y*y) > 12)
+            if(Math.Sqrt(x*x + y*y) >= 12)
             {
                 Console.WriteLine("Точка входит в область 4.");
                 return;
             }
 
-            if(x*y >= 0)
+            if(x*y > 0 || (x < 0 && y == 0) || (x == 0 && y > 0))
             {
                 Console.WriteLine("Точка входит в область 2.");
                 return;
