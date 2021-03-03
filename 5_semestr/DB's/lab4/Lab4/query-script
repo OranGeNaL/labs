@@ -1,0 +1,89 @@
+DROP VIEW IF EXISTS prep_col_h;
+DROP VIEW IF EXISTS prep_col_s;
+DROP VIEW IF EXISTS such_st_h;
+DROP VIEW IF EXISTS such_st_s;
+DROP VIEW IF EXISTS profs_h;
+DROP VIEW IF EXISTS profs_s;
+DROP VIEW IF EXISTS doc_h;
+DROP VIEW IF EXISTS doc_s;
+DROP VIEW IF EXISTS dolya_h;
+DROP VIEW IF EXISTS dolya_s;
+
+CREATE VIEW prep_col_h AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=1 AND Kateg_ID=1;
+
+CREATE VIEW prep_col_s AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=1 AND Kateg_ID=2;
+
+CREATE VIEW such_st_h AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=2 AND Kateg_ID=1;
+
+CREATE VIEW such_st_s AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=2 AND Kateg_ID=2;
+
+CREATE VIEW profs_h AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=3 AND Kateg_ID=1;
+
+CREATE VIEW profs_s AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=3 AND Kateg_ID=2;
+
+CREATE VIEW doc_h AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=4 AND Kateg_ID=1;
+
+CREATE VIEW doc_s AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=4 AND Kateg_ID=2;
+
+CREATE VIEW dolya_h AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=5 AND Kateg_ID=1;
+
+CREATE VIEW dolya_s AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=5 AND Kateg_ID=2;
+
+SELECT _Year.Year_ID, ph.Kolichestvo AS Kol_Prep_St, ps.Kolichestvo AS Kol_Prep_Sov, sh.Kolichestvo AS S_Uch_St_St, ss.Kolichestvo AS S_Uch_St_Sov, prh.Kolichestvo AS Profs_St,
+prs.Kolichestvo  AS Profs_Sov, dh.Kolichestvo AS Doc_St, ds.Kolichestvo AS Doc_Sov, dolh.Kolichestvo AS Dol_Prep_St, dols.Kolichestvo AS Dol_Prep_Sov
+FROM _Year
+LEFT JOIN prep_col_h AS ph
+    ON ph.Year_ID=_Year.Year_ID
+LEFT JOIN prep_col_s AS ps
+    ON ps.Year_ID=_Year.Year_ID
+
+LEFT JOIN such_st_h AS sh
+    ON sh.Year_ID=_Year.Year_ID
+LEFT JOIN such_st_s AS ss
+    ON ss.Year_ID=_Year.Year_ID
+
+LEFT JOIN profs_h AS prh
+    ON prh.Year_ID=_Year.Year_ID
+LEFT JOIN profs_s AS prs
+    ON prs.Year_ID=_Year.Year_ID
+
+LEFT JOIN doc_h AS dh
+    ON dh.Year_ID=_Year.Year_ID
+LEFT JOIN doc_s AS ds
+    ON ds.Year_ID=_Year.Year_ID
+
+LEFT JOIN dolya_h AS dolh
+    ON dolh.Year_ID=_Year.Year_ID
+LEFT JOIN dolya_s AS dols
+    ON dols.Year_ID=_Year.Year_ID
+ORDER BY _Year.Year_ID;
