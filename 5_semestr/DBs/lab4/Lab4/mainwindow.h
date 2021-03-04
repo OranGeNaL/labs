@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QtSql>
 #include <QMessageBox>
+#include <LimeReport>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -76,6 +77,8 @@ private slots:
     void on_cbChooseVal_currentIndexChanged(int index);
 
     void on_cbChooseKat_currentIndexChanged(int index);
+
+    void on_generateButton_clicked();
 
 private:
     Ui::MainWindow *ui;

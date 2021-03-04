@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="KafedraPage">
      <attribute name="title">
@@ -386,6 +386,34 @@
         <x>690</x>
         <y>20</y>
         <width>221</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="OtchetPage">
+     <attribute name="title">
+      <string>Отчёт</string>
+     </attribute>
+     <widget class="QPushButton" name="generateButton">
+      <property name="geometry">
+       <rect>
+        <x>138</x>
+        <y>130</y>
+        <width>181</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Сгенерировать отчёт</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="otchetCombo">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>80</y>
+        <width>181</width>
         <height>25</height>
        </rect>
       </property>

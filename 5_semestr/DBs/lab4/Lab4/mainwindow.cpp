@@ -1,5 +1,6 @@
 #include "ui_mainwindow.h"
 #include "mainwindow.h"
+#include <LimeReport>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -22,7 +23,7 @@ int MainWindow::initDB()
 
     //QString filename = "/home/orangenal/Документы/labs/5_semestr/DB's/lab2/Lab2/base3-02.db";
     //QString filename = "/home/orangenal/Документы/labs/5_semestr/DB's/lab3/Lab3/base-new-un.db";
-    QString filename = "/home/orangenal/Документы/labs/5_semestr/DB's/lab4/Lab4/base-cascade";
+    QString filename = "/home/orangenal/Documents/labs/5_semestr/DBs/lab4/Lab4/base-cascade";
 
     db.setDatabaseName(filename);
     if (QFileInfo::exists(filename))
@@ -144,6 +145,11 @@ void MainWindow::initCB()
     ui->cbChooseKaf->setModel(Kafedra);
     ui->cbChooseKaf->setModelColumn(0);
     ui->cbChooseKaf->setCurrentIndex(0);
+
+    ui->otchetCombo->setModel(Kafedra);
+    ui->otchetCombo->setModelColumn(0);
+    ui->otchetCombo->setCurrentIndex(0);
+
 
     ui->cbChooseVal->setModel(Value);
     ui->cbChooseVal->setModelColumn(0);
@@ -428,4 +434,13 @@ void MainWindow::on_cbChooseVal_currentIndexChanged(int index)
 void MainWindow::on_cbChooseKat_currentIndexChanged(int index)
 {
     updateFilter();
+}
+
+void MainWindow::on_generateButton_clicked() // Кнопка отчета
+{
+    LimeReport::ReportEngine report;
+    report.loadFromFile("/home/orangenal/Documents/labs/5_semestr/DBs/lab4/Lab4/report.lrxml");
+    report.previewReport();
+
+
 }

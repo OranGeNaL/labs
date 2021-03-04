@@ -1,5 +1,7 @@
 QT       += core gui
 QT += sql
+QT += printsupport
+QT += qml quick
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -22,3 +24,13 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+unix:!macx: LIBS += -L$$PWD/../../../../../LimeReport/build/5.15.2/linux64/release/lib/ -llimereport
+
+INCLUDEPATH += $$PWD/../../../../../LimeReport/build/5.15.2/linux64/release/lib/include
+DEPENDPATH += $$PWD/../../../../../LimeReport/build/5.15.2/linux64/release/lib/include
+
+unix:!macx: LIBS += -L$$PWD/../../../../../LimeReport/build/5.15.2/linux64/release/lib/ -lQtZint
+
+INCLUDEPATH += $$PWD/../../../../../LimeReport/build/5.15.2/linux64/release/lib/include
+DEPENDPATH += $$PWD/../../../../../LimeReport/build/5.15.2/linux64/release/lib/include
