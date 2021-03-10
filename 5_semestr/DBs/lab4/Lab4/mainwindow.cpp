@@ -206,15 +206,7 @@ void MainWindow::updateFilter()
 
 void MainWindow::UpdateDB()
 {
-//    Kafedra_SUB->setQuery("SELECT * FROM Kafedra");
-//    Value_SUB->setQuery("SELECT * FROM Value");
-//    Kategoria_SUB->setQuery("SELECT * FROM Kategoria");
-//    Year_SUB->setQuery("SELECT * FROM _Year");
-
     Chislennost->select();
-    /*Chislennost->relationModel(2)->select();
-    Chislennost->relationModel(3)->select();
-    Chislennost->relationModel(4)->select();*/
 }
 
 //Kafedra page
@@ -438,9 +430,65 @@ void MainWindow::on_cbChooseKat_currentIndexChanged(int index)
 
 void MainWindow::on_generateButton_clicked() // Кнопка отчета
 {
+    QString kaf;
+    int ind;
+
+    ind = ui->otchetCombo->currentIndex();
+    kaf = Kafedra->record(ind).field("Kaf_ID").value().toString();
+
+    QSqlQuery query;
+    query.exec("DROP VIEW IF EXISTS prep_col_h;\
+DROP VIEW IF EXISTS prep_col_s;\
+DROP VIEW IF EXISTS such_st_h;\
+DROP VIEW IF EXISTS such_st_s;\
+DROP VIEW IF EXISTS profs_h;\
+DROP VIEW IF EXISTS profs_s;\
+DROP VIEW IF EXISTS doc_h;\
+DROP VIEW IF EXISTS doc_s;\
+DROP VIEW IF EXISTS dolya_h;\
+DROP VIEW IF EXISTS dolya_s;\
+CREATE VIEW prep_col_h AS\
+SELECT Year_ID, Kolichestvo\
+FROM Chislennost\
+WHERE Kaf_ID="+kaf +" AND Val_ID=1 AND Kateg_ID=1;\
+CREATE VIEW prep_col_s AS\
+SELECT Year_ID, Kolichestvo\
+FROM Chislennost\
+WHERE Kaf_ID="+kaf +" AND Val_ID=1 AND Kateg_ID=2;\
+CREATE VIEW such_st_h AS\
+SELECT Year_ID, Kolichestvo\
+FROM Chislennost\
+WHERE Kaf_ID="+kaf +" AND Val_ID=2 AND Kateg_ID=1;\
+CREATE VIEW such_st_s AS\
+SELECT Year_ID, Kolichestvo\
+FROM Chislennost\
+WHERE Kaf_ID="+kaf +" AND Val_ID=2 AND Kateg_ID=2;\
+CREATE VIEW profs_h AS\
+SELECT Year_ID, Kolichestvo\
+FROM Chislennost\
+WHERE Kaf_ID="+kaf +" AND Val_ID=3 AND Kateg_ID=1;\
+CREATE VIEW profs_s AS\
+SELECT Year_ID, Kolichestvo\
+FROM Chislennost\
+WHERE Kaf_ID="+kaf +" AND Val_ID=3 AND Kateg_ID=2;\
+CREATE VIEW doc_h AS\
+SELECT Year_ID, Kolichestvo\
+FROM Chislennost\
+WHERE Kaf_ID="+kaf +" AND Val_ID=4 AND Kateg_ID=1;\
+CREATE VIEW doc_s AS\
+SELECT Year_ID, Kolichestvo\
+FROM Chislennost\
+WHERE Kaf_ID="+kaf +" AND Val_ID=4 AND Kateg_ID=2;\
+CREATE VIEW dolya_h AS\
+SELECT Year_ID, Kolichestvo\
+FROM Chislennost\
+WHERE Kaf_ID="+kaf +" AND Val_ID=5 AND Kateg_ID=1;\
+CREATE VIEW dolya_s AS\
+SELECT Year_ID, Kolichestvo\
+FROM Chislennost\
+WHERE Kaf_ID="+kaf +" AND Val_ID=5 AND Kateg_ID=2;");
+
     LimeReport::ReportEngine report;
     report.loadFromFile("/home/orangenal/Documents/labs/5_semestr/DBs/lab4/Lab4/report.lrxml");
     report.previewReport();
-
-
 }
