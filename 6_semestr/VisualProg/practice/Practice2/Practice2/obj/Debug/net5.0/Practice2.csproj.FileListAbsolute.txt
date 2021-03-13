@@ -1,0 +1,16 @@
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/bin/Debug/net5.0/Practice2
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/bin/Debug/net5.0/Practice2.deps.json
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/bin/Debug/net5.0/Practice2.runtimeconfig.json
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/bin/Debug/net5.0/Practice2.runtimeconfig.dev.json
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/bin/Debug/net5.0/Practice2.dll
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/bin/Debug/net5.0/ref/Practice2.dll
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/bin/Debug/net5.0/Practice2.pdb
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/obj/Debug/net5.0/Practice2.csprojAssemblyReference.cache
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/obj/Debug/net5.0/Practice2.GeneratedMSBuildEditorConfig.editorconfig
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/obj/Debug/net5.0/Practice2.AssemblyInfoInputs.cache
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/obj/Debug/net5.0/Practice2.AssemblyInfo.cs
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/obj/Debug/net5.0/Practice2.csproj.CoreCompileInputs.cache
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/obj/Debug/net5.0/Practice2.dll
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/obj/Debug/net5.0/ref/Practice2.dll
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/obj/Debug/net5.0/Practice2.pdb
+/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/obj/Debug/net5.0/Practice2.genruntimeconfig.cache

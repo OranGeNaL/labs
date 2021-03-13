@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/orangenal/.dotnet/store/|arch|/|tfm|",
+      "/home/orangenal/.nuget/packages"
+    ]
+  }
+}
