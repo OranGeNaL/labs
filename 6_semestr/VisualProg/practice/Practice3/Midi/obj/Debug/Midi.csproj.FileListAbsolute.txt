@@ -1,0 +1,11 @@
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Midi\bin\Debug\Midi.exe.config
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Midi\bin\Debug\Midi.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Midi\bin\Debug\Midi.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Midi\obj\Debug\Midi.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Midi\obj\Debug\Midi.Properties.Resources.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Midi\obj\Debug\Midi.csproj.GenerateResource.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Midi\obj\Debug\Midi.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Midi\obj\Debug\Midi.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Midi\obj\Debug\Midi.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Midi\obj\Debug\Midi.ChildForm.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Midi\obj\Debug\Midi.ParentForm.resources

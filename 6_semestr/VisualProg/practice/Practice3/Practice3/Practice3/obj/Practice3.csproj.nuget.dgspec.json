@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice2\\Practice2\\Practice2.csproj": {}
+    "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice3\\Practice3\\Practice3\\Practice3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice2\\Practice2\\Practice2.csproj": {
+    "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice3\\Practice3\\Practice3\\Practice3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice2\\Practice2\\Practice2.csproj",
-        "projectName": "Practice2",
-        "projectPath": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice2\\Practice2\\Practice2.csproj",
+        "projectUniqueName": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice3\\Practice3\\Practice3\\Practice3.csproj",
+        "projectName": "Practice3",
+        "projectPath": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice3\\Practice3\\Practice3\\Practice3.csproj",
         "packagesPath": "C:\\Users\\pshen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice2\\Practice2\\obj\\",
+        "outputPath": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice3\\Practice3\\Practice3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\pshen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,15 +22,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net5.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
             "projectReferences": {}
           }
         },
@@ -41,8 +41,8 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
           "imports": [
             "net461",
             "net462",
@@ -56,6 +56,9 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
