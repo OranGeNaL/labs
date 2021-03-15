@@ -1,0 +1,10 @@
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\UchebProg\bin\Debug\UchebProg.exe.config
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\UchebProg\bin\Debug\UchebProg.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\UchebProg\bin\Debug\UchebProg.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\UchebProg\obj\Debug\UchebProg.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\UchebProg\obj\Debug\UchebProg.Form1.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\UchebProg\obj\Debug\UchebProg.Properties.Resources.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\UchebProg\obj\Debug\UchebProg.csproj.GenerateResource.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\UchebProg\obj\Debug\UchebProg.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\UchebProg\obj\Debug\UchebProg.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\UchebProg\obj\Debug\UchebProg.pdb

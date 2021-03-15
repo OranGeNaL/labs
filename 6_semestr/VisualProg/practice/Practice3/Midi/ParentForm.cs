@@ -12,6 +12,8 @@ namespace Midi
 {
     public partial class ParentForm : Form
     {
+        private int openDocuments = 0;
+
         public ParentForm()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace Midi
         {
             ChildForm newChild = new ChildForm();
             newChild.MdiParent = this;
+            newChild.Text = newChild.Text + " " + ++openDocuments;
             newChild.Show();
         }
     }
