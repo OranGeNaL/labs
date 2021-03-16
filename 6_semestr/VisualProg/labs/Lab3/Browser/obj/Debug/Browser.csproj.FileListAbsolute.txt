@@ -1,0 +1,10 @@
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Browser\bin\Debug\Browser.exe.config
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Browser\bin\Debug\Browser.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Browser\bin\Debug\Browser.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Browser\obj\Debug\Browser.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Browser\obj\Debug\Browser.Form1.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Browser\obj\Debug\Browser.Properties.Resources.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Browser\obj\Debug\Browser.csproj.GenerateResource.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Browser\obj\Debug\Browser.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Browser\obj\Debug\Browser.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Browser\obj\Debug\Browser.pdb

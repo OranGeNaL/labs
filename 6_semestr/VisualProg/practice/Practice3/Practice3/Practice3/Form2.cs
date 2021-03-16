@@ -23,7 +23,7 @@ namespace Practice3
             myPath.AddPolygon(new Point[]
             {
                 new Point(0, 0),
-                new Point(00, this.Height),
+                new Point(0, this.Height),
                 new Point(this.Width, 0)
             });
             Region myRegion = new Region(myPath);

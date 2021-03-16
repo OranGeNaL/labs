@@ -1,0 +1,11 @@
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\GREENPEACE\bin\Debug\GREENPEACE.exe.config
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\GREENPEACE\bin\Debug\GREENPEACE.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\GREENPEACE\bin\Debug\GREENPEACE.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\GREENPEACE\obj\Debug\GREENPEACE.Form1.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\GREENPEACE\obj\Debug\GREENPEACE.Properties.Resources.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\GREENPEACE\obj\Debug\GREENPEACE.csproj.GenerateResource.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\GREENPEACE\obj\Debug\GREENPEACE.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\GREENPEACE\obj\Debug\GREENPEACE.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\GREENPEACE\obj\Debug\GREENPEACE.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\GREENPEACE\obj\Debug\GREENPEACE.Form2.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\GREENPEACE\obj\Debug\GREENPEACE.csprojAssemblyReference.cache

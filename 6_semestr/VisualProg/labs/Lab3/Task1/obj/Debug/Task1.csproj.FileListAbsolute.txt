@@ -1,0 +1,10 @@
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Task1\bin\Debug\Task1.exe.config
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Task1\bin\Debug\Task1.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Task1\bin\Debug\Task1.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Task1\obj\Debug\Task1.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Task1\obj\Debug\Task1.Form1.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Task1\obj\Debug\Task1.Properties.Resources.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Task1\obj\Debug\Task1.csproj.GenerateResource.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Task1\obj\Debug\Task1.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Task1\obj\Debug\Task1.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Task1\obj\Debug\Task1.pdb

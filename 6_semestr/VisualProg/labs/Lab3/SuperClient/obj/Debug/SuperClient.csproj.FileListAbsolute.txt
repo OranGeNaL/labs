@@ -1,0 +1,10 @@
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\SuperClient\bin\Debug\SuperClient.exe.config
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\SuperClient\bin\Debug\SuperClient.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\SuperClient\bin\Debug\SuperClient.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\SuperClient\obj\Debug\SuperClient.Form1.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\SuperClient\obj\Debug\SuperClient.Properties.Resources.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\SuperClient\obj\Debug\SuperClient.csproj.GenerateResource.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\SuperClient\obj\Debug\SuperClient.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\SuperClient\obj\Debug\SuperClient.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\SuperClient\obj\Debug\SuperClient.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\SuperClient\obj\Debug\SuperClient.csprojAssemblyReference.cache
