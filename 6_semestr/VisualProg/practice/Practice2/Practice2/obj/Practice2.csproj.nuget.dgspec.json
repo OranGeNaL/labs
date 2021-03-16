@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice2\\Practice2\\Practice2.csproj": {}
+    "/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/Practice2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice2\\Practice2\\Practice2.csproj": {
+    "/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/Practice2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice2\\Practice2\\Practice2.csproj",
+        "projectUniqueName": "/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/Practice2.csproj",
         "projectName": "Practice2",
-        "projectPath": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice2\\Practice2\\Practice2.csproj",
-        "packagesPath": "C:\\Users\\pshen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\practice\\Practice2\\Practice2\\obj\\",
+        "projectPath": "/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/Practice2.csproj",
+        "packagesPath": "/home/orangenal/.nuget/packages/",
+        "outputPath": "/home/orangenal/Documents/labs/6_semestr/VisualProg/practice/Practice2/Practice2/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet"
-        ],
         "configFilePaths": [
-          "C:\\Users\\pshen\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/home/orangenal/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/current/sdk/5.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }

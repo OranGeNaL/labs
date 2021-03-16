@@ -70,7 +70,6 @@ namespace Practice2
                     ok = false;
                     break;
             }
-
             if (ok)
                 Console.WriteLine("Результат: " + res);
             else
@@ -82,7 +81,7 @@ namespace Practice2
         static void Task3()
         {
             double Xn = -2, Xk = 12, dX = 2, t = 2, y;
-            Console.WriteLine("| x | у |"); // заголовоктаблицы
+            Console.WriteLine("|      x |      у |"); // заголовок таблицы
             double x = Xn; //1
             while (x <= Xk) //5
             {
