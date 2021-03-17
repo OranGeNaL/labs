@@ -24,6 +24,7 @@ public:
     void updateFilter();
     void fillRecord(QSqlRecord &record);
     bool warningDialog();
+    void executeQueriesFromFile(QFile *file, QSqlQuery *query);
 
 private slots:
     void on_pushButton_clicked();

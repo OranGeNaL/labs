@@ -436,59 +436,88 @@ void MainWindow::on_generateButton_clicked() // Кнопка отчета
     ind = ui->otchetCombo->currentIndex();
     kaf = Kafedra->record(ind).field("Kaf_ID").value().toString();
 
+    QString fir, sec, thir, four, fif;
+    fir = Value->record(0).field("Val_ID").value().toString();
+    sec = Value->record(1).field("Val_ID").value().toString();
+    thir = Value->record(2).field("Val_ID").value().toString();
+    four = Value->record(3).field("Val_ID").value().toString();
+    fif = Value->record(4).field("Val_ID").value().toString();
+
     QSqlQuery query;
-    query.exec("DROP VIEW IF EXISTS prep_col_h;\
-DROP VIEW IF EXISTS prep_col_s;\
-DROP VIEW IF EXISTS such_st_h;\
-DROP VIEW IF EXISTS such_st_s;\
-DROP VIEW IF EXISTS profs_h;\
-DROP VIEW IF EXISTS profs_s;\
-DROP VIEW IF EXISTS doc_h;\
-DROP VIEW IF EXISTS doc_s;\
-DROP VIEW IF EXISTS dolya_h;\
-DROP VIEW IF EXISTS dolya_s;\
-CREATE VIEW prep_col_h AS\
-SELECT Year_ID, Kolichestvo\
-FROM Chislennost\
-WHERE Kaf_ID="+kaf +" AND Val_ID=1 AND Kateg_ID=1;\
-CREATE VIEW prep_col_s AS\
-SELECT Year_ID, Kolichestvo\
-FROM Chislennost\
-WHERE Kaf_ID="+kaf +" AND Val_ID=1 AND Kateg_ID=2;\
-CREATE VIEW such_st_h AS\
-SELECT Year_ID, Kolichestvo\
-FROM Chislennost\
-WHERE Kaf_ID="+kaf +" AND Val_ID=2 AND Kateg_ID=1;\
-CREATE VIEW such_st_s AS\
-SELECT Year_ID, Kolichestvo\
-FROM Chislennost\
-WHERE Kaf_ID="+kaf +" AND Val_ID=2 AND Kateg_ID=2;\
-CREATE VIEW profs_h AS\
-SELECT Year_ID, Kolichestvo\
-FROM Chislennost\
-WHERE Kaf_ID="+kaf +" AND Val_ID=3 AND Kateg_ID=1;\
-CREATE VIEW profs_s AS\
-SELECT Year_ID, Kolichestvo\
-FROM Chislennost\
-WHERE Kaf_ID="+kaf +" AND Val_ID=3 AND Kateg_ID=2;\
-CREATE VIEW doc_h AS\
-SELECT Year_ID, Kolichestvo\
-FROM Chislennost\
-WHERE Kaf_ID="+kaf +" AND Val_ID=4 AND Kateg_ID=1;\
-CREATE VIEW doc_s AS\
-SELECT Year_ID, Kolichestvo\
-FROM Chislennost\
-WHERE Kaf_ID="+kaf +" AND Val_ID=4 AND Kateg_ID=2;\
-CREATE VIEW dolya_h AS\
-SELECT Year_ID, Kolichestvo\
-FROM Chislennost\
-WHERE Kaf_ID="+kaf +" AND Val_ID=5 AND Kateg_ID=1;\
-CREATE VIEW dolya_s AS\
-SELECT Year_ID, Kolichestvo\
-FROM Chislennost\
-WHERE Kaf_ID="+kaf +" AND Val_ID=5 AND Kateg_ID=2;");
+
+
+    //executeQueriesFromFile(new QFile("/home/orangenal/Documents/labs/5_semestr/DBs/lab4/Lab4/script"), &query);
+
+    QByteArray fileData;
+    QFile file("/home/orangenal/Documents/labs/5_semestr/DBs/lab4/Lab4/script");
+    QFile iFile("/home/orangenal/Documents/labs/5_semestr/DBs/lab4/Lab4/scriptIn");
+    file.open(QIODevice::ReadWrite);
+    iFile.open(QIODevice::ReadWrite);
+    fileData = iFile.readAll();
+    QString text(fileData);
+
+    text.replace(QString("*1*"), fir);
+    text.replace(QString("*2*"), sec);
+    text.replace(QString("*3*"), thir);
+    text.replace(QString("*4*"), four);
+    text.replace(QString("*5*"), fif);
+
+    /*QMessageBox msgBox;
+    msgBox.setText(text);
+    msgBox.exec();*/
+
+    file.seek(0);
+    file.write(text.toUtf8());
+
+    file.close();
+    iFile.close();
 
     LimeReport::ReportEngine report;
+    QProcess *process = new QProcess(this);
+    process->start("sqlite3 -init /home/orangenal/Documents/labs/5_semestr/DBs/lab4/Lab4/script /home/orangenal/Documents/labs/5_semestr/DBs/lab4/Lab4/base-cascade");
     report.loadFromFile("/home/orangenal/Documents/labs/5_semestr/DBs/lab4/Lab4/report.lrxml");
     report.previewReport();
+
+    process->close();
+}
+
+
+void MainWindow::executeQueriesFromFile(QFile *file, QSqlQuery *query)
+{
+    while (!file->atEnd()){
+        QByteArray readLine="";
+        QString cleanedLine;
+        QString line="";
+        bool finished=false;
+        while(!finished){
+            readLine = file->readLine();
+            cleanedLine=readLine.trimmed();
+            // remove comments at end of line
+            QStringList strings=cleanedLine.split("--");
+            cleanedLine=strings.at(0);
+
+            // remove lines with only comment, and DROP lines
+            if(!cleanedLine.startsWith("--")
+                    && /*!cleanedLine.startsWith("DROP")
+                    && */!cleanedLine.isEmpty()){
+                line+=cleanedLine;
+            }
+            if(cleanedLine.endsWith(";")){
+                break;
+            }
+            if(cleanedLine.startsWith("COMMIT")){
+                finished=true;
+            }
+        }
+
+        if(!line.isEmpty()){
+            query->exec(line);
+        }
+        if(!query->isActive()){
+            qDebug() << QSqlDatabase::drivers();
+            qDebug() <<  query->lastError();
+            qDebug() << "test executed query:"<< query->executedQuery();
+            qDebug() << "test last query:"<< query->lastQuery();
+        }
+    }
 }

@@ -1,0 +1,73 @@
+DROP VIEW IF EXISTS prep_col_h;
+DROP VIEW IF EXISTS prep_col_s;
+DROP VIEW IF EXISTS such_st_h;
+DROP VIEW IF EXISTS such_st_s;
+DROP VIEW IF EXISTS profs_h;
+DROP VIEW IF EXISTS profs_s;
+DROP VIEW IF EXISTS doc_h;
+DROP VIEW IF EXISTS doc_s;
+DROP VIEW IF EXISTS dolya_h;
+DROP VIEW IF EXISTS dolya_s;
+DROP VIEW IF EXISTS vals;
+DROP VIEW IF EXISTS vals_w_n;
+
+CREATE VIEW vals AS
+SELECT Val_name
+FROM Value
+LIMIT 5;
+
+CREATE VIEW vals_w_n AS
+SELECT row_number() over () as rn, *
+FROM vals;
+
+CREATE VIEW prep_col_h AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=*1* AND Kateg_ID=1;
+
+CREATE VIEW prep_col_s AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=*1* AND Kateg_ID=2;
+
+CREATE VIEW such_st_h AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=*2* AND Kateg_ID=1;
+
+CREATE VIEW such_st_s AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=*2* AND Kateg_ID=2;
+
+CREATE VIEW profs_h AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=*3* AND Kateg_ID=1;
+
+CREATE VIEW profs_s AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=*3* AND Kateg_ID=2;
+
+CREATE VIEW doc_h AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=*4* AND Kateg_ID=1;
+
+CREATE VIEW doc_s AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=*4* AND Kateg_ID=2;
+
+CREATE VIEW dolya_h AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=*5* AND Kateg_ID=1;
+
+CREATE VIEW dolya_s AS
+SELECT Year_ID, Kolichestvo
+FROM Chislennost
+WHERE Val_ID=*5* AND Kateg_ID=2;
+
+--COMMIT;
