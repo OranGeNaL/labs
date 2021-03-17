@@ -7,3 +7,4 @@ C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Elems\obj\De
 C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Elems\obj\Debug\Elems.csproj.CoreCompileInputs.cache
 C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Elems\obj\Debug\Elems.exe
 C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Elems\obj\Debug\Elems.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab3\Elems\obj\Debug\Elems.csprojAssemblyReference.cache
