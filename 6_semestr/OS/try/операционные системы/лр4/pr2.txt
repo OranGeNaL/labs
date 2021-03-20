@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
+#include <pthread.h>
+#include <sys/wait.h>
+
+#define ITER 9
+pthread_mutex_t my_sync;
+
+int main(int argc, char *argv[])
+{
+	int pid, sizeB = 1, j;
+	pthread_mutex_init(&my_sync, NULL);
+	clock_t t1, t2;
+	int shmid;
+	key_t key_s = ftok(".", 's');
+	char *shmPtr;
+	double rest;
+
+	for(short int i = 0; i < ITER; i++)
+	{	
+		if((pid = fork()) < 0)
+		{
+			perror("fork failed");
+			exit(2);
+		}
+		if(pid == 0)
+		{
+			char *buf;
+			buf = (char*)malloc(sizeB * sizeof(char));
+			t1 = clock();
+			pthread_mutex_lock(&my_sync);
+			shmid = shmget(key_s, sizeB, 0);
+			if(shmid == -1) 
+				exit(1);
+			shmPtr = shmat(shmid, 0, 0);
+			if (shmPtr == (char *) -1) 
+				exit(2);
+			for(j = 0; j< sizeB; j++)
+				buf[j] = shmPtr[j];
+			t2 = clock();
+			rest = 1000.0 * (t2 - t1) / CLOCKS_PER_SEC;
+			printf("Сегмент %d = %d, размер = %d\n", i, shmid, sizeB);
+			printf("Время, мс = %.2f\n", rest);
+			printf("Скорость = %.2f\n------------------------\n", sizeB / rest);
+			pthread_mutex_unlock(&my_sync);
+			exit(0);					
+		}
+		else
+		{
+			pthread_mutex_lock(&my_sync);
+			if((shmid = shmget(key_s, sizeB, 0666|IPC_CREAT)) == -1)
+				exit(1);
+			printf("Сегмент %d = %d, размер = %d\n", i, shmid, sizeB);
+			shmPtr = shmat(shmid, 0, 0);
+			if(shmPtr == (char *) -1)
+				exit(2);
+			for(j = 0; j < sizeB; j++)
+				shmPtr[j] = 'S';
+			pthread_mutex_unlock(&my_sync);
+			wait(NULL);
+			shmdt(shmPtr);
+			if(shmctl(shmid, IPC_RMID, NULL) == -1 ) // удаление сегмента
+				exit(-1);
+		}
+		sizeB *= 10;
+	}
+}
+
