@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/orangenal/Documents/labs/6_semestr/OS/lab2/task1/task1.cpp
+stdio.h
+-
+iostream
+-
+unistd.h
+-
+sys/types.h
+-
+stdlib.h
+-
+sys/errno.h
+-
+sys/wait.h
+-
+time.h
+-
+errno.h
+-
+

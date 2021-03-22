@@ -1,0 +1,97 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
+#include <pthread.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#define ITER 9 // степень передаваемых данных
+
+pthread_mutex_t my_sync; 
+
+int main(int argc, char *argv[])
+{
+int fd[2], pid, j;
+int nread; //количество записанных и считанных данных в байтах
+int sizeB = 1; //размер буфера
+char *buf; 
+pthread_mutex_init(&my_sync, NULL);
+clock_t start, stop; 
+double rest; //время в милисекунды
+int shmid; // Сегмент общей памяти 
+key_t key_s = ftok(".", 's');
+char *shmPtr;
+if((shmid = shmget(key_s, sizeof(int), 0666|IPC_CREAT)) == -1)
+exit(1);
+printf("Сегмент = %d\n", shmid);
+shmPtr = shmat(shmid, 0, 0);
+if(shmPtr == (char *) -1)
+exit(2);
+for(short int i = 0; i < ITER; i++)
+{
+buf = (char*)malloc(sizeB * sizeof(char)); //выделение памяти под буфер
+for(j = 0; j < sizeB; j++) //инициализация буфера
+buf[j] = 'S';
+if(pipe(fd) == -1)
+{
+perror("pipe failed");
+exit(1);
+}
+
+if((pid = fork()) < 0)
+{
+perror("fork failed");
+exit(2);
+}
+
+if(pid == 0) //child
+{
+pthread_mutex_lock(&my_sync);
+char *tmp; // буфер для использования данных, считанных из канала
+tmp = (char*)malloc(sizeB * sizeof(char));
+if((shmid = shmget(key_s, sizeof(int), 0)) == -1)
+exit(1);
+shmPtr = shmat(shmid, 0, 0);
+if(shmPtr == (char *) -1)
+exit(2);
+close(fd[1]);
+start = clock();
+nread = read(fd[0], buf, sizeB);
+for(j = 0; j < sizeB; j++) //использование данных
+tmp[j] = buf[j];
+stop = clock();
+close(fd[0]);
+printf("Количество считанных данных = %d\n", nread);
+rest = 1000.0 * (stop - start) / CLOCKS_PER_SEC + shmPtr[0]; //перевод в мс
+printf("Время, мс = %.2f\n", rest);
+printf("Скорость = %.2f\n------------------------\n", sizeB / rest); 
+free(tmp);
+shmdt(shmPtr);
+pthread_mutex_unlock(&my_sync);
+
+exit(0);
+}
+
+else //рarent
+{
+pthread_mutex_lock(&my_sync);
+close(fd[0]);
+start = clock();
+nread = write(fd[1], buf, sizeB);
+stop = clock();
+printf("Количество записанных данных = %d\n", nread);
+close(fd[1]);
+rest = 1000.0 * (stop - start) / CLOCKS_PER_SEC; 
+shmPtr[0] = rest; // запись в общий сегмент памяти 
+pthread_mutex_unlock(&my_sync);
+wait(NULL);
+}
+free(buf);
+sizeB *= 10; // Увеличение размера передаваемых данных
+}
+shmdt(shmPtr);
+if(shmctl(shmid, IPC_RMID, NULL) == -1 ) // удаление сегмента
+exit(-1);
+}

@@ -1,0 +1,85 @@
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int buffer[11];
+int bdp=1;
+int edp=1;
+ 
+pthread_mutex_t mymtx;
+pthread_cond_t mysv;
+ 
+void* sourser (void *t) {
+int t1;
+while (1) {
+   pthread_mutex_lock (&mymtx);
+   if ((bdp==1 && edp==10)||(edp==bdp-1))
+   pthread_cond_wait (&mysv, &mymtx);
+   else {
+   buffer[edp]=edp;
+   printf ("Symbol %d in\n", buffer[edp]);
+   edp=edp+1;
+    if (edp>10)
+    edp=1;
+    pthread_cond_signal (&mysv);  
+    }
+    pthread_mutex_unlock (&mymtx);
+    t1=rand() % 1500000 + 500000;
+    usleep(t1);
+    }
+    return;
+    }
+    
+void* extructor (void *d) {
+int t2;
+while (1) {
+  pthread_mutex_lock (&mymtx);
+  if (edp==bdp)
+  pthread_cond_wait (&mysv, &mymtx);
+  else {
+  buffer[bdp];     
+  printf ("Symbol %d out\n", buffer[bdp]);
+  buffer[bdp]=0;
+  bdp=bdp+1;
+    if (bdp>10)
+    bdp=1;
+    pthread_cond_signal (&mysv);   
+    }
+    pthread_mutex_unlock (&mymtx);
+    t2=rand() % 1500000 + 500000;
+    usleep(t2);
+    }
+    return;
+    }
+    
+int main() {
+int res;
+pthread_t sid, eid;
+res=pthread_mutex_init (&mymtx, NULL);
+if (res != 0) {
+  perror("Mutex initialization failed");
+  exit(EXIT_FAILURE);
+  }
+pthread_cond_init (&mysv, NULL);
+res=pthread_create (&sid, NULL, &sourser, NULL);
+if (res != 0) {
+  perror("Thread creation failed");
+  exit(EXIT_FAILURE);
+  }
+res=pthread_create (&eid, NULL, &extructor, NULL);
+if (res != 0) {
+  perror("Thread creation failed");
+  exit(EXIT_FAILURE);
+  }
+res=pthread_join (sid, NULL);
+if (res != 0) {
+  perror("Thread join failed");
+  exit(EXIT_FAILURE);
+  }
+res=pthread_join (eid, NULL);
+if (res != 0) {
+  perror("Thread join failed");
+  exit(EXIT_FAILURE);
+  }
+return;
+}
