@@ -18,4 +18,3 @@ C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Pra
 C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Practice3\Practice3\obj\Debug\net5.0-windows\Practice3.csproj.GenerateResource.cache
 C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Practice3\Practice3\obj\Debug\net5.0-windows\Practice3.Form2.resources
 C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Practice3\Practice3\obj\Debug\net5.0-windows\Practice3.Form3.resources
-C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice3\Practice3\Practice3\obj\Debug\net5.0-windows\Practice3.MidiForm.resources
