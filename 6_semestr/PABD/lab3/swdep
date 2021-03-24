@@ -1,0 +1,123 @@
+CASE-SWDEP CDM File: 'swdep.cdmod'
+model 1282 722
+
+table Course
+pos 663 18
+size 150 50
+row Number INTEGER 
+
+table Discipline
+pos 594 227
+size 150 70
+row ID INTEGER PK/NN/UQ
+row Disc_Name VARCHAR(60) UQ
+
+table Group
+pos 400 167
+size 150 130
+row ID INTEGER PK/NN/UQ
+row Grp_Name VARCHAR(50) UQ
+row Enter_Date DATE 
+
+table Gupr
+pos 847 133
+size 150 70
+row Prodolzh INTEGER 
+
+table Gupr_Element
+pos 963 328
+size 150 70
+row ID INTEGER PK/NN/UQ
+row Elem_Name VARCHAR(60) UQ
+
+table Kafedr_Raspred
+pos 397 375
+size 150 90
+
+table Kafedra
+pos 128 454
+size 150 70
+row ID INTEGER PK/NN/UQ
+row Kaf_Name VARCHAR(60) UQ
+
+table Poryadkov_Semestr
+pos 635 111
+size 150 50
+row Number INTEGER 
+
+table Specialnost
+pos 140 192
+size 150 70
+row ID INTEGER PK/NN/UQ
+row Spec_Name VARCHAR(100) UQ
+
+table Uch_Plan
+pos 136 40
+size 150 90
+row ID INTEGER PK/NN/UQ
+row Plan_Name VARCHAR(100) UQ
+
+table Ucheb_Nagruzka
+pos 457 17
+size 150 110
+row Hours INTEGER 
+
+table Week_Number
+pos 847 19
+size 150 50
+row Number INTEGER 
+
+relationship Course Gupr
+type one-many
+m mandatory mandatory
+
+relationship Discipline Kafedr_Raspred
+type one-many
+m mandatory mandatory
+
+relationship Discipline Ucheb_Nagruzka
+type one-many
+m mandatory mandatory
+
+relationship Gupr_Element Gupr
+type one-many
+m mandatory mandatory
+
+relationship Kafedra Kafedr_Raspred
+type one-many
+m mandatory mandatory
+
+relationship Poryadkov_Semestr Ucheb_Nagruzka
+type one-many
+m mandatory mandatory
+
+relationship Specialnost Kafedr_Raspred
+type one-many
+m mandatory mandatory
+
+relationship Specialnost Uch_Plan
+type one-many
+m mandatory mandatory
+
+relationship Uch_Plan Group
+type one-many
+m mandatory mandatory
+
+relationship Uch_Plan Ucheb_Nagruzka
+type one-many
+m mandatory mandatory
+
+relationship Week_Number Gupr
+type one-many
+m mandatory mandatory
+
+frow Uch_Plan ID Group
+frow Specialnost ID Group
+frow Gupr_Element ID Gupr
+frow Specialnost ID Kafedr_Raspred
+frow Discipline ID Kafedr_Raspred
+frow Kafedra ID Kafedr_Raspred
+frow Specialnost ID Uch_Plan
+frow Uch_Plan ID Ucheb_Nagruzka
+frow Specialnost ID Ucheb_Nagruzka
+frow Discipline ID Ucheb_Nagruzka
