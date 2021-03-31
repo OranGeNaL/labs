@@ -7,22 +7,18 @@
 #IncludeRegexTransform: 
 
 /home/orangenal/Documents/labs/6_semestr/OS/lab2/task1/task1.cpp
-stdio.h
+cstdlib
 -
 iostream
 -
 unistd.h
 -
-sys/types.h
+ctime
 -
-stdlib.h
--
-sys/errno.h
+string.h
 -
 sys/wait.h
 -
-time.h
--
-errno.h
+sys/errno.h
 -
 
