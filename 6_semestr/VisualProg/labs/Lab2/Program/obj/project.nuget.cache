@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "XONNTce6VxRAc8RVnHx8x91RX+jkfdWmUIZ06awWtz0bfEqpDvblSwsi4XNG6ZeHvFGrbdPFGUNS8pVs9dduQQ==",
+  "dgSpecHash": "7nIKmpCgzTxTsgu3jc3d+QPFjel11s9zSVIPQS3TV5BTjnwsxoRSy+XdszYoFo9IY6LiBiV7fknomZV0CJVd1Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pshen\\Documents\\GitHub\\labs\\6_semestr\\VisualProg\\labs\\Lab2\\Program\\Program.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/orangenal/Documents/labs/6_semestr/VisualProg/labs/Lab2/Program/Program.csproj",
+  "expectedPackageFiles": [
+    "/home/orangenal/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "/home/orangenal/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/home/orangenal/.nuget/packages/microsoft.netcore.app.host.linux-x64/3.1.13/microsoft.netcore.app.host.linux-x64.3.1.13.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/prog2.dir/prog2.cpp.o  -o prog2 
