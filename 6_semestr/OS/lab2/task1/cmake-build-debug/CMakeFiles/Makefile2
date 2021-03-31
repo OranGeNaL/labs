@@ -55,10 +55,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/orangenal/clion-2020.3.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/orangenal/Downloads/CLion-2020.3.3/clion-2020.3.3/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/orangenal/clion-2020.3.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/orangenal/Downloads/CLion-2020.3.3/clion-2020.3.3/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =

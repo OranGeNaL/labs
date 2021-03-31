@@ -1,20 +1,24 @@
-#include <stdio.h>
-#include <iostream>
-#include <unistd.h>
-#include <sys/types.h>
-#include <stdlib.h>
-#include <sys/errno.h> 
-#include <sys/wait.h> 
-#include <time.h>
-#include <errno.h>
+#include<cstdlib>
+//#include<string>
+#include<iostream>
+#include<unistd.h>
+#include<ctime>
+#include<string.h>
+#include<sys/wait.h>
+#include<sys/errno.h>
 
 using namespace std;
 
-#define TEST "./ex2"
-#define TEST1 "./ex3"
+#define PROG1 "./home/orangenal/Documents/labs/6_semestr/OS/lab2/progs/prog1"
+#define PROG2 "./home/orangenal/Documents/labs/6_semestr/OS/lab2/progs/prog2"
 
 void error();
 int execute(int);
+int firstProcess();
+int secondProcess();
+int thirdProcess();
+int fourthProcess();
+string arrows(int);
 
 int main(int argc, char **argv) {
 
@@ -49,17 +53,84 @@ int execute(int n){
 
     switch (n) {
         case 1:
+            ret_code = firstProcess();
             break;
         case 2:
+            ret_code = secondProcess();
             break;
         case 3:
+            ret_code = thirdProcess();
             break;
         case 4:
+            ret_code = fourthProcess();
             break;
         default:
-
             break;
     }
+    return ret_code;
+}
+
+int firstProcess(){
+    time_t current_time = time(NULL);
+    cout << arrows(1) << "Первый процесс (1), PID: " << getpid() << " PPID: " << getppid() << ". Текущее время: " << ctime(&current_time);
+    cout << arrows(1) << "Запускаю программу \"prog1\" (собственная)\n";
+    cout << arrows(1) << "Вывод запущенной программы:\n";
+
+    char * const args[3] = {"prog1", "Аргумент1", "Аргумент2"};
+    execv(PROG1, args);
+
+    char* buf = new char[100];
+    cout << arrows(2) << "SecondProcess::execl::ERROR::" << strerror_r(errno, buf, 100) << "\n";
+
+    current_time = time(NULL);
+    cout << arrows(1) << "Процесс(2) завершился! Текущее время: " << ctime(&current_time);
+
+    return EXIT_SUCCESS;
+}
+
+int secondProcess(){
+    time_t current_time = time(NULL);
+    cout << arrows(1) << "Второй процесс (2), PID: " << getpid() << " PPID: " << getppid() << ". Текущее время: " << ctime(&current_time);
+    cout << arrows(1) << "Запускаю программу \"PROG2\" (собственная)\n";
+    cout << arrows(1) << "Вывод запущенной программы:\n";
+
+    char * const args[3] = {"prog2", "Аргумент1", "Аргумент2"};
+    execv(PROG2, args);
+
+    current_time = time(NULL);
+    cout << arrows(1) << "Процесс(2) завершился! Текущее время: " << ctime(&current_time);
+
+    return EXIT_SUCCESS;
+}
+
+int thirdProcess(){
+    time_t current_time = time(NULL);
+    cout << arrows(1) << "Третий процесс (3), PID: " << getpid() << " PPID: " << getppid() << ". Текущее время: " << ctime(&current_time);
+    cout << arrows(1) << "Запускаю программу \"prog1\" (собственная)\n";
+    cout << arrows(1) << "Вывод запущенной программы:\n";
+
+    char * const args[3] = {"first", "Аргумент1", "Аргумент2"};
+    execv(PROG1, args);
+
+    current_time = time(NULL);
+    cout << arrows(1) << "Процесс(3) завершился! Текущее время: " << ctime(&current_time);
+
+    return EXIT_SUCCESS;
+}
+
+int fourthProcess(){
+    time_t current_time = time(NULL);
+    cout << arrows(1) << "Четвёртый процесс (4), PID: " << getpid() << " PPID: " << getppid() << ". Текущее время: " << ctime(&current_time);
+    cout << arrows(1) << "Запускаю программу \"prog1\" (собственная)\n";
+    cout << arrows(1) << "Вывод запущенной программы:\n";
+
+    char * const args[3] = {"first", "Аргумент1", "Аргумент2"};
+    execv(PROG1, args);
+
+    current_time = time(NULL);
+    cout << arrows(1) << "Процесс(4) завершился! Текущее время: " << ctime(&current_time);
+
+    return EXIT_SUCCESS;
 }
 
 void error()
@@ -87,6 +158,14 @@ break;
 break;
 	
 	}
+}
+
+string arrows(int n)
+{
+    string res = "";
+    for(int i = 0; i < n; i++)
+        res += ">>>";
+    return res;
 }
 
 
