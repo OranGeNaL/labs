@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/orangenal/Documents/labs/6_semestr/OS/lab2/task2.1/task2.1.cpp
+stdio.h
+-
+pthread.h
+-
+stdlib.h
+-
+unistd.h
+-
+

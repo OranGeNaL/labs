@@ -1,0 +1,3 @@
+/home/orangenal/Documents/labs/6_semestr/OS/lab2/task2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/orangenal/Documents/labs/6_semestr/OS/lab2/task2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/orangenal/Documents/labs/6_semestr/OS/lab2/task2/cmake-build-debug/CMakeFiles/task2.dir
