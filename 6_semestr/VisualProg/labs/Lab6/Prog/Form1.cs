@@ -90,16 +90,12 @@ namespace Lab4
                 temp1[i] *= temp[0];
                 res += temp1[i];
             }
-            //MessageBox.Show("x: " + x.ToString() + " y: " + res.ToString());
             return res;
         }
 
         private void importButton_Click(object sender, EventArgs e)
         {
             string fileText = "";
-            /*Form2 importForm = new Form2();
-            importForm.Owner = this;
-            importForm.ShowDialog();*/
 
             Main.sourcePath = "";
 
@@ -132,7 +128,6 @@ namespace Lab4
                     ClearForm();
                     string[] separators = {"\n", " ", "\t"};
                     string[] splittedText = fileText.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-                    //string text = "";
 
                     Main.numOfCouples = int.Parse(splittedText[0]);
                     Main.couples = new double[Main.numOfCouples, 2];
@@ -141,14 +136,9 @@ namespace Lab4
                     {
                         for (int j = 0; j < 2; j++)
                         {
-                            //MessageBox.Show("+" + splittedText[1 + i * 2 + j] + "+");
                             Main.couples[i, j] = double.Parse(splittedText[1 + i * 2 + j]);
-                            //text += Main.couples[i, j].ToString() + " ";
                         }
-                        //text += '\n';
                     }
-
-                    //MessageBox.Show(text);
                 }
                 catch
                 {
@@ -163,16 +153,6 @@ namespace Lab4
 
         private void showCouples_Click(object sender, EventArgs e)
         {
-            /*string text = Main.numOfCouples.ToString() + " пар:\n";
-            for (int i = 0; i < Main.numOfCouples; i++)
-            {
-                for (int j = 0; j < 2; j++)
-                {
-                    text += Main.couples[i, j].ToString() + " ";
-                }
-                text += '\n';
-            }*/
-
             string text = string.Format("a: {0}\nb: {1}", Main.a, Main.b);
 
             MessageBox.Show(text);
@@ -258,15 +238,6 @@ namespace Lab4
 
             Main.a = k;
             Main.b = b;
-
-            //label1.Text = "k: " + k.ToString() + "\nb: " + b.ToString();
-
-            /*MessageBox.Show(sumX.ToString() + " " 
-                + sumY.ToString() + " " 
-                + sumXY.ToString() + " "
-                + sumXX.ToString() + " k: "
-                + k.ToString() + " b: "
-                + b.ToString());*/
             Dot dot1 = new Dot(Main.GetMinX() - 1, (Main.GetMinX() - 1) * k + b);
             Dot dot2 = new Dot(Main.GetMaxX() + 1, (Main.GetMaxX() + 1) * k + b);
             Main.lines.Add(new Line(dot1, dot2));
@@ -281,14 +252,6 @@ namespace Lab4
 
         private void shouDotsButton_Click(object sender, EventArgs e)
         {
-            /*string result = "";
-            int i = 1;
-            foreach(Dot x in Main.dots)
-            {
-                result += i.ToString() + ": " + x.x.ToString() + "/" + x.y.ToString() + "\n";
-                i++;
-            }
-            MessageBox.Show(result);*/
             Close();
         }
 
