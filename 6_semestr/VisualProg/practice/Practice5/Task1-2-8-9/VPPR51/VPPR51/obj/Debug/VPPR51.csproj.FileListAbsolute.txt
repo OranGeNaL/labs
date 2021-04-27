@@ -1,0 +1,11 @@
+C:\Users\alway\source\repos\VPPR51\VPPR51\bin\Debug\VPPR51.exe.config
+C:\Users\alway\source\repos\VPPR51\VPPR51\bin\Debug\VPPR51.exe
+C:\Users\alway\source\repos\VPPR51\VPPR51\bin\Debug\VPPR51.pdb
+C:\Users\alway\source\repos\VPPR51\VPPR51\obj\Debug\VPPR51.csprojAssemblyReference.cache
+C:\Users\alway\source\repos\VPPR51\VPPR51\obj\Debug\VPPR51.Form1.resources
+C:\Users\alway\source\repos\VPPR51\VPPR51\obj\Debug\VPPR51.Form2.resources
+C:\Users\alway\source\repos\VPPR51\VPPR51\obj\Debug\VPPR51.Properties.Resources.resources
+C:\Users\alway\source\repos\VPPR51\VPPR51\obj\Debug\VPPR51.csproj.GenerateResource.cache
+C:\Users\alway\source\repos\VPPR51\VPPR51\obj\Debug\VPPR51.csproj.CoreCompileInputs.cache
+C:\Users\alway\source\repos\VPPR51\VPPR51\obj\Debug\VPPR51.exe
+C:\Users\alway\source\repos\VPPR51\VPPR51\obj\Debug\VPPR51.pdb
