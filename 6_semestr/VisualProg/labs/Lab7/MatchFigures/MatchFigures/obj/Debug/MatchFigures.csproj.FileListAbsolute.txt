@@ -1,0 +1,10 @@
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab7\MatchFigures\MatchFigures\bin\Debug\MatchFigures.exe.config
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab7\MatchFigures\MatchFigures\bin\Debug\MatchFigures.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab7\MatchFigures\MatchFigures\bin\Debug\MatchFigures.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab7\MatchFigures\MatchFigures\obj\Debug\MatchFigures.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab7\MatchFigures\MatchFigures\obj\Debug\MatchFigures.Form1.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab7\MatchFigures\MatchFigures\obj\Debug\MatchFigures.Properties.Resources.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab7\MatchFigures\MatchFigures\obj\Debug\MatchFigures.csproj.GenerateResource.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab7\MatchFigures\MatchFigures\obj\Debug\MatchFigures.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab7\MatchFigures\MatchFigures\obj\Debug\MatchFigures.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\labs\Lab7\MatchFigures\MatchFigures\obj\Debug\MatchFigures.pdb
