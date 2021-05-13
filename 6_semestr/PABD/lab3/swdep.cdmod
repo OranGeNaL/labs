@@ -1,0 +1,124 @@
+CASE-SWDEP CDM File: 'swdep.cdmod'
+model 1282 722
+
+table Course
+pos 904 206
+size 150 50
+row number_course INTEGER 
+
+table Discipline
+pos 918 446
+size 150 70
+row id_disc INTEGER PK/NN/UQ
+row name_disc VARCHAR(50) NN/UQ
+
+table Group
+pos 28 348
+size 150 130
+row id_group INTEGER PK/NN/UQ
+row name_group VARCHAR(50) NN/UQ
+row enter_date DATE NN
+
+table Gupr
+pos 548 452
+size 150 70
+row duration INTEGER 
+
+table Gupr_elem
+pos 337 112
+size 150 70
+row id_gupr_elem INTEGER PK/NN/UQ
+row name_gupr_elem VARCHAR(50) NN/UQ
+
+table Kaf_Rasp
+pos 372 609
+size 150 90
+
+table Kafedra
+pos 555 109
+size 150 70
+row id_kaf INTEGER PK/NN/UQ
+row name_kaf VARCHAR(50) NN/UQ
+
+table Semestr
+pos 744 115
+size 150 50
+row id_semestr INTEGER PK
+
+table Speciality
+pos 163 265
+size 150 70
+row id_spec INTEGER PK/NN/UQ
+row name_spec VARCHAR(50) NN/UQ
+
+table Uch_Load
+pos 1094 62
+size 150 130
+row hours INTEGER 
+
+table Uch_Plan
+pos 129 19
+size 150 90
+row id_uch INTEGER PK/NN/UQ
+row name_uch VARCHAR(50) NN/UQ
+
+table number_weeks
+pos 1099 360
+size 150 50
+row number INTEGER 
+
+relationship Course Gupr
+type aggregate
+m mandatory mandatory
+
+relationship Discipline Kaf_Rasp
+type aggregate
+m mandatory mandatory
+
+relationship Discipline Uch_Load
+type aggregate
+m mandatory mandatory
+
+relationship Gupr_elem Gupr
+type one-many
+m mandatory mandatory
+
+relationship Kafedra Kaf_Rasp
+type one-many
+m mandatory mandatory
+
+relationship Semestr Uch_Load
+type aggregate
+m mandatory mandatory
+
+relationship Speciality Kaf_Rasp
+type aggregate
+m mandatory mandatory
+
+relationship Speciality Uch_Plan
+type one-many
+m mandatory mandatory
+
+relationship Uch_Plan Group
+type one-many
+m mandatory mandatory
+
+relationship Uch_Plan Uch_Load
+type aggregate
+m mandatory mandatory
+
+relationship number_weeks Gupr
+type aggregate
+m mandatory mandatory
+
+frow Uch_Plan id_uch Group
+frow Speciality id_spec Group
+frow Gupr_elem id_gupr_elem Gupr
+frow Speciality id_spec Kaf_Rasp PK
+frow Discipline id_disc Kaf_Rasp PK
+frow Kafedra id_kaf Kaf_Rasp
+frow Uch_Plan id_uch Uch_Load PK
+frow Speciality id_spec Uch_Load
+frow Semestr id_semestr Uch_Load PK
+frow Discipline id_disc Uch_Load PK
+frow Speciality id_spec Uch_Plan

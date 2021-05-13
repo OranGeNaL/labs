@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo "$1" >> /etc/crontab
 systemctl stop crond.service
+echo "$1" >> /etc/crontab
 systemctl start crond.service

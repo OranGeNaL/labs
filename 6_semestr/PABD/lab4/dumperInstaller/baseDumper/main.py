@@ -9,7 +9,7 @@ location = sys.argv[0][:-7]
 
 def dump():
     filename = location + sys.argv[1] + "_" + datetime.datetime.now().strftime('%Y-%m-%d_%H:%M:%S')
-    os.system("./dump.sh " + filename + " " + sys.argv[1])
+    os.system(location + "/dump.sh " + filename + " " + sys.argv[1] + " " + location)
     return "Dump created with name " + filename
 
 
