@@ -37,5 +37,10 @@ namespace Prog
 
             return poly;
         }
+
+        public void Move(int x, int y)
+        {
+            basePoint = new Point(basePoint.X + x, basePoint.Y + y);
+        }
     }
 }

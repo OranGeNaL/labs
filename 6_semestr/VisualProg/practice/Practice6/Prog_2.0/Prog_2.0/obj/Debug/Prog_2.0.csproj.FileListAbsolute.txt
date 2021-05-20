@@ -1,0 +1,10 @@
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice6\Prog_2.0\Prog_2.0\bin\Debug\Prog_2.0.exe.config
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice6\Prog_2.0\Prog_2.0\bin\Debug\Prog_2.0.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice6\Prog_2.0\Prog_2.0\bin\Debug\Prog_2.0.pdb
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice6\Prog_2.0\Prog_2.0\obj\Debug\Prog_2.0.csprojAssemblyReference.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice6\Prog_2.0\Prog_2.0\obj\Debug\Prog_2._0.Form1.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice6\Prog_2.0\Prog_2.0\obj\Debug\Prog_2._0.Properties.Resources.resources
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice6\Prog_2.0\Prog_2.0\obj\Debug\Prog_2.0.csproj.GenerateResource.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice6\Prog_2.0\Prog_2.0\obj\Debug\Prog_2.0.csproj.CoreCompileInputs.cache
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice6\Prog_2.0\Prog_2.0\obj\Debug\Prog_2.0.exe
+C:\Users\pshen\Documents\GitHub\labs\6_semestr\VisualProg\practice\Practice6\Prog_2.0\Prog_2.0\obj\Debug\Prog_2.0.pdb
