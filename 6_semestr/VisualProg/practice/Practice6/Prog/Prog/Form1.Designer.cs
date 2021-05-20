@@ -36,12 +36,14 @@ namespace Prog
             this.rightButton = new System.Windows.Forms.Button();
             this.downButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(9, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(641, 479);
             this.panel1.TabIndex = 0;
@@ -50,7 +52,7 @@ namespace Prog
             // upButton
             // 
             this.upButton.Location = new System.Drawing.Point(715, 212);
-            this.upButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.upButton.Margin = new System.Windows.Forms.Padding(2);
             this.upButton.Name = "upButton";
             this.upButton.Size = new System.Drawing.Size(38, 41);
             this.upButton.TabIndex = 1;
@@ -62,7 +64,7 @@ namespace Prog
             // leftButton
             // 
             this.leftButton.Location = new System.Drawing.Point(675, 258);
-            this.leftButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.leftButton.Margin = new System.Windows.Forms.Padding(2);
             this.leftButton.Name = "leftButton";
             this.leftButton.Size = new System.Drawing.Size(38, 41);
             this.leftButton.TabIndex = 1;
@@ -73,7 +75,7 @@ namespace Prog
             // rightButton
             // 
             this.rightButton.Location = new System.Drawing.Point(757, 258);
-            this.rightButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rightButton.Margin = new System.Windows.Forms.Padding(2);
             this.rightButton.Name = "rightButton";
             this.rightButton.Size = new System.Drawing.Size(38, 41);
             this.rightButton.TabIndex = 1;
@@ -84,7 +86,7 @@ namespace Prog
             // downButton
             // 
             this.downButton.Location = new System.Drawing.Point(715, 303);
-            this.downButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.downButton.Margin = new System.Windows.Forms.Padding(2);
             this.downButton.Name = "downButton";
             this.downButton.Size = new System.Drawing.Size(38, 41);
             this.downButton.TabIndex = 1;
@@ -98,17 +100,40 @@ namespace Prog
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(675, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 68);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Авто";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(675, 120);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 68);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Ручное управление";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 499);
+            this.ClientSize = new System.Drawing.Size(824, 499);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.downButton);
             this.Controls.Add(this.rightButton);
             this.Controls.Add(this.leftButton);
             this.Controls.Add(this.upButton);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -124,6 +149,8 @@ namespace Prog
         private System.Windows.Forms.Button rightButton;
         private System.Windows.Forms.Button downButton;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
