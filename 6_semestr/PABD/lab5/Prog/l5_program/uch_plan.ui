@@ -1,33 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Course</class>
- <widget class="QDialog" name="Course">
+ <class>Uch_Plan</class>
+ <widget class="QDialog" name="Uch_Plan">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>533</width>
-    <height>377</height>
+    <width>802</width>
+    <height>591</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Курс</string>
+   <string>Учебный план</string>
   </property>
-  <widget class="QTableView" name="tableView">
+  <widget class="QTableView" name="uch_planTableView">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>40</y>
-     <width>451</width>
-     <height>261</height>
+     <x>20</x>
+     <y>50</y>
+     <width>441</width>
+     <height>431</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTableView" name="specialityTableView">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>50</y>
+     <width>291</width>
+     <height>431</height>
     </rect>
    </property>
   </widget>
   <widget class="QPushButton" name="addButton">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>320</y>
+     <x>20</x>
+     <y>490</y>
      <width>87</width>
      <height>27</height>
     </rect>
@@ -36,11 +46,11 @@
     <string>Добавить</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="deleteButton">
+  <widget class="QPushButton" name="delButton">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>320</y>
+     <x>120</x>
+     <y>490</y>
      <width>87</width>
      <height>27</height>
     </rect>

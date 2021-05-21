@@ -9,7 +9,7 @@
 #include <QDebug>
 
 #include <authorization.h>
-#include <course.h>
+#include <uch_plan.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,7 +25,7 @@ public:
     QSqlRelationalTableModel* model;
 
     Authorization* formAutorization;
-    Course* formCourse;
+    Uch_Plan* formUch_Plan;
 
     QMenu* mainMenu;
     QMenu* mainMenuTables;

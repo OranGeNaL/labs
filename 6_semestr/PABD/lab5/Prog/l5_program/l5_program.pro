@@ -12,19 +12,19 @@ CONFIG += c++11
 
 SOURCES += \
     authorization.cpp \
-    course.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    uch_plan.cpp
 
 HEADERS += \
     authorization.h \
-    course.h \
-    mainwindow.h
+    mainwindow.h \
+    uch_plan.h
 
 FORMS += \
     authorization.ui \
-    course.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    uch_plan.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

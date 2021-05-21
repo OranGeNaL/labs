@@ -48,7 +48,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->menubar->addMenu(otherMenuTables);
 
     formAutorization = new Authorization();
-    formCourse = new Course();
+    formUch_Plan = new Uch_Plan(db);
 
     connect(formAutorization, SIGNAL(sendConnect()), this,
     SLOT(Connect()));
@@ -73,6 +73,23 @@ void MainWindow::OpenF(QAction* a)
             break;
         case 34458455: selectTable("discipline");
             break;
+        case 2821064468: selectTable("speciality");
+            break;
+        case 2581877950: selectTable("gupr_elem");
+            break;
+    case 1721633621:
+        formUch_Plan->Update();
+        formUch_Plan->show();
+        break;
+    case 1202426404:
+        selectTable("kafedra");
+        break;
+    case 4111733963:
+        selectTable("number_weeks");
+        break;
+    case 3415898536:
+        selectTable("semestr");
+        break;
         /*case 391431443: formDiscipline->show();
         break;
         case 2821064468: formSpec->show();
@@ -90,6 +107,8 @@ void MainWindow::selectTable(QString nameTable)
     ui->tableView->show();
     table = new QSqlRelationalTableModel(0, db);
     table->setTable(nameTable);
+    ui->tableView->setModel(table);
+    ui->tableView->showColumn(0);
 
     if(nameTable == "discipline")
     {
@@ -101,9 +120,34 @@ void MainWindow::selectTable(QString nameTable)
         table->setHeaderData(0, Qt::Horizontal, QObject::tr("Номер курса"), Qt::DisplayRole);
     }
 
-    table->select();
+    else if(nameTable == "number_weeks")
+    {
+        table->setHeaderData(0, Qt::Horizontal, QObject::tr("Количество недель"), Qt::DisplayRole);
+    }
 
-    ui->tableView->setModel(table);
+    else if(nameTable == "speciality")
+    {
+        table->setHeaderData(1, Qt::Horizontal, QObject::tr("Специальность"), Qt::DisplayRole);
+    }
+
+    else if(nameTable == "gupr_elem")
+    {
+        table->setHeaderData(1, Qt::Horizontal, QObject::tr("Элемент ГУПР"), Qt::DisplayRole);
+    }
+
+    else if(nameTable == "kafedra")
+    {
+        table->setHeaderData(1, Qt::Horizontal, QObject::tr("Кафедра"), Qt::DisplayRole);
+        ui->tableView->hideColumn(0);
+    }
+
+    else if(nameTable == "semestr")
+    {
+        table->setHeaderData(0, Qt::Horizontal, QObject::tr("Семестр"), Qt::DisplayRole);
+    }
+
+    table->select();
+    //ui->tableView->
 }
 
 unsigned MainWindow::const_hash(char const *input)
