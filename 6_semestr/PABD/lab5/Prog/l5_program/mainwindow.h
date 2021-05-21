@@ -2,6 +2,14 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QSqlDatabase>
+#include <QMessageBox>
+#include <QSqlError>
+#include <QSqlRelationalTableModel>
+#include <QDebug>
+
+#include <authorization.h>
+#include <course.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,8 +22,40 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QSqlRelationalTableModel* model;
+
+    Authorization* formAutorization;
+    Course* formCourse;
+
+    QMenu* mainMenu;
+    QMenu* mainMenuTables;
+    QMenu* otherMenuTables;
+
+    QAction* actAuthorisation;
+    QAction* actUch_Load;
+    QAction* actCourse;
+    QAction* actDiscipline;
+    QAction* actSpeciality;
+    QAction* actUch_Plan;
+    QAction* actGruppa;
+    QAction* actGupr;
+    QAction* actGupr_elem;
+    QAction* actKafedra;
+    QAction* actKaf_Rasp;
+    QAction* actSemestr;
+    QAction* actNumber_Weeks;
 
 private:
     Ui::MainWindow *ui;
+    QSqlDatabase db;
+    QSqlRelationalTableModel* table;
+    void selectTable(QString nameTable);
+
+    unsigned const_hash(char const *);
+
+private slots:
+    void Connect();
+    void Disconnect();
+    void OpenF(QAction*);
 };
 #endif // MAINWINDOW_H

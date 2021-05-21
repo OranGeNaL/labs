@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1572edf2-cf14-49e6-b047-be9cc244fdf8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab4/dumperInstaller/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab4/dumperInstaller/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/l5_program.pro" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/l5_program.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/l5_program.pro.user" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/l5_program.pro.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/mainwindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/mainwindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/mainwindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/mainwindow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/mainwindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/mainwindow.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

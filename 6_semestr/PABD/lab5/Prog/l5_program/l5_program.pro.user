@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.15.0, 2021-05-16T14:50:02. -->
+<!-- Written by QtCreator 4.15.0, 2021-05-21T10:21:41. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -82,6 +82,9 @@
     <valuelist type="QVariantList" key="ClangTools.SelectedFiles"/>
     <valuelist type="QVariantList" key="ClangTools.SuppressedDiagnostics"/>
     <value type="bool" key="ClangTools.UseGlobalSettings">true</value>
+   </valuemap>
+   <valuemap type="QVariantMap" key="CppEditor.QuickFix">
+    <value type="bool" key="UseGlobalSettings">true</value>
    </valuemap>
   </valuemap>
  </data>
@@ -291,7 +294,10 @@
     </valuelist>
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
-    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes">
+     <value type="QString">&lt;переменная&gt;=&lt;значение&gt;</value>
+     <value type="QString">LD_LIBRARY_PATH=/home/orangenal/Qt/5.15.2/gcc_64/lib:/home/orangenal/Post/lib</value>
+    </valuelist>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/orangenal/Documents/labs/6_semestr/PABD/lab5/Prog/l5_program/l5_program.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/orangenal/Documents/labs/6_semestr/PABD/lab5/Prog/l5_program/l5_program.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
