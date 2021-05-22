@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Просмотр PABD</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableView" name="tableView">
@@ -97,98 +97,6 @@
     </property>
     <property name="text">
      <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="disciplineCombo">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>111</width>
-      <height>27</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="disciplineLabel">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>91</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Дисциплина</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="disciplineLabel_2">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>10</y>
-      <width>111</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Год зачисления</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="yearCombo">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>40</y>
-      <width>111</width>
-      <height>27</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="groupCombo">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>40</y>
-      <width>111</width>
-      <height>27</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="disciplineLabel_3">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>10</y>
-      <width>91</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Группа</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="specialityCombo">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>40</y>
-      <width>111</width>
-      <height>27</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="disciplineLabel_4">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>10</y>
-      <width>111</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Специальность</string>
     </property>
    </widget>
   </widget>

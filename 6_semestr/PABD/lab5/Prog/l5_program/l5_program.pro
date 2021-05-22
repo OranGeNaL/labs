@@ -12,17 +12,23 @@ CONFIG += c++11
 
 SOURCES += \
     authorization.cpp \
+    gruppa.cpp \
+    gupr.cpp \
     main.cpp \
     mainwindow.cpp \
     uch_plan.cpp
 
 HEADERS += \
     authorization.h \
+    gruppa.h \
+    gupr.h \
     mainwindow.h \
     uch_plan.h
 
 FORMS += \
     authorization.ui \
+    gruppa.ui \
+    gupr.ui \
     mainwindow.ui \
     uch_plan.ui
 

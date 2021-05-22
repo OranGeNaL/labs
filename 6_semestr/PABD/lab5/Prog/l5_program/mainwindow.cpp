@@ -49,6 +49,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     formAutorization = new Authorization();
     formUch_Plan = new Uch_Plan(db);
+    formGupr = new Gupr(db);
+    formGruppa = new Gruppa(db);
+
 
     connect(formAutorization, SIGNAL(sendConnect()), this,
     SLOT(Connect()));
@@ -56,6 +59,8 @@ MainWindow::MainWindow(QWidget *parent)
     this, SLOT(Disconnect()));
 
     connect(ui->menubar, SIGNAL(triggered(QAction*)), this, SLOT(OpenF(QAction*)));
+
+    formAutorization->show();
 }
 
 MainWindow::~MainWindow()
@@ -90,6 +95,12 @@ void MainWindow::OpenF(QAction* a)
     case 3415898536:
         selectTable("semestr");
         break;
+    case 1436716544:
+        formGupr->Update();
+        formGupr->show();
+    case 3862366129:
+        formGruppa->Update();
+        formGruppa->show();
         /*case 391431443: formDiscipline->show();
         break;
         case 2821064468: formSpec->show();
@@ -171,9 +182,9 @@ void MainWindow::Connect()
     if(!db.open())
         QMessageBox::critical(this, tr("ERROR!"),
         db.lastError().databaseText());
-    else
+    /*else
     QMessageBox::information(this, tr("SUCCESS!"),
-    tr("Соединение установлено! Выберите таблицу для работы"));
+    tr("Соединение установлено! Выберите таблицу для работы"));*/
     model = new QSqlRelationalTableModel(0, db);
     ui->tableView->setModel(model);
 }

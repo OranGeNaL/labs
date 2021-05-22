@@ -10,6 +10,8 @@
 
 #include <authorization.h>
 #include <uch_plan.h>
+#include <gupr.h>
+#include <gruppa.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,6 +28,8 @@ public:
 
     Authorization* formAutorization;
     Uch_Plan* formUch_Plan;
+    Gupr* formGupr;
+    Gruppa* formGruppa;
 
     QMenu* mainMenu;
     QMenu* mainMenuTables;
