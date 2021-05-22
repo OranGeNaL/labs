@@ -109,10 +109,12 @@ void MainWindow::selectTable(QString nameTable)
     table->setTable(nameTable);
     ui->tableView->setModel(table);
     ui->tableView->showColumn(0);
+    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
     if(nameTable == "discipline")
     {
         table->setHeaderData(1, Qt::Horizontal, QObject::tr("Наименование дисциплины"), Qt::DisplayRole);
+        ui->tableView->hideColumn(0);
     }
 
     else if(nameTable == "course")

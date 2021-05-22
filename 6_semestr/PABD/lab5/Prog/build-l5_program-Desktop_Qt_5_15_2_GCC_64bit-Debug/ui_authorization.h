@@ -53,6 +53,7 @@ public:
         editPassword = new QLineEdit(Authorization);
         editPassword->setObjectName(QString::fromUtf8("editPassword"));
         editPassword->setGeometry(QRect(190, 150, 113, 27));
+        editPassword->setEchoMode(QLineEdit::Password);
         label_3 = new QLabel(Authorization);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(190, 120, 91, 19));
@@ -83,6 +84,7 @@ public:
         editHost->setText(QCoreApplication::translate("Authorization", "localhost", nullptr));
         editUser->setText(QCoreApplication::translate("Authorization", "orangenal", nullptr));
         label_2->setText(QCoreApplication::translate("Authorization", "\320\237\320\276\320\273\321\214\320\267\320\276\320\262\320\260\321\202\320\265\320\273\321\214", nullptr));
+        editPassword->setText(QCoreApplication::translate("Authorization", "1488", nullptr));
         label_3->setText(QCoreApplication::translate("Authorization", "\320\237\320\260\321\200\320\276\320\273\321\214", nullptr));
         label_4->setText(QCoreApplication::translate("Authorization", "\320\237\320\276\321\200\321\202", nullptr));
         connectButton->setText(QCoreApplication::translate("Authorization", "\320\241\320\276\320\265\320\264\320\270\320\275\320\270\321\202\321\214\321\201\321\217", nullptr));

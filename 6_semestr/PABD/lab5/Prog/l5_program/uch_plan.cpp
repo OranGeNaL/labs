@@ -44,4 +44,6 @@ void Uch_Plan::Update()
     ui->specialityTableView->setModel(specTable);
     ui->uch_planTableView->setModel(uch_planTable);
     ui->uch_planTableView->hideColumn(0);
+    ui->specialityTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->uch_planTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
