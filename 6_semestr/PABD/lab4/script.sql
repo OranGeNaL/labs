@@ -14,9 +14,9 @@ CREATE TABLE IF NOT EXISTS Gupr (duration INTEGER, Gupr_elem_id_gupr_elem INTEGE
 
 CREATE TABLE IF NOT EXISTS Kafedra (id_kaf SERIAL, name_kaf VARCHAR(50) UNIQUE NOT NULL, PRIMARY KEY (id_kaf));
 
-CREATE TABLE IF NOT EXISTS Kaf_Rasp (Speciality_id_spec INT, Discipline_id_disc INTEGER, Kafedra_id_kaf INTEGER, PRIMARY KEY (Speciality_id_spec, Discipline_id_disc),  FOREIGN KEY (Discipline_id_disc) REFERENCES Discipline (id_disc) ON DELETE RESTRICT ON UPDATE RESTRICT,  FOREIGN KEY (Kafedra_id_kaf) REFERENCES Kafedra (id_kaf) ON DELETE RESTRICT ON UPDATE RESTRICT,  FOREIGN KEY (Speciality_id_spec) REFERENCES Speciality (id_spec) ON DELETE RESTRICT ON UPDATE RESTRICT);
+CREATE TABLE IF NOT EXISTS Kaf_Rasp (Speciality_id_spec INT, Discipline_id_disc INTEGER, Kafedra_id_kaf INTEGER, PRIMARY KEY (Speciality_id_spec, Discipline_id_disc),  FOREIGN KEY (Discipline_id_disc) REFERENCES Discipline (id_disc) ON DELETE RESTRICT ON UPDATE RESTRICT,  FOREIGN KEY (Kafedra_id_kaf) REFERENCES Kafedra (id_kaf) ON DELETE RESTRICT ON UPDATE RESTRICT,  FOREIGN KEY (Speciality_id_spec) REFERENCES Specialitgupr_ely (id_spec) ON DELETE RESTRICT ON UPDATE RESTRICT);
 
-CREATE TABLE IF NOT EXISTS Semestr (id_semestr SERIAL, PRIMARY KEY (id_semestr));
+CREATE TABLE IF NOT EXISTS Semestr (id_semestr INT, PRIMARY KEY (id_semestr));
 
 CREATE TABLE IF NOT EXISTS Uch_Load (hours INTEGER, Uch_Plan_id_uch INTEGER, Speciality_id_spec INTEGER, Semestr_id_semestr INTEGER, Discipline_id_disc INTEGER, PRIMARY KEY (Uch_Plan_id_uch, Semestr_id_semestr, Discipline_id_disc),  FOREIGN KEY (Discipline_id_disc) REFERENCES Discipline (id_disc) ON DELETE RESTRICT ON UPDATE RESTRICT,  FOREIGN KEY (Semestr_id_semestr) REFERENCES Semestr (id_semestr) ON DELETE RESTRICT ON UPDATE RESTRICT,  FOREIGN KEY (Speciality_id_spec) REFERENCES Speciality (id_spec) ON DELETE RESTRICT ON UPDATE RESTRICT,  FOREIGN KEY (Uch_Plan_id_uch) REFERENCES Uch_Plan (id_uch) ON DELETE RESTRICT ON UPDATE RESTRICT);
 

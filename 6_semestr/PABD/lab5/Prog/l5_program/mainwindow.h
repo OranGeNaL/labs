@@ -6,12 +6,17 @@
 #include <QMessageBox>
 #include <QSqlError>
 #include <QSqlRelationalTableModel>
+#include <QSqlQuery>
+#include <QSqlRecord>
+#include <QSqlField>
 #include <QDebug>
 
 #include <authorization.h>
 #include <uch_plan.h>
 #include <gupr.h>
 #include <gruppa.h>
+#include <extensibleadd.h>
+#include <kaf_rasp.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -30,6 +35,8 @@ public:
     Uch_Plan* formUch_Plan;
     Gupr* formGupr;
     Gruppa* formGruppa;
+    ExtensibleAdd* formAdd;
+    Kaf_Rasp* formKaf;
 
     QMenu* mainMenu;
     QMenu* mainMenuTables;
@@ -49,6 +56,8 @@ public:
     QAction* actSemestr;
     QAction* actNumber_Weeks;
 
+    QString selectedTable;
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
@@ -60,6 +69,9 @@ private:
 private slots:
     void Connect();
     void Disconnect();
+    void Add();
+    void Dismiss();
     void OpenF(QAction*);
+    void on_addButton_clicked();
 };
 #endif // MAINWINDOW_H

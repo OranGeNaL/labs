@@ -53,24 +53,32 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../l5_program/authorization.cpp \
+		../l5_program/extensibleadd.cpp \
 		../l5_program/gruppa.cpp \
 		../l5_program/gupr.cpp \
+		../l5_program/kaf_rasp.cpp \
 		../l5_program/main.cpp \
 		../l5_program/mainwindow.cpp \
 		../l5_program/uch_plan.cpp moc_authorization.cpp \
+		moc_extensibleadd.cpp \
 		moc_gruppa.cpp \
 		moc_gupr.cpp \
+		moc_kaf_rasp.cpp \
 		moc_mainwindow.cpp \
 		moc_uch_plan.cpp
 OBJECTS       = authorization.o \
+		extensibleadd.o \
 		gruppa.o \
 		gupr.o \
+		kaf_rasp.o \
 		main.o \
 		mainwindow.o \
 		uch_plan.o \
 		moc_authorization.o \
+		moc_extensibleadd.o \
 		moc_gruppa.o \
 		moc_gupr.o \
+		moc_kaf_rasp.o \
 		moc_mainwindow.o \
 		moc_uch_plan.o
 DIST          = /home/orangenal/Qt/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
@@ -251,12 +259,16 @@ DIST          = /home/orangenal/Qt/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/orangenal/Qt/5.15.2/gcc_64/mkspecs/features/yacc.prf \
 		/home/orangenal/Qt/5.15.2/gcc_64/mkspecs/features/lex.prf \
 		../l5_program/l5_program.pro ../l5_program/authorization.h \
+		../l5_program/extensibleadd.h \
 		../l5_program/gruppa.h \
 		../l5_program/gupr.h \
+		../l5_program/kaf_rasp.h \
 		../l5_program/mainwindow.h \
 		../l5_program/uch_plan.h ../l5_program/authorization.cpp \
+		../l5_program/extensibleadd.cpp \
 		../l5_program/gruppa.cpp \
 		../l5_program/gupr.cpp \
+		../l5_program/kaf_rasp.cpp \
 		../l5_program/main.cpp \
 		../l5_program/mainwindow.cpp \
 		../l5_program/uch_plan.cpp
@@ -268,7 +280,7 @@ TARGET        = l5_program
 first: all
 ####### Build rules
 
-l5_program: ui_authorization.h ui_gruppa.h ui_gupr.h ui_mainwindow.h ui_uch_plan.h $(OBJECTS)  
+l5_program: ui_authorization.h ui_extensibleadd.h ui_gruppa.h ui_gupr.h ui_kaf_rasp.h ui_mainwindow.h ui_uch_plan.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../l5_program/l5_program.pro /home/orangenal/Qt/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf /home/orangenal/Qt/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
@@ -643,9 +655,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/orangenal/Qt/5.15.2/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../l5_program/authorization.h ../l5_program/gruppa.h ../l5_program/gupr.h ../l5_program/mainwindow.h ../l5_program/uch_plan.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../l5_program/authorization.cpp ../l5_program/gruppa.cpp ../l5_program/gupr.cpp ../l5_program/main.cpp ../l5_program/mainwindow.cpp ../l5_program/uch_plan.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../l5_program/authorization.ui ../l5_program/gruppa.ui ../l5_program/gupr.ui ../l5_program/mainwindow.ui ../l5_program/uch_plan.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../l5_program/authorization.h ../l5_program/extensibleadd.h ../l5_program/gruppa.h ../l5_program/gupr.h ../l5_program/kaf_rasp.h ../l5_program/mainwindow.h ../l5_program/uch_plan.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../l5_program/authorization.cpp ../l5_program/extensibleadd.cpp ../l5_program/gruppa.cpp ../l5_program/gupr.cpp ../l5_program/kaf_rasp.cpp ../l5_program/main.cpp ../l5_program/mainwindow.cpp ../l5_program/uch_plan.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../l5_program/authorization.ui ../l5_program/extensibleadd.ui ../l5_program/gruppa.ui ../l5_program/gupr.ui ../l5_program/kaf_rasp.ui ../l5_program/mainwindow.ui ../l5_program/uch_plan.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -677,9 +689,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /home/orangenal/Qt/5.15.2/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -Wextra -dM -E -o moc_predefs.h /home/orangenal/Qt/5.15.2/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_authorization.cpp moc_gruppa.cpp moc_gupr.cpp moc_mainwindow.cpp moc_uch_plan.cpp
+compiler_moc_header_make_all: moc_authorization.cpp moc_extensibleadd.cpp moc_gruppa.cpp moc_gupr.cpp moc_kaf_rasp.cpp moc_mainwindow.cpp moc_uch_plan.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_authorization.cpp moc_gruppa.cpp moc_gupr.cpp moc_mainwindow.cpp moc_uch_plan.cpp
+	-$(DEL_FILE) moc_authorization.cpp moc_extensibleadd.cpp moc_gruppa.cpp moc_gupr.cpp moc_kaf_rasp.cpp moc_mainwindow.cpp moc_uch_plan.cpp
 moc_authorization.cpp: ../l5_program/authorization.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QWidget \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qwidget.h \
@@ -787,6 +799,115 @@ moc_authorization.cpp: ../l5_program/authorization.h \
 		moc_predefs.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/bin/moc
 	/home/orangenal/Qt/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/orangenal/Documents/labs/6_semestr/PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/orangenal/Qt/5.15.2/gcc_64/mkspecs/linux-g++ -I/home/orangenal/Documents/labs/6_semestr/PABD/lab5/Prog/l5_program -I/home/orangenal/Qt/5.15.2/gcc_64/include -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/c++/11/x86_64-redhat-linux -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-redhat-linux/11/include -I/usr/local/include -I/usr/include ../l5_program/authorization.h -o moc_authorization.cpp
+
+moc_extensibleadd.cpp: ../l5_program/extensibleadd.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QDialog \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qglobal.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qconfig.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qlogging.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qflags.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmutex.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtgui-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobject.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstring.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qchar.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringview.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qlist.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qiterator.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qpair.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qvector.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qpoint.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qregexp.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmargins.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qrect.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsize.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpalette.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qcolor.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qrgb.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qrgba64.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qbrush.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qmatrix.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qregion.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qdatastream.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qline.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtransform.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qimage.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpixelformat.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpixmap.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qhash.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qfont.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qfontinfo.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qcursor.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qkeysequence.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qevent.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qvariant.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmap.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qdebug.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qlocale.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qset.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qurl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qurlquery.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qfile.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qvector2d.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		moc_predefs.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/bin/moc
+	/home/orangenal/Qt/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/orangenal/Documents/labs/6_semestr/PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/orangenal/Qt/5.15.2/gcc_64/mkspecs/linux-g++ -I/home/orangenal/Documents/labs/6_semestr/PABD/lab5/Prog/l5_program -I/home/orangenal/Qt/5.15.2/gcc_64/include -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/c++/11/x86_64-redhat-linux -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-redhat-linux/11/include -I/usr/local/include -I/usr/include ../l5_program/extensibleadd.h -o moc_extensibleadd.cpp
 
 moc_gruppa.cpp: ../l5_program/gruppa.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QDialog \
@@ -897,11 +1018,22 @@ moc_gruppa.cpp: ../l5_program/gruppa.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqldatabase.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qtsqlglobal.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qtsql-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlRelationalTableModel \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqltablemodel.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlquerymodel.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlRecord \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlQuery \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlquery.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlField \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlfield.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlError \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlerror.h \
+		../l5_program/extensibleadd.h \
 		moc_predefs.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/bin/moc
 	/home/orangenal/Qt/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/orangenal/Documents/labs/6_semestr/PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/orangenal/Qt/5.15.2/gcc_64/mkspecs/linux-g++ -I/home/orangenal/Documents/labs/6_semestr/PABD/lab5/Prog/l5_program -I/home/orangenal/Qt/5.15.2/gcc_64/include -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/c++/11/x86_64-redhat-linux -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-redhat-linux/11/include -I/usr/local/include -I/usr/include ../l5_program/gruppa.h -o moc_gruppa.cpp
@@ -1024,6 +1156,124 @@ moc_gupr.cpp: ../l5_program/gupr.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/bin/moc
 	/home/orangenal/Qt/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/orangenal/Documents/labs/6_semestr/PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/orangenal/Qt/5.15.2/gcc_64/mkspecs/linux-g++ -I/home/orangenal/Documents/labs/6_semestr/PABD/lab5/Prog/l5_program -I/home/orangenal/Qt/5.15.2/gcc_64/include -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/c++/11/x86_64-redhat-linux -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-redhat-linux/11/include -I/usr/local/include -I/usr/include ../l5_program/gupr.h -o moc_gupr.cpp
 
+moc_kaf_rasp.cpp: ../l5_program/kaf_rasp.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QDialog \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qglobal.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qconfig.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qlogging.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qflags.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmutex.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtgui-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobject.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstring.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qchar.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringview.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qlist.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qiterator.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qpair.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qvector.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qpoint.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qregexp.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmargins.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qrect.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsize.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpalette.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qcolor.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qrgb.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qrgba64.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qbrush.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qmatrix.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qregion.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qdatastream.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qline.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtransform.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qimage.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpixelformat.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpixmap.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qhash.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qfont.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qfontinfo.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qcursor.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qkeysequence.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qevent.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qvariant.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmap.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qdebug.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qlocale.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qset.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qurl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qurlquery.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qfile.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qvector2d.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlDatabase \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qtsql-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlRelationalTableModel \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		moc_predefs.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/bin/moc
+	/home/orangenal/Qt/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/orangenal/Documents/labs/6_semestr/PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/orangenal/Qt/5.15.2/gcc_64/mkspecs/linux-g++ -I/home/orangenal/Documents/labs/6_semestr/PABD/lab5/Prog/l5_program -I/home/orangenal/Qt/5.15.2/gcc_64/include -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/c++/11/x86_64-redhat-linux -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-redhat-linux/11/include -I/usr/local/include -I/usr/include ../l5_program/kaf_rasp.h -o moc_kaf_rasp.cpp
+
 moc_mainwindow.cpp: ../l5_program/mainwindow.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -1145,6 +1395,12 @@ moc_mainwindow.cpp: ../l5_program/mainwindow.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqltablemodel.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlquerymodel.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlQuery \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlquery.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlRecord \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlField \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlfield.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/QDebug \
 		../l5_program/authorization.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QWidget \
@@ -1152,6 +1408,8 @@ moc_mainwindow.cpp: ../l5_program/mainwindow.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QDialog \
 		../l5_program/gupr.h \
 		../l5_program/gruppa.h \
+		../l5_program/extensibleadd.h \
+		../l5_program/kaf_rasp.h \
 		moc_predefs.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/bin/moc
 	/home/orangenal/Qt/5.15.2/gcc_64/bin/moc $(DEFINES) --include /home/orangenal/Documents/labs/6_semestr/PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h -I/home/orangenal/Qt/5.15.2/gcc_64/mkspecs/linux-g++ -I/home/orangenal/Documents/labs/6_semestr/PABD/lab5/Prog/l5_program -I/home/orangenal/Qt/5.15.2/gcc_64/include -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql -I/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/c++/11/x86_64-redhat-linux -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-redhat-linux/11/include -I/usr/local/include -I/usr/include ../l5_program/mainwindow.h -o moc_mainwindow.cpp
@@ -1278,12 +1536,16 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_authorization.h ui_gruppa.h ui_gupr.h ui_mainwindow.h ui_uch_plan.h
+compiler_uic_make_all: ui_authorization.h ui_extensibleadd.h ui_gruppa.h ui_gupr.h ui_kaf_rasp.h ui_mainwindow.h ui_uch_plan.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_authorization.h ui_gruppa.h ui_gupr.h ui_mainwindow.h ui_uch_plan.h
+	-$(DEL_FILE) ui_authorization.h ui_extensibleadd.h ui_gruppa.h ui_gupr.h ui_kaf_rasp.h ui_mainwindow.h ui_uch_plan.h
 ui_authorization.h: ../l5_program/authorization.ui \
 		/home/orangenal/Qt/5.15.2/gcc_64/bin/uic
 	/home/orangenal/Qt/5.15.2/gcc_64/bin/uic ../l5_program/authorization.ui -o ui_authorization.h
+
+ui_extensibleadd.h: ../l5_program/extensibleadd.ui \
+		/home/orangenal/Qt/5.15.2/gcc_64/bin/uic
+	/home/orangenal/Qt/5.15.2/gcc_64/bin/uic ../l5_program/extensibleadd.ui -o ui_extensibleadd.h
 
 ui_gruppa.h: ../l5_program/gruppa.ui \
 		/home/orangenal/Qt/5.15.2/gcc_64/bin/uic
@@ -1292,6 +1554,10 @@ ui_gruppa.h: ../l5_program/gruppa.ui \
 ui_gupr.h: ../l5_program/gupr.ui \
 		/home/orangenal/Qt/5.15.2/gcc_64/bin/uic
 	/home/orangenal/Qt/5.15.2/gcc_64/bin/uic ../l5_program/gupr.ui -o ui_gupr.h
+
+ui_kaf_rasp.h: ../l5_program/kaf_rasp.ui \
+		/home/orangenal/Qt/5.15.2/gcc_64/bin/uic
+	/home/orangenal/Qt/5.15.2/gcc_64/bin/uic ../l5_program/kaf_rasp.ui -o ui_kaf_rasp.h
 
 ui_mainwindow.h: ../l5_program/mainwindow.ui \
 		/home/orangenal/Qt/5.15.2/gcc_64/bin/uic
@@ -1444,6 +1710,135 @@ authorization.o: ../l5_program/authorization.cpp ../l5_program/authorization.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qregularexpression.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o authorization.o ../l5_program/authorization.cpp
 
+extensibleadd.o: ../l5_program/extensibleadd.cpp ../l5_program/extensibleadd.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QDialog \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qglobal.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qconfig.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qlogging.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qflags.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmutex.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtgui-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobject.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstring.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qchar.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringview.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qlist.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qiterator.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qpair.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qvector.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qpoint.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qregexp.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmargins.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qrect.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsize.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpalette.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qcolor.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qrgb.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qrgba64.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qbrush.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qmatrix.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qregion.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qdatastream.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qline.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtransform.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qimage.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpixelformat.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpixmap.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qhash.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qfont.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qfontinfo.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qcursor.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qkeysequence.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qevent.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qvariant.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmap.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qdebug.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qlocale.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qset.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qurl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qurlquery.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qfile.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qvector2d.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		ui_extensibleadd.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QApplication \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qapplication.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qeventloop.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qguiapplication.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qinputmethod.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QLabel \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QLineEdit \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtextcursor.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtextformat.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpen.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qicon.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o extensibleadd.o ../l5_program/extensibleadd.cpp
+
 gruppa.o: ../l5_program/gruppa.cpp ../l5_program/gruppa.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QDialog \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
@@ -1553,12 +1948,58 @@ gruppa.o: ../l5_program/gruppa.cpp ../l5_program/gruppa.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqldatabase.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qtsqlglobal.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qtsql-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlRelationalTableModel \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqltablemodel.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlquerymodel.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qabstractitemmodel.h \
-		ui_gruppa.h
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlRecord \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlQuery \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlquery.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlField \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlfield.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlError \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlerror.h \
+		../l5_program/extensibleadd.h \
+		ui_gruppa.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QApplication \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qapplication.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qeventloop.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qguiapplication.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qinputmethod.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QComboBox \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qvalidator.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qregularexpression.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qicon.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qslider.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qstyle.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QHeaderView \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QLabel \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QTableView \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qtableview.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gruppa.o ../l5_program/gruppa.cpp
 
 gupr.o: ../l5_program/gupr.cpp ../l5_program/gupr.h \
@@ -1709,6 +2150,123 @@ gupr.o: ../l5_program/gupr.cpp ../l5_program/gupr.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qtableview.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gupr.o ../l5_program/gupr.cpp
 
+kaf_rasp.o: ../l5_program/kaf_rasp.cpp ../l5_program/kaf_rasp.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QDialog \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qglobal.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qconfig.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qlogging.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qflags.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmutex.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtgui-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobject.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstring.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qchar.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringview.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qlist.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qiterator.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qpair.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qvector.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qpoint.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qregexp.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmargins.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qrect.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsize.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpalette.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qcolor.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qrgb.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qrgba64.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qbrush.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qmatrix.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qregion.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qdatastream.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qline.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtransform.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qimage.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpixelformat.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qpixmap.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qhash.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qfont.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qfontinfo.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qcursor.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qkeysequence.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qevent.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qvariant.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qmap.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qdebug.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qlocale.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qset.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qurl.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qurlquery.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qfile.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qvector2d.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlDatabase \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qtsql-config.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlRelationalTableModel \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		ui_kaf_rasp.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o kaf_rasp.o ../l5_program/kaf_rasp.cpp
+
 main.o: ../l5_program/main.cpp ../l5_program/mainwindow.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -1830,6 +2388,12 @@ main.o: ../l5_program/main.cpp ../l5_program/mainwindow.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqltablemodel.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlquerymodel.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlQuery \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlquery.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlRecord \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlField \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlfield.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/QDebug \
 		../l5_program/authorization.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QWidget \
@@ -1837,6 +2401,8 @@ main.o: ../l5_program/main.cpp ../l5_program/mainwindow.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QDialog \
 		../l5_program/gupr.h \
 		../l5_program/gruppa.h \
+		../l5_program/extensibleadd.h \
+		../l5_program/kaf_rasp.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QApplication \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qapplication.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1967,6 +2533,12 @@ mainwindow.o: ../l5_program/mainwindow.cpp ../l5_program/mainwindow.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqltablemodel.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlquerymodel.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlQuery \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlquery.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlRecord \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/QSqlField \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtSql/qsqlfield.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/QDebug \
 		../l5_program/authorization.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QWidget \
@@ -1974,6 +2546,8 @@ mainwindow.o: ../l5_program/mainwindow.cpp ../l5_program/mainwindow.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QDialog \
 		../l5_program/gupr.h \
 		../l5_program/gruppa.h \
+		../l5_program/extensibleadd.h \
+		../l5_program/kaf_rasp.h \
 		ui_mainwindow.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QApplication \
@@ -1983,8 +2557,12 @@ mainwindow.o: ../l5_program/mainwindow.cpp ../l5_program/mainwindow.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qdesktopwidget.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qguiapplication.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qinputmethod.h \
-		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QComboBox \
-		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QHeaderView \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qitemselectionmodel.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qstyleoption.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
@@ -1995,14 +2573,6 @@ mainwindow.o: ../l5_program/mainwindow.cpp ../l5_program/mainwindow.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qstyle.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qtabbar.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qrubberband.h \
-		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qframe.h \
-		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QHeaderView \
-		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qheaderview.h \
-		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/home/orangenal/Qt/5.15.2/gcc_64/include/QtCore/qitemselectionmodel.h \
-		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QLabel \
-		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/QLineEdit \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtWidgets/qlineedit.h \
 		/home/orangenal/Qt/5.15.2/gcc_64/include/QtGui/qtextcursor.h \
@@ -2174,11 +2744,17 @@ uch_plan.o: ../l5_program/uch_plan.cpp ../l5_program/uch_plan.h \
 moc_authorization.o: moc_authorization.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_authorization.o moc_authorization.cpp
 
+moc_extensibleadd.o: moc_extensibleadd.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_extensibleadd.o moc_extensibleadd.cpp
+
 moc_gruppa.o: moc_gruppa.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_gruppa.o moc_gruppa.cpp
 
 moc_gupr.o: moc_gupr.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_gupr.o moc_gupr.cpp
+
+moc_kaf_rasp.o: moc_kaf_rasp.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_kaf_rasp.o moc_kaf_rasp.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

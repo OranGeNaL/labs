@@ -1,45 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Gruppa</class>
- <widget class="QDialog" name="Gruppa">
+ <class>Kaf_Rasp</class>
+ <widget class="QDialog" name="Kaf_Rasp">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>723</width>
-    <height>531</height>
+    <width>704</width>
+    <height>529</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Группа</string>
+   <string>Dialog</string>
   </property>
-  <widget class="QTableView" name="groupTableView">
+  <widget class="QTableView" name="kaf_raspTableView">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>90</y>
-     <width>701</width>
-     <height>391</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="specialityCombo">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>50</y>
-     <width>351</width>
-     <height>27</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="uch_planCombo">
-   <property name="geometry">
-    <rect>
-     <x>380</x>
-     <y>50</y>
-     <width>331</width>
-     <height>27</height>
+     <width>681</width>
+     <height>371</height>
     </rect>
    </property>
   </widget>
@@ -47,7 +27,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>490</y>
+     <y>470</y>
      <width>87</width>
      <height>27</height>
     </rect>
@@ -59,8 +39,8 @@
   <widget class="QPushButton" name="delButton">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>490</y>
+     <x>120</x>
+     <y>470</y>
      <width>87</width>
      <height>27</height>
     </rect>
@@ -69,17 +49,37 @@
     <string>Удалить</string>
    </property>
   </widget>
+  <widget class="QComboBox" name="kafedraCombo">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>291</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="disciplineCombo">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>50</y>
+     <width>311</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>20</y>
-     <width>131</width>
+     <width>101</width>
      <height>19</height>
     </rect>
    </property>
    <property name="text">
-    <string>Специальность</string>
+    <string>Кафедра</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -87,12 +87,12 @@
     <rect>
      <x>380</x>
      <y>20</y>
-     <width>131</width>
+     <width>101</width>
      <height>19</height>
     </rect>
    </property>
    <property name="text">
-    <string>Учебный план</string>
+    <string>Дисциплина</string>
    </property>
   </widget>
  </widget>

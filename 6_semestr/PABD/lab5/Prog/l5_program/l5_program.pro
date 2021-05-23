@@ -12,23 +12,29 @@ CONFIG += c++11
 
 SOURCES += \
     authorization.cpp \
+    extensibleadd.cpp \
     gruppa.cpp \
     gupr.cpp \
+    kaf_rasp.cpp \
     main.cpp \
     mainwindow.cpp \
     uch_plan.cpp
 
 HEADERS += \
     authorization.h \
+    extensibleadd.h \
     gruppa.h \
     gupr.h \
+    kaf_rasp.h \
     mainwindow.h \
     uch_plan.h
 
 FORMS += \
     authorization.ui \
+    extensibleadd.ui \
     gruppa.ui \
     gupr.ui \
+    kaf_rasp.ui \
     mainwindow.ui \
     uch_plan.ui
 

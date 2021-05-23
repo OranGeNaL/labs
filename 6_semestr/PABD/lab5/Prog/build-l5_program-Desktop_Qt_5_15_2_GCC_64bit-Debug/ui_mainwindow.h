@@ -45,7 +45,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tableView = new QTableView(centralwidget);
         tableView->setObjectName(QString::fromUtf8("tableView"));
-        tableView->setGeometry(QRect(20, 70, 671, 471));
+        tableView->setGeometry(QRect(20, 20, 671, 521));
         editSearch = new QLineEdit(centralwidget);
         editSearch->setObjectName(QString::fromUtf8("editSearch"));
         editSearch->setGeometry(QRect(20, 550, 561, 27));

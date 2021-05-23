@@ -89,14 +89,14 @@ END;
 $$ LANGUAGE plpgsql;
 
 --Вставка в Semestr
--- CREATE OR REPLACE FUNCTION insertIntoSemestr()
--- RETURNS VOID AS $$
--- BEGIN
---   INSERT INTO Log_Users(User_Name, TimeAction, TableAction, Action)
---   VALUES (current_user, now(), 'semestr', 'INSERT');
---   INSERT INTO Semestr () VALUES ();
--- END;
--- $$ LANGUAGE plpgsql;
+CREATE OR REPLACE FUNCTION insertIntoSemestr(INT)
+RETURNS VOID AS $$
+BEGIN
+  INSERT INTO Log_Users(User_Name, TimeAction, TableAction, Action)
+  VALUES (current_user, now(), 'semestr', 'INSERT');
+  INSERT INTO Semestr (id_semestr) VALUES ($1);
+END;
+$$ LANGUAGE plpgsql;
 
 --Вставка в Uch_Load
 CREATE OR REPLACE FUNCTION insertIntoUch_Load(INT, INT, INT, INT, INT)

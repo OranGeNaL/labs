@@ -51,12 +51,18 @@ MainWindow::MainWindow(QWidget *parent)
     formUch_Plan = new Uch_Plan(db);
     formGupr = new Gupr(db);
     formGruppa = new Gruppa(db);
-
+    formAdd = new ExtensibleAdd();
+    formKaf = new Kaf_Rasp(db);
 
     connect(formAutorization, SIGNAL(sendConnect()), this,
     SLOT(Connect()));
     connect(formAutorization, SIGNAL(sendDisconnect()),
     this, SLOT(Disconnect()));
+
+    connect(formAdd, SIGNAL(sendPositive()), this,
+    SLOT(Add()));
+    connect(formAdd, SIGNAL(sendNegative()),
+    this, SLOT(Dismiss()));
 
     connect(ui->menubar, SIGNAL(triggered(QAction*)), this, SLOT(OpenF(QAction*)));
 
@@ -71,7 +77,8 @@ MainWindow::~MainWindow()
 void MainWindow::OpenF(QAction* a)
 {
     qDebug() << const_hash(a->text().toStdString().c_str());
-    switch (const_hash(a->text().toStdString().c_str())) {
+    selectedTable = a->text();
+    switch (const_hash(selectedTable.toStdString().c_str())) {
         case 1105689965: formAutorization->show();
             break;
         case 3566738188: selectTable("course");
@@ -98,17 +105,15 @@ void MainWindow::OpenF(QAction* a)
     case 1436716544:
         formGupr->Update();
         formGupr->show();
+        break;
     case 3862366129:
+        formGruppa->SetDB(db);
         formGruppa->Update();
         formGruppa->show();
-        /*case 391431443: formDiscipline->show();
         break;
-        case 2821064468: formSpec->show();
-        break;
-        case 3919113952: formDepart->show();
-        break;
-        case 155890075: formStream->show();
-        break;*/
+     case 2958382714:
+        formKaf->Update();
+        formKaf->show();
     }
 
 }
@@ -196,3 +201,81 @@ void MainWindow::Disconnect()
     db.close();
     formAutorization->hide();
 }
+
+void MainWindow::on_addButton_clicked()
+{
+    switch (const_hash(selectedTable.toStdString().c_str())) {
+
+        case 3566738188: //selectTable("course");
+            formAdd->Set("Номер курса", "", "", "");
+            formAdd->show();
+            break;
+        case 34458455: //selectTable("discipline");
+            formAdd->Set("Наименование дисциплины", "", "", "");
+            formAdd->show();
+            break;
+        case 2821064468: //selectTable("speciality");
+            formAdd->Set("Наименование специальности", "", "", "");
+            formAdd->show();
+            break;
+        case 2581877950: //selectTable("gupr_elem");
+            formAdd->Set("Наименование ГУПР", "", "", "");
+            formAdd->show();
+            break;
+        case 1202426404:
+            //selectTable("kafedra");
+            formAdd->Set("Наименование Кафедры", "", "", "");
+            formAdd->show();
+            break;
+        case 4111733963:
+            //selectTable("number_weeks");
+            formAdd->Set("Количество недель", "", "", "");
+            formAdd->show();
+            break;
+        case 3415898536:
+            //selectTable("semestr");
+            formAdd->Set("Номер семестра", "", "", "");
+            formAdd->show();
+            break;
+    }
+}
+
+void MainWindow::Add()
+{
+    switch (const_hash(selectedTable.toStdString().c_str())) {
+
+        case 3566738188: //selectTable("course");
+            db.exec("select insertintocourse(" + formAdd->arg1 + ")");
+            break;
+        case 34458455: //selectTable("discipline");
+            db.exec("select insertintodiscipline('" + formAdd->arg1 + "')");
+            break;
+        case 2821064468: //selectTable("speciality");
+            db.exec("select insertintospeciality('" + formAdd->arg1 + "')");
+            break;
+        case 2581877950: //selectTable("gupr_elem");
+            db.exec("select insertintogupr_elem('" + formAdd->arg1 + "')");
+            break;
+        case 1202426404:
+            //selectTable("kafedra");
+            db.exec("select insertintokafedra('" + formAdd->arg1 + "')");
+            break;
+        case 4111733963:
+            //selectTable("number_weeks");
+            db.exec("select insertintonumber_weeks('" + formAdd->arg1 + "')");
+            break;
+        case 3415898536:
+            //selectTable("semestr");
+            db.exec("select insertintosemestr('" + formAdd->arg1 + "')");
+            break;
+    }
+
+    formAdd->hide();
+    table->select();
+}
+
+void MainWindow::Dismiss()
+{
+    formAdd->hide();
+}
+
