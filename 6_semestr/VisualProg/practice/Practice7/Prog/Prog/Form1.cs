@@ -79,7 +79,73 @@ namespace Prog
 
         private void button1_Click(object sender, EventArgs e)
         {
+            g.Clear(Color.White);
             Draw((int)numericUpDown1.Value);
+        }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            g.Clear(Color.White);
+
+            Point start = new Point(50, 50);
+            Point finish = new Point(200, 200);
+
+            int x1 = 50;
+            int y1 = 40;
+            int x2 = 230;
+            int y2 = 300;
+
+            int k = (int)numericUpDown1.Value;
+
+            //DragonLine(k, start, finish);
+            DragonLine(k, x1, y1, x2, y2);
+        }
+
+        private void DragonLine(int k, int x1, int y1, int x2, int y2)
+        {
+            if (k == 0)
+                g.DrawLine(new Pen(Color.Black), new Point(x1, y1), new Point(x2, y2));
+            else
+            {
+                int tx = (int)((x1 + x2) / 2.0 + (y2 - y1) / 2.0);
+                int ty = (int)((y1 + y2) / 2.0 - (x2 - x1) / 2.0);
+
+                DragonLine(k - 1, x2, y2, tx, ty);
+                DragonLine(k - 1, x1, y1, tx, ty);
+            }
+        }
+
+        private void LeviLine(int k, int x1, int y1, int x2, int y2)
+        {
+            if (k == 0)
+                g.DrawLine(new Pen(Color.Black), new Point(x1, y1), new Point(x2, y2));
+            else
+            {
+                int tx = (int)((x1 + x2) / 2.0 + (y2 - y1) / 2.0);
+                int ty = (int)((y1 + y2) / 2.0 - (x2 - x1) / 2.0);
+
+                LeviLine(k - 1, x1, y1, tx, ty);
+                LeviLine(k - 1, tx, ty, x2, y2);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            g.Clear(Color.White);
+
+            Point start = new Point(50, 50);
+            Point finish = new Point(200, 200);
+
+            int x1 = 50;
+            int y1 = 40;
+            int x2 = 230;
+            int y2 = 300;
+
+            int k = (int)numericUpDown1.Value;
+
+            //DragonLine(k, start, finish);
+            LeviLine(k, x1, y1, x2, y2);
         }
     }
 }
