@@ -90,6 +90,7 @@ void MainWindow::OpenF(QAction* a)
         case 2581877950: selectTable("gupr_elem");
             break;
     case 1721633621:
+        formUch_Plan->SetDB(db);
         formUch_Plan->Update();
         formUch_Plan->show();
         break;
@@ -103,8 +104,10 @@ void MainWindow::OpenF(QAction* a)
         selectTable("semestr");
         break;
     case 1436716544:
+        formGupr->SetDB(db);
         formGupr->Update();
         formGupr->show();
+        //selectTable("kafedra");
         break;
     case 3862366129:
         formGruppa->SetDB(db);
@@ -123,6 +126,7 @@ void MainWindow::selectTable(QString nameTable)
     ui->tableView->show();
     table = new QSqlRelationalTableModel(0, db);
     table->setTable(nameTable);
+    table->setEditStrategy(QSqlTableModel::OnManualSubmit);
     ui->tableView->setModel(table);
     ui->tableView->showColumn(0);
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -277,5 +281,19 @@ void MainWindow::Add()
 void MainWindow::Dismiss()
 {
     formAdd->hide();
+}
+
+
+void MainWindow::on_deleteButton_clicked()
+{
+    QModelIndex ind;
+    int row = ui->tableView->selectionModel()->selectedRows(0).first().row();
+    qDebug() << row;
+    table->removeRow(row, ind);
+
+    if(!table->submitAll())
+    {
+        QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+    }
 }
 

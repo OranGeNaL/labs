@@ -20,7 +20,7 @@ row name_group VARCHAR(50) NN/UQ
 row enter_date DATE NN
 
 table Gupr
-pos 548 452
+pos 658 335
 size 150 70
 row duration INTEGER 
 
@@ -52,7 +52,7 @@ row id_spec INTEGER PK/NN/UQ
 row name_spec VARCHAR(50) NN/UQ
 
 table Uch_Load
-pos 1094 62
+pos 1084 30
 size 150 130
 row hours INTEGER 
 

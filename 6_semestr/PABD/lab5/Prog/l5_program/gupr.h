@@ -5,6 +5,8 @@
 #include <QSqlDatabase>
 #include <QSqlRelationalTableModel>
 
+#include <extensibleadd.h>
+
 namespace Ui {
 class Gupr;
 }
@@ -17,10 +19,20 @@ public:
     explicit Gupr(QSqlDatabase _db, QWidget *parent = nullptr);
     ~Gupr();
     void Update();
+    void SetDB(QSqlDatabase _db);
+
+    QSqlDatabase db;
+
+    ExtensibleAdd* formAdd;
+
+private slots:
+    void Add();
+    void Dismiss();
+
+    void on_addButton_clicked();
 
 private:
     Ui::Gupr *ui;
-    QSqlDatabase db;
 
     QSqlRelationalTableModel* guprTable;
     QSqlRelationalTableModel* gupr_elTable;

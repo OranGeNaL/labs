@@ -60,6 +60,8 @@ void Kaf_Rasp::Update()
     ui->kafedraCombo->setModel(kafedraTable);
     ui->disciplineCombo->setModel(disciplineTable);
 
+    ui->kaf_raspTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
     ui->kafedraCombo->setModelColumn(kafedraTable->fieldIndex("name_kaf"));
     ui->disciplineCombo->setModelColumn(disciplineTable->fieldIndex("name_disc"));
 }

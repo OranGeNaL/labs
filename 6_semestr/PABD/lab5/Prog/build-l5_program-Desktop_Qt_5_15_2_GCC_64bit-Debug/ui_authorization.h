@@ -81,7 +81,7 @@ public:
     {
         Authorization->setWindowTitle(QCoreApplication::translate("Authorization", "\320\220\320\262\321\202\320\276\321\200\320\270\320\267\320\260\321\206\320\270\321\217", nullptr));
         label->setText(QCoreApplication::translate("Authorization", "\320\230\320\274\321\217 \321\205\320\276\321\201\321\202\320\260", nullptr));
-        editHost->setText(QCoreApplication::translate("Authorization", "localhost", nullptr));
+        editHost->setText(QCoreApplication::translate("Authorization", "192.168.122.69", nullptr));
         editUser->setText(QCoreApplication::translate("Authorization", "orangenal", nullptr));
         label_2->setText(QCoreApplication::translate("Authorization", "\320\237\320\276\320\273\321\214\320\267\320\276\320\262\320\260\321\202\320\265\320\273\321\214", nullptr));
         editPassword->setText(QCoreApplication::translate("Authorization", "1488", nullptr));

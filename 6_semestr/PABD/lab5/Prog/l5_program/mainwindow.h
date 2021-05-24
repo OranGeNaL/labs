@@ -73,5 +73,6 @@ private slots:
     void Dismiss();
     void OpenF(QAction*);
     void on_addButton_clicked();
+    void on_deleteButton_clicked();
 };
 #endif // MAINWINDOW_H

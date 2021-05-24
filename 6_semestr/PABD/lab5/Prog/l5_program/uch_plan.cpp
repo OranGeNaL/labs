@@ -1,10 +1,13 @@
 #include "uch_plan.h"
 #include "ui_uch_plan.h"
+#include <QSqlQuery>
 
 Uch_Plan::Uch_Plan(QSqlDatabase _db, QWidget *parent) : QDialog(parent), ui(new Ui::Uch_Plan)
 {
     ui->setupUi(this);
     db = _db;
+
+    formAdd = new ExtensibleAdd();
 
     uch_planTable = new QSqlRelationalTableModel(0, db);
     specTable = new QSqlRelationalTableModel(0, db);
@@ -17,6 +20,11 @@ Uch_Plan::Uch_Plan(QSqlDatabase _db, QWidget *parent) : QDialog(parent), ui(new 
 
     ui->specialityTableView->setModel(specTable);
     ui->uch_planTableView->setModel(uch_planTable);
+
+    connect(formAdd, SIGNAL(sendPositive()), this,
+    SLOT(Add()));
+    connect(formAdd, SIGNAL(sendNegative()),
+    this, SLOT(Dismiss()));
 }
 
 Uch_Plan::~Uch_Plan()
@@ -32,6 +40,7 @@ void Uch_Plan::Update()
     uch_planTable->setTable("uch_plan");
     specTable->setTable("speciality");
 
+    uch_planTable->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"), Qt::DisplayRole);
     uch_planTable->setHeaderData(1, Qt::Horizontal, QObject::tr("Наименование уч плана"), Qt::DisplayRole);
     uch_planTable->setHeaderData(2, Qt::Horizontal, QObject::tr("ID Специальности"), Qt::DisplayRole);
     specTable->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"), Qt::DisplayRole);
@@ -43,7 +52,38 @@ void Uch_Plan::Update()
 
     ui->specialityTableView->setModel(specTable);
     ui->uch_planTableView->setModel(uch_planTable);
-    ui->uch_planTableView->hideColumn(0);
+//    ui->uch_planTableView->hideColumn(0);
     ui->specialityTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->uch_planTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
+
+void Uch_Plan::SetDB(QSqlDatabase _db)
+{
+    db = _db;
+    Update();
+}
+
+void Uch_Plan::Add()
+{
+    QSqlQuery query("select id_spec from speciality where name_spec='" + formAdd->arg2 + "';");
+    query.next();
+    QString str = query.value(0).toString();
+
+    db.exec("select insertintouchplan('" + formAdd->arg1 + "', " + str + ")");
+    uch_planTable->select();
+    specTable->select();
+
+    formAdd->hide();
+}
+
+void Uch_Plan::Dismiss()
+{
+    formAdd->hide();
+}
+
+void Uch_Plan::on_addButton_clicked()
+{
+    formAdd->Set("Наименование Уч. Плана", "Специальность", "", "");
+    formAdd->show();
+}
+

@@ -5,6 +5,8 @@
 #include <QSqlDatabase>
 #include <QSqlRelationalTableModel>
 
+#include <extensibleadd.h>
+
 namespace Ui {
 class Uch_Plan;
 }
@@ -17,10 +19,19 @@ public:
     explicit Uch_Plan(QSqlDatabase _db, QWidget *parent = nullptr);
     ~Uch_Plan();
     void Update();
+    void SetDB(QSqlDatabase _db);
+
+private slots:
+    void Add();
+    void Dismiss();
+
+    void on_addButton_clicked();
 
 private:
     Ui::Uch_Plan *ui;
     QSqlDatabase db;
+
+    ExtensibleAdd* formAdd;
 
     QSqlRelationalTableModel* specTable;
     QSqlRelationalTableModel* uch_planTable;

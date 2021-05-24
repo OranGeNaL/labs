@@ -1,5 +1,6 @@
 #include "gruppa.h"
 #include "ui_gruppa.h"
+#include <QDebug>
 
 Gruppa::Gruppa(QSqlDatabase _db, QWidget *parent) :
     QDialog(parent),
@@ -58,6 +59,9 @@ void Gruppa::Update()
     uchPlanBox->select();
     specialityBox->select();
     gruppaTable->select();
+
+    gruppaTable->setHeaderData(1, Qt::Horizontal, QObject::tr("Группа"), Qt::DisplayRole);
+    gruppaTable->setHeaderData(2, Qt::Horizontal, QObject::tr("Дата вступления"), Qt::DisplayRole);
 //    gruppaTable->setFilter();
 
     ui->specialityCombo->setModel(specialityBox);
@@ -66,11 +70,12 @@ void Gruppa::Update()
 
     ui->groupTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->groupTableView->hideColumn(0);
-    //ui->groupTableView->hideColumn(3);
-    //ui->groupTableView->hideColumn(4);
+    ui->groupTableView->hideColumn(3);
+    ui->groupTableView->hideColumn(4);
 
     ui->specialityCombo->setModelColumn(specialityBox->fieldIndex("name_spec"));
     ui->uch_planCombo->setModelColumn(uchPlanBox->fieldIndex("name_uch"));
+
 
 }
 
@@ -104,7 +109,18 @@ void Gruppa::on_addButton_clicked()
 
 void Gruppa::Add()
 {
-    db.exec("select insertintogruppa('" + formAdd->arg1 + "', '" + formAdd->arg2 + "', " + formAdd->arg3 + ", " + formAdd->arg4 + ")");
+    QSqlQuery query("select id_uch from uch_plan where name_uch='" + formAdd->arg3 + "';");
+    query.next();
+    QString str1 = query.value(0).toString();
+
+    QSqlQuery query2("select id_spec from speciality where name_spec='" + formAdd->arg4 + "';");
+    query2.next();
+    QString str2 = query2.value(0).toString();
+
+    qDebug() << str1;
+    qDebug() << str2;
+
+    db.exec("select insertintogruppa('" + formAdd->arg1 + "', '" + formAdd->arg2 + "', " + str1 + ", " + str2 + ")");
     uchPlanBox->select();
     gruppaTable->select();
     specialityBox->select();
