@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QKeyEvent>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -47,6 +48,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->menubar->addMenu(mainMenuTables);
     ui->menubar->addMenu(otherMenuTables);
 
+
+    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+
     formAutorization = new Authorization();
     formUch_Plan = new Uch_Plan(db);
     formGupr = new Gupr(db);
@@ -76,7 +80,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::OpenF(QAction* a)
 {
-    qDebug() << const_hash(a->text().toStdString().c_str());
+//    qDebug() << const_hash(a->text().toStdString().c_str());
     selectedTable = a->text();
     switch (const_hash(selectedTable.toStdString().c_str())) {
         case 1105689965: formAutorization->show();
@@ -117,6 +121,9 @@ void MainWindow::OpenF(QAction* a)
      case 2958382714:
         formKaf->Update();
         formKaf->show();
+        break;
+    case 625336143:
+        break; //Учебная нагрузка
     }
 
 }
@@ -150,6 +157,7 @@ void MainWindow::selectTable(QString nameTable)
     else if(nameTable == "speciality")
     {
         table->setHeaderData(1, Qt::Horizontal, QObject::tr("Специальность"), Qt::DisplayRole);
+        ui->tableView->hideColumn(0);
     }
 
     else if(nameTable == "gupr_elem")
@@ -295,5 +303,56 @@ void MainWindow::on_deleteButton_clicked()
     {
         QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
     }
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    if(ui->tableView->hasFocus() && (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter))
+    {
+        if(!table->submitAll())
+        {
+            QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+        }
+    }
+}
+
+
+void MainWindow::on_editSearch_textChanged(const QString &arg1)
+{
+    QString pole = "";
+    switch (const_hash(selectedTable.toStdString().c_str())) {
+
+        case 3566738188: //selectTable("course");
+            pole = "course.number_course";
+            break;
+        case 34458455: //selectTable("discipline");
+            pole = "discipline.name_disc";
+            break;
+        case 2821064468: //selectTable("speciality");
+            pole = "speciality.name_spec";
+            break;
+        case 2581877950: //selectTable("gupr_elem");
+            pole = "gupr_elem.name_gupr_elem";
+            break;
+        case 1202426404: //selectTable("kafedra");
+            pole = "kafedra.name_kaf";
+            break;
+        case 4111733963: //selectTable("number_weeks");
+            pole = "number_weeks.number";
+            break;
+        case 3415898536: //selectTable("semestr");
+            pole = "semestr.id_semestr";
+            break;
+    }
+
+    QString filter = "upper( " + pole + " ) like upper('%" + ui->editSearch->text() + "%')";
+    //qDebug() << filter;
+    table->setFilter(filter);
+}
+
+
+void MainWindow::on_buttonClear_clicked()
+{
+    ui->editSearch->setText("");
 }
 

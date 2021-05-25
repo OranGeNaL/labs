@@ -63,6 +63,7 @@ private:
     QSqlDatabase db;
     QSqlRelationalTableModel* table;
     void selectTable(QString nameTable);
+    void keyPressEvent(QKeyEvent *event);
 
     unsigned const_hash(char const *);
 
@@ -74,5 +75,7 @@ private slots:
     void OpenF(QAction*);
     void on_addButton_clicked();
     void on_deleteButton_clicked();
+    void on_editSearch_textChanged(const QString &arg1);
+    void on_buttonClear_clicked();
 };
 #endif // MAINWINDOW_H

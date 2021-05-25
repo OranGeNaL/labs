@@ -51,7 +51,7 @@ public:
         editSearch->setGeometry(QRect(20, 550, 561, 27));
         buttonClear = new QPushButton(centralwidget);
         buttonClear->setObjectName(QString::fromUtf8("buttonClear"));
-        buttonClear->setGeometry(QRect(600, 550, 87, 27));
+        buttonClear->setGeometry(QRect(610, 550, 87, 27));
         addButton = new QPushButton(centralwidget);
         addButton->setObjectName(QString::fromUtf8("addButton"));
         addButton->setGeometry(QRect(720, 60, 87, 27));

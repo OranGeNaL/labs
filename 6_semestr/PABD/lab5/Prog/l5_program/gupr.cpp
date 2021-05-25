@@ -2,6 +2,8 @@
 #include "ui_gupr.h"
 #include <QSqlQuery>
 #include <QDebug>
+#include <QMessageBox>
+#include <QSqlError>
 
 Gupr::Gupr(QSqlDatabase _db, QWidget *parent) :
     QDialog(parent),
@@ -21,6 +23,8 @@ Gupr::Gupr(QSqlDatabase _db, QWidget *parent) :
 
     ui->guprTableView->setModel(guprTable);
     ui->gupr_elTableView->setModel(gupr_elTable);
+
+    ui->guprTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
 
     formAdd = new ExtensibleAdd();
 
@@ -43,10 +47,14 @@ void Gupr::Update()
     guprTable->setTable("gupr");
     gupr_elTable->setTable("gupr_elem");
 
+    guprTable->setEditStrategy(QSqlTableModel::OnManualSubmit);
+
     guprTable->setHeaderData(0, Qt::Horizontal, QObject::tr("Длительность"), Qt::DisplayRole);
-    guprTable->setHeaderData(1, Qt::Horizontal, QObject::tr("ID ГУПР"), Qt::DisplayRole);
+    guprTable->setHeaderData(1, Qt::Horizontal, QObject::tr("Наименование ГУПР"), Qt::DisplayRole);
     //gupr_elTable->setHeaderData(0, Qt::Horizontal, QObject::tr("ID ГУПР"), Qt::DisplayRole);
     gupr_elTable->setHeaderData(1, Qt::Horizontal, QObject::tr("Наименование ГУПР"), Qt::DisplayRole);
+
+    guprTable->setRelation(1, QSqlRelation("gupr_elem", "id_gupr_elem", "name_gupr_elem"));
 
 
     guprTable->select();
@@ -94,5 +102,19 @@ void Gupr::on_addButton_clicked()
 {
     formAdd->Set("Длительность", "Элемент ГУПР", "", "");
     formAdd->show();
+}
+
+
+void Gupr::on_delButton_clicked()
+{
+    QModelIndex ind;
+    int row = ui->guprTableView->selectionModel()->selectedRows(0).first().row();
+    qDebug() << row;
+    guprTable->removeRow(row, ind);
+
+    if(!guprTable->submitAll())
+    {
+        QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+    }
 }
 

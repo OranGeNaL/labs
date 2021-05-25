@@ -1,6 +1,9 @@
 #include "uch_plan.h"
 #include "ui_uch_plan.h"
 #include <QSqlQuery>
+#include <QDebug>
+#include <QMessageBox>
+#include <QSqlError>
 
 Uch_Plan::Uch_Plan(QSqlDatabase _db, QWidget *parent) : QDialog(parent), ui(new Ui::Uch_Plan)
 {
@@ -21,6 +24,8 @@ Uch_Plan::Uch_Plan(QSqlDatabase _db, QWidget *parent) : QDialog(parent), ui(new 
     ui->specialityTableView->setModel(specTable);
     ui->uch_planTableView->setModel(uch_planTable);
 
+    ui->uch_planTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+
     connect(formAdd, SIGNAL(sendPositive()), this,
     SLOT(Add()));
     connect(formAdd, SIGNAL(sendNegative()),
@@ -40,12 +45,14 @@ void Uch_Plan::Update()
     uch_planTable->setTable("uch_plan");
     specTable->setTable("speciality");
 
-    uch_planTable->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"), Qt::DisplayRole);
+    //uch_planTable->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"), Qt::DisplayRole);
     uch_planTable->setHeaderData(1, Qt::Horizontal, QObject::tr("Наименование уч плана"), Qt::DisplayRole);
-    uch_planTable->setHeaderData(2, Qt::Horizontal, QObject::tr("ID Специальности"), Qt::DisplayRole);
-    specTable->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"), Qt::DisplayRole);
+    uch_planTable->setHeaderData(2, Qt::Horizontal, QObject::tr("Специальность"), Qt::DisplayRole);
+    //specTable->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"), Qt::DisplayRole);
     specTable->setHeaderData(1, Qt::Horizontal, QObject::tr("Специальность"), Qt::DisplayRole);
 
+
+    uch_planTable->setRelation(2, QSqlRelation("speciality", "id_spec", "name_spec"));
 
     uch_planTable->select();
     specTable->select();
@@ -53,6 +60,8 @@ void Uch_Plan::Update()
     ui->specialityTableView->setModel(specTable);
     ui->uch_planTableView->setModel(uch_planTable);
 //    ui->uch_planTableView->hideColumn(0);
+    ui->uch_planTableView->hideColumn(0);
+    ui->specialityTableView->hideColumn(0);
     ui->specialityTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->uch_planTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
@@ -85,5 +94,20 @@ void Uch_Plan::on_addButton_clicked()
 {
     formAdd->Set("Наименование Уч. Плана", "Специальность", "", "");
     formAdd->show();
+}
+
+
+void Uch_Plan::on_delButton_clicked()
+{
+
+    QModelIndex ind;
+    int row = ui->uch_planTableView->selectionModel()->selectedRows(0).first().row();
+    qDebug() << row;
+    uch_planTable->removeRow(row, ind);
+
+    if(!uch_planTable->submitAll())
+    {
+        QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+    }
 }
 
