@@ -6,6 +6,8 @@
 #include <QSqlRelationalTableModel>
 #include <QSqlRelation>
 
+#include <extensibleadd.h>
+
 namespace Ui {
 class Kaf_Rasp;
 }
@@ -18,6 +20,11 @@ public:
     explicit Kaf_Rasp(QSqlDatabase _db, QWidget *parent = nullptr);
     ~Kaf_Rasp();
     void Update();
+
+private slots:
+    void on_addButton_clicked();
+
+    void on_delButton_clicked();
 
 private:
     Ui::Kaf_Rasp *ui;

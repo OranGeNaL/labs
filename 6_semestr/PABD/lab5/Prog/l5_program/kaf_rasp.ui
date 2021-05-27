@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Кафедра распределения</string>
   </property>
   <widget class="QTableView" name="kaf_raspTableView">
    <property name="geometry">

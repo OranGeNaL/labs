@@ -34,7 +34,7 @@ MainWindow::MainWindow(QWidget *parent)
     mainMenuTables->addAction(actGruppa);
     mainMenuTables->addAction(actKaf_Rasp);
 
-    otherMenuTables->addAction(actCourse);
+    //otherMenuTables->addAction(actCourse);
     otherMenuTables->addAction(actDiscipline);
     otherMenuTables->addAction(actSpeciality);
     otherMenuTables->addAction(actUch_Plan);
@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
     otherMenuTables->addAction(actGupr_elem);
     otherMenuTables->addAction(actKafedra);
     otherMenuTables->addAction(actSemestr);
-    otherMenuTables->addAction(actNumber_Weeks);
+    //otherMenuTables->addAction(actNumber_Weeks);
 
     ui->menubar->addMenu(mainMenu);
     ui->menubar->addMenu(mainMenuTables);
@@ -220,23 +220,28 @@ void MainWindow::on_addButton_clicked()
 
         case 3566738188: //selectTable("course");
             formAdd->Set("Номер курса", "", "", "");
+            formAdd->SetInput(0, 0, 0, -1);
             formAdd->show();
             break;
         case 34458455: //selectTable("discipline");
             formAdd->Set("Наименование дисциплины", "", "", "");
+            formAdd->SetInput(0, -1, -1, -1);
             formAdd->show();
             break;
         case 2821064468: //selectTable("speciality");
             formAdd->Set("Наименование специальности", "", "", "");
+            formAdd->SetInput(0, -1, -1, -1);
             formAdd->show();
             break;
         case 2581877950: //selectTable("gupr_elem");
             formAdd->Set("Наименование ГУПР", "", "", "");
+            formAdd->SetInput(0, -1, -1, -1);
             formAdd->show();
             break;
         case 1202426404:
             //selectTable("kafedra");
             formAdd->Set("Наименование Кафедры", "", "", "");
+            formAdd->SetInput(0, -1, -1, -1);
             formAdd->show();
             break;
         case 4111733963:
@@ -247,6 +252,7 @@ void MainWindow::on_addButton_clicked()
         case 3415898536:
             //selectTable("semestr");
             formAdd->Set("Номер семестра", "", "", "");
+            formAdd->SetInput(0, -1, -1, -1);
             formAdd->show();
             break;
     }

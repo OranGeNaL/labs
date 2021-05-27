@@ -51,6 +51,8 @@ void Gupr::Update()
 
     guprTable->setHeaderData(0, Qt::Horizontal, QObject::tr("Длительность"), Qt::DisplayRole);
     guprTable->setHeaderData(1, Qt::Horizontal, QObject::tr("Наименование ГУПР"), Qt::DisplayRole);
+    guprTable->setHeaderData(2, Qt::Horizontal, QObject::tr("Курс"), Qt::DisplayRole);
+    guprTable->setHeaderData(3, Qt::Horizontal, QObject::tr("Количество недель"), Qt::DisplayRole);
     //gupr_elTable->setHeaderData(0, Qt::Horizontal, QObject::tr("ID ГУПР"), Qt::DisplayRole);
     gupr_elTable->setHeaderData(1, Qt::Horizontal, QObject::tr("Наименование ГУПР"), Qt::DisplayRole);
 
@@ -100,7 +102,8 @@ void Gupr::Dismiss()
 
 void Gupr::on_addButton_clicked()
 {
-    formAdd->Set("Длительность", "Элемент ГУПР", "", "");
+    formAdd->Set("Длительность", "Курс", "Количество недель", "Элемент ГУПР");
+    formAdd->SetInput(0, 0, 0, -1);
     formAdd->show();
 }
 

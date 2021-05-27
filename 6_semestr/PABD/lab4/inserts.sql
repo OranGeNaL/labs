@@ -1,12 +1,12 @@
 --Вставка в Course
-CREATE OR REPLACE FUNCTION insertIntoCourse(INT)
-RETURNS VOID AS $$
-BEGIN
-  INSERT INTO Log_Users(User_Name, TimeAction, TableAction, Action)
-  VALUES (current_user, now(), 'course', 'INSERT');
-  INSERT INTO Course (number_course) VALUES ($1);
-END;
-$$ LANGUAGE plpgsql;
+-- CREATE OR REPLACE FUNCTION insertIntoCourse(INT)
+-- RETURNS VOID AS $$
+-- BEGIN
+--   INSERT INTO Log_Users(User_Name, TimeAction, TableAction, Action)
+--   VALUES (current_user, now(), 'course', 'INSERT');
+--   INSERT INTO Course (number_course) VALUES ($1);
+-- END;
+-- $$ LANGUAGE plpgsql;
 
 --Вставка в Discipline
 CREATE OR REPLACE FUNCTION insertIntoDiscipline(VARCHAR(50))
@@ -59,12 +59,12 @@ END;
 $$ LANGUAGE plpgsql;
 
 --Вставка в Gupr
-CREATE OR REPLACE FUNCTION insertIntoGupr(INT, INT)
+CREATE OR REPLACE FUNCTION insertIntoGupr(INT, INT, INT, INT)
 RETURNS VOID AS $$
 BEGIN
   INSERT INTO Log_Users(User_Name, TimeAction, TableAction, Action)
   VALUES (current_user, now(), 'gupr', 'INSERT');
-  INSERT INTO Gupr (duration, Gupr_elem_id_gupr_elem) VALUES ($1, $2);
+  INSERT INTO Gupr (duration, number_course, number_weeks, Gupr_elem_id_gupr_elem) VALUES ($1, $2, $3, $4);
 END;
 $$ LANGUAGE plpgsql;
 
@@ -109,11 +109,11 @@ END;
 $$ LANGUAGE plpgsql;
 
 --Вставка в number_weeks
-CREATE OR REPLACE FUNCTION insertIntoNumber_Weeks(INT)
-RETURNS VOID AS $$
-BEGIN
-  INSERT INTO Log_Users(User_Name, TimeAction, TableAction, Action)
-  VALUES (current_user, now(), 'number_weeks', 'INSERT');
-  INSERT INTO number_weeks (number) VALUES ($1);
-END;
-$$ LANGUAGE plpgsql;
+-- CREATE OR REPLACE FUNCTION insertIntoNumber_Weeks(INT)
+-- RETURNS VOID AS $$
+-- BEGIN
+--   INSERT INTO Log_Users(User_Name, TimeAction, TableAction, Action)
+--   VALUES (current_user, now(), 'number_weeks', 'INSERT');
+--   INSERT INTO number_weeks (number) VALUES ($1);
+-- END;
+-- $$ LANGUAGE plpgsql;

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>697</width>
+    <width>881</width>
     <height>514</height>
    </rect>
   </property>
@@ -16,9 +16,9 @@
   <widget class="QTableView" name="guprTableView">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>371</width>
+     <x>200</x>
+     <y>10</y>
+     <width>671</width>
      <height>421</height>
     </rect>
    </property>
@@ -26,9 +26,9 @@
   <widget class="QTableView" name="gupr_elTableView">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>20</y>
-     <width>251</width>
+     <x>10</x>
+     <y>10</y>
+     <width>181</width>
      <height>421</height>
     </rect>
    </property>

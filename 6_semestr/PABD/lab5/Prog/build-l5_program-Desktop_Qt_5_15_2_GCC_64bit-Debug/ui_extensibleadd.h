@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -31,6 +32,10 @@ public:
     QLabel *label4;
     QLabel *label3;
     QLineEdit *lineEdit3;
+    QComboBox *comboBox;
+    QComboBox *comboBox2;
+    QComboBox *comboBox3;
+    QComboBox *comboBox4;
 
     void setupUi(QDialog *ExtensibleAdd)
     {
@@ -67,6 +72,18 @@ public:
         lineEdit3 = new QLineEdit(ExtensibleAdd);
         lineEdit3->setObjectName(QString::fromUtf8("lineEdit3"));
         lineEdit3->setGeometry(QRect(250, 70, 191, 27));
+        comboBox = new QComboBox(ExtensibleAdd);
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setGeometry(QRect(10, 70, 191, 27));
+        comboBox2 = new QComboBox(ExtensibleAdd);
+        comboBox2->setObjectName(QString::fromUtf8("comboBox2"));
+        comboBox2->setGeometry(QRect(10, 140, 191, 27));
+        comboBox3 = new QComboBox(ExtensibleAdd);
+        comboBox3->setObjectName(QString::fromUtf8("comboBox3"));
+        comboBox3->setGeometry(QRect(250, 70, 191, 27));
+        comboBox4 = new QComboBox(ExtensibleAdd);
+        comboBox4->setObjectName(QString::fromUtf8("comboBox4"));
+        comboBox4->setGeometry(QRect(250, 140, 191, 27));
 
         retranslateUi(ExtensibleAdd);
 

@@ -49,6 +49,11 @@ void Kaf_Rasp::Update()
     specialityTable->setTable("speciality");
     disciplineTable->setTable("discipline");
 
+
+    kaf_raspTable->setHeaderData(0, Qt::Horizontal, QObject::tr("Специальность"), Qt::DisplayRole);
+    kaf_raspTable->setHeaderData(1, Qt::Horizontal, QObject::tr("Дисциплина"), Qt::DisplayRole);
+    kaf_raspTable->setHeaderData(2, Qt::Horizontal, QObject::tr("Кафедра"), Qt::DisplayRole);
+
     kaf_raspTable->select();
     kafedraTable->select();
     specialityTable->select();
@@ -71,3 +76,15 @@ Kaf_Rasp::~Kaf_Rasp()
     delete ui;
 
 }
+
+void Kaf_Rasp::on_addButton_clicked()
+{
+
+}
+
+
+void Kaf_Rasp::on_delButton_clicked()
+{
+
+}
+

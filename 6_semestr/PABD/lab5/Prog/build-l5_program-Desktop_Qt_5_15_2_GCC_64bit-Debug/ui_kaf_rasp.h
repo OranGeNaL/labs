@@ -65,7 +65,7 @@ public:
 
     void retranslateUi(QDialog *Kaf_Rasp)
     {
-        Kaf_Rasp->setWindowTitle(QCoreApplication::translate("Kaf_Rasp", "Dialog", nullptr));
+        Kaf_Rasp->setWindowTitle(QCoreApplication::translate("Kaf_Rasp", "\320\232\320\260\321\204\320\265\320\264\321\200\320\260 \321\200\320\260\321\201\320\277\321\200\320\265\320\264\320\265\320\273\320\265\320\275\320\270\321\217", nullptr));
         addButton->setText(QCoreApplication::translate("Kaf_Rasp", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214", nullptr));
         delButton->setText(QCoreApplication::translate("Kaf_Rasp", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214", nullptr));
         label->setText(QCoreApplication::translate("Kaf_Rasp", "\320\232\320\260\321\204\320\265\320\264\321\200\320\260", nullptr));

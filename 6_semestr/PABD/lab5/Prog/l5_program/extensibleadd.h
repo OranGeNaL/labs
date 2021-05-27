@@ -16,6 +16,8 @@ public:
     ~ExtensibleAdd();
 
     void Set(QString, QString, QString, QString);
+    void SetInput(int, int, int, int);
+    void SetCombo(QString, QString);
     QString arg1;
     QString arg2;
     QString arg3;
@@ -29,6 +31,7 @@ private slots:
     void on_cancelButton_clicked();
 
 private:
+    void InputChange(int, int);
     Ui::ExtensibleAdd *ui;
 };
 

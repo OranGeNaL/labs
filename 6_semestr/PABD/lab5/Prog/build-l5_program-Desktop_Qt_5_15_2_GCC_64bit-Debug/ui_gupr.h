@@ -30,13 +30,13 @@ public:
     {
         if (Gupr->objectName().isEmpty())
             Gupr->setObjectName(QString::fromUtf8("Gupr"));
-        Gupr->resize(697, 514);
+        Gupr->resize(881, 514);
         guprTableView = new QTableView(Gupr);
         guprTableView->setObjectName(QString::fromUtf8("guprTableView"));
-        guprTableView->setGeometry(QRect(20, 20, 371, 421));
+        guprTableView->setGeometry(QRect(200, 10, 671, 421));
         gupr_elTableView = new QTableView(Gupr);
         gupr_elTableView->setObjectName(QString::fromUtf8("gupr_elTableView"));
-        gupr_elTableView->setGeometry(QRect(420, 20, 251, 421));
+        gupr_elTableView->setGeometry(QRect(10, 10, 181, 421));
         addButton = new QPushButton(Gupr);
         addButton->setObjectName(QString::fromUtf8("addButton"));
         addButton->setGeometry(QRect(20, 450, 87, 27));

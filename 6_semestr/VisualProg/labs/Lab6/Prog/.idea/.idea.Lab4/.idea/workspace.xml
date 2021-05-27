@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1572edf2-cf14-49e6-b047-be9cc244fdf8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/l5_program.pro" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/l5_program.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/kaf_rasp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/kaf_rasp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/l5_program" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/l5_program" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/mainwindow.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/mainwindow.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_kaf_rasp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_kaf_rasp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_kaf_rasp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_kaf_rasp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_kaf_rasp.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/build-l5_program-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_kaf_rasp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/kaf_rasp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/kaf_rasp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/kaf_rasp.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/kaf_rasp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/kaf_rasp.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/kaf_rasp.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/l5_program.pro.user" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/l5_program.pro.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/mainwindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/mainwindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/mainwindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/mainwindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/mainwindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PABD/lab5/Prog/l5_program/mainwindow.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lab4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lab4/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,17 +33,26 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="1572edf2-cf14-49e6-b047-be9cc244fdf8" name="Default Changelist" comment="" />
       <created>1620627814148</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620627814148</updated>
       <workItem from="1620813607706" duration="14000" />
+      <workItem from="1622029233282" duration="32000" />
+      <workItem from="1622029368813" duration="51000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
