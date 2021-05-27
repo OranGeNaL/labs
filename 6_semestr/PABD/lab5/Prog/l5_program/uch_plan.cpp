@@ -93,6 +93,7 @@ void Uch_Plan::Dismiss()
 void Uch_Plan::on_addButton_clicked()
 {
     formAdd->Set("Наименование Уч. Плана", "Специальность", "", "");
+    formAdd->SetInput(0, 1, -1, -1);
     formAdd->show();
 }
 

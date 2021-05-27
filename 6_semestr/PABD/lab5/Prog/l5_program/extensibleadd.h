@@ -2,6 +2,9 @@
 #define EXTENSIBLEADD_H
 
 #include <QDialog>
+#include <QSqlDatabase>
+#include <QDebug>
+#include <QSqlRelationalTableModel>
 
 namespace Ui {
 class ExtensibleAdd;
@@ -17,11 +20,16 @@ public:
 
     void Set(QString, QString, QString, QString);
     void SetInput(int, int, int, int);
-    void SetCombo(QString, QString);
+    void SetCombo(int, QString, QString);
     QString arg1;
     QString arg2;
     QString arg3;
     QString arg4;
+
+    QString** comboParams;
+    QSqlRelationalTableModel **tables;
+
+    int* inputsState;
 
 signals:
     void sendPositive();

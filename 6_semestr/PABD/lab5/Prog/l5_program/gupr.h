@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QSqlDatabase>
+#include <QSqlRecord>
 #include <QSqlRelationalTableModel>
 
 #include <extensibleadd.h>
@@ -28,6 +29,7 @@ public:
 private slots:
     void Add();
     void Dismiss();
+    void currentGuprChanged(QModelIndex cur_ind, QModelIndex previous);
 
     void on_addButton_clicked();
 
