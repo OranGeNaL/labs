@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QSqlDatabase>
 #include <QSqlRelationalTableModel>
+#include <QSqlRecord>
 
 #include <extensibleadd.h>
 
@@ -24,6 +25,7 @@ public:
 private slots:
     void Add();
     void Dismiss();
+    void currentUch_PlanChanged(QModelIndex cur_ind, QModelIndex previous);
 
     void on_addButton_clicked();
 

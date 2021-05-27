@@ -42,6 +42,8 @@ private slots:
 
     void on_addButton_clicked();
 
+    void on_delButton_clicked();
+
 private:
     Ui::Gruppa *ui;
 };

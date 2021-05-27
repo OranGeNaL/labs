@@ -21,6 +21,7 @@ public:
     void Set(QString, QString, QString, QString);
     void SetInput(int, int, int, int);
     void SetCombo(int, QString, QString);
+    void SetAddName(QString);
     QString arg1;
     QString arg2;
     QString arg3;

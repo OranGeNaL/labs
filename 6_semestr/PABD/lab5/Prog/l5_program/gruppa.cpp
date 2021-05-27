@@ -18,6 +18,7 @@ Gruppa::Gruppa(QSqlDatabase _db, QWidget *parent) :
     specialityBox->setTable("speciality");
     gruppaTable->setTable("gruppa");
 
+    ui->groupTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     uchPlanBox->select();
     specialityBox->select();
 
@@ -103,7 +104,11 @@ void Gruppa::on_uch_planCombo_currentIndexChanged(int index)
 
 void Gruppa::on_addButton_clicked()
 {
-    formAdd->Set("Наименование Группы", "Дата вступления", "ID Учебного Плана", "ID Специальности");
+    formAdd->Set("Наименование Группы", "Дата вступления", "Учебный План", "Специальность");
+    formAdd->SetInput(0, 0, 1, 1);
+    formAdd->SetCombo(2, "uch_plan", "name_uch");
+    formAdd->SetCombo(3, "speciality", "name_spec");
+    formAdd->SetAddName("Добавить группу");
     formAdd->show();
 }
 
@@ -135,3 +140,17 @@ void Gruppa::Dismiss()
 {
     formAdd->hide();
 }
+
+void Gruppa::on_delButton_clicked()
+{
+    QModelIndex ind;
+    int row = ui->groupTableView->selectionModel()->selectedRows(0).first().row();
+    qDebug() << row;
+    gruppaTable->removeRow(row, ind);
+
+    if(!gruppaTable->submitAll())
+    {
+        QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+    }
+}
+

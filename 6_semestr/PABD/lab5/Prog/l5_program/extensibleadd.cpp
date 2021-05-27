@@ -134,6 +134,10 @@ void ExtensibleAdd::InputChange(int ind, int type)
     }
 }
 
+void ExtensibleAdd::SetAddName(QString name)
+{
+    ExtensibleAdd::setWindowTitle(name);
+}
 
 void ExtensibleAdd::on_cancelButton_clicked()
 {

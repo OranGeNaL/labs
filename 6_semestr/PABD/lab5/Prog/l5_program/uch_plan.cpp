@@ -30,6 +30,9 @@ Uch_Plan::Uch_Plan(QSqlDatabase _db, QWidget *parent) : QDialog(parent), ui(new 
     SLOT(Add()));
     connect(formAdd, SIGNAL(sendNegative()),
     this, SLOT(Dismiss()));
+
+    connect(ui->specialityTableView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex, QModelIndex)), this, SLOT(currentUch_PlanChanged(QModelIndex, QModelIndex)));
+
 }
 
 Uch_Plan::~Uch_Plan()
@@ -64,6 +67,8 @@ void Uch_Plan::Update()
     ui->specialityTableView->hideColumn(0);
     ui->specialityTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->uch_planTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    connect(ui->specialityTableView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex, QModelIndex)), this, SLOT(currentUch_PlanChanged(QModelIndex, QModelIndex)));
 }
 
 void Uch_Plan::SetDB(QSqlDatabase _db)
@@ -94,6 +99,8 @@ void Uch_Plan::on_addButton_clicked()
 {
     formAdd->Set("Наименование Уч. Плана", "Специальность", "", "");
     formAdd->SetInput(0, 1, -1, -1);
+    formAdd->SetCombo(1, "speciality", "name_spec");
+    formAdd->SetAddName("Добавить учебный план");
     formAdd->show();
 }
 
@@ -112,3 +119,17 @@ void Uch_Plan::on_delButton_clicked()
     }
 }
 
+void Uch_Plan::currentUch_PlanChanged(QModelIndex cur_ind, QModelIndex)
+{
+    //qDebug() << "CHANGED";
+    if(cur_ind.isValid())
+    {
+        QSqlRecord record = specTable->record(cur_ind.row());
+        //QString id = record.value("");
+        uch_planTable->setFilter(QString("Speciality_id_spec=%1").arg(record.value("id_spec").toInt()));
+    }
+    else
+    {
+        uch_planTable->setFilter("Speciality_id_spec=-1");
+    }
+}

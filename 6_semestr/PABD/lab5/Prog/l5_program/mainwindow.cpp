@@ -109,17 +109,18 @@ void MainWindow::OpenF(QAction* a)
         break;
     case 1436716544:
         formGupr->SetDB(db);
-        formGupr->Update();
+        //formGupr->Update();
         formGupr->show();
         //selectTable("kafedra");
         break;
     case 3862366129:
         formGruppa->SetDB(db);
-        formGruppa->Update();
+        //formGruppa->Update();
         formGruppa->show();
         break;
      case 2958382714:
-        formKaf->Update();
+        formKaf->SetDB(db);
+        //formKaf->Update();
         formKaf->show();
         break;
     case 625336143:

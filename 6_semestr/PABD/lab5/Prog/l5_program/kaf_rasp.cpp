@@ -21,6 +21,13 @@ Kaf_Rasp::Kaf_Rasp(QSqlDatabase _db, QWidget *parent) :
     specialityTable->setTable("speciality");
     disciplineTable->setTable("discipline");
 
+    formAdd = new ExtensibleAdd();
+
+    connect(formAdd, SIGNAL(sendPositive()), this,
+    SLOT(Add()));
+    connect(formAdd, SIGNAL(sendNegative()),
+    this, SLOT(Dismiss()));
+
     /*ui->specialityCombo->setModel(specialityBox);
     ui->uch_planCombo->setModel(uchPlanBox);
 
@@ -33,6 +40,12 @@ Kaf_Rasp::Kaf_Rasp(QSqlDatabase _db, QWidget *parent) :
     SLOT(Add()));
     connect(formAdd, SIGNAL(sendNegative()),
     this, SLOT(Dismiss()));*/
+}
+
+void Kaf_Rasp::SetDB(QSqlDatabase _db)
+{
+    db = _db;
+    Update();
 }
 
 void Kaf_Rasp::Update()
@@ -63,12 +76,12 @@ void Kaf_Rasp::Update()
 
     ui->kaf_raspTableView->setModel(kaf_raspTable);
     ui->kafedraCombo->setModel(kafedraTable);
-    ui->disciplineCombo->setModel(disciplineTable);
+    ui->specialityCombo->setModel(specialityTable);
 
     ui->kaf_raspTableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
     ui->kafedraCombo->setModelColumn(kafedraTable->fieldIndex("name_kaf"));
-    ui->disciplineCombo->setModelColumn(disciplineTable->fieldIndex("name_disc"));
+    ui->specialityCombo->setModelColumn(specialityTable->fieldIndex("name_spec"));
 }
 
 Kaf_Rasp::~Kaf_Rasp()
@@ -77,9 +90,45 @@ Kaf_Rasp::~Kaf_Rasp()
 
 }
 
+void Kaf_Rasp::Add() {
+
+    QSqlQuery query("select id_spec from speciality where name_spec='" + ui->specialityCombo->currentText()+ "';");
+    qDebug() << "select id_spec from speciality where name_spec='" + ui->specialityCombo->currentText()+ "';";
+    query.next();
+    QString spec_id = query.value(0).toString();
+
+    QSqlQuery query1("select id_kaf from kafedra where name_kaf='" + ui->kafedraCombo->currentText()+ "';");
+    qDebug() << "select id_kaf from kafedra where name_kaf='" + ui->kafedraCombo->currentText()+ "';";
+    query1.next();
+    QString kaf_id = query1.value(0).toString();
+
+    QSqlQuery query2("select id_disc from discipline where name_disc='" + formAdd->arg1+ "';");
+    qDebug() << "select id_disc from discipline where name_disc='" + formAdd->arg1+ "';";
+    query2.next();
+    QString disc_id = query2.value(0).toString();
+
+    db.exec("select insertintokaf_rasp(" + spec_id + ", " + disc_id + ", " + kaf_id + ")");
+    qDebug() << "select insertintokaf_rasp(" + spec_id + ", " + disc_id + ", " + kaf_id + ")";
+//    guprTable->select();
+//    gupr_elTable->select();
+
+    /*QMessageBox::critical(this, tr("ERROR!"),
+    db.lastError().databaseText());*/
+    kaf_raspTable->select();
+    formAdd->hide();
+}
+
+void Kaf_Rasp::Dismiss(){
+    formAdd->hide();
+}
+
 void Kaf_Rasp::on_addButton_clicked()
 {
-
+    formAdd->Set("Дисциплина", "", "", "");
+    formAdd->SetInput(1, -1, -1, -1);
+    formAdd->SetCombo(0, "discipline", "name_disc");
+    formAdd->SetAddName("Добавить распределение");
+    formAdd->show();
 }
 
 

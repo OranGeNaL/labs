@@ -27,7 +27,7 @@ public:
     QPushButton *addButton;
     QPushButton *delButton;
     QComboBox *kafedraCombo;
-    QComboBox *disciplineCombo;
+    QComboBox *specialityCombo;
     QLabel *label;
     QLabel *label_2;
 
@@ -48,15 +48,15 @@ public:
         kafedraCombo = new QComboBox(Kaf_Rasp);
         kafedraCombo->setObjectName(QString::fromUtf8("kafedraCombo"));
         kafedraCombo->setGeometry(QRect(10, 50, 291, 27));
-        disciplineCombo = new QComboBox(Kaf_Rasp);
-        disciplineCombo->setObjectName(QString::fromUtf8("disciplineCombo"));
-        disciplineCombo->setGeometry(QRect(380, 50, 311, 27));
+        specialityCombo = new QComboBox(Kaf_Rasp);
+        specialityCombo->setObjectName(QString::fromUtf8("specialityCombo"));
+        specialityCombo->setGeometry(QRect(380, 50, 311, 27));
         label = new QLabel(Kaf_Rasp);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(10, 20, 101, 19));
         label_2 = new QLabel(Kaf_Rasp);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(380, 20, 101, 19));
+        label_2->setGeometry(QRect(380, 20, 111, 19));
 
         retranslateUi(Kaf_Rasp);
 
@@ -69,7 +69,7 @@ public:
         addButton->setText(QCoreApplication::translate("Kaf_Rasp", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214", nullptr));
         delButton->setText(QCoreApplication::translate("Kaf_Rasp", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214", nullptr));
         label->setText(QCoreApplication::translate("Kaf_Rasp", "\320\232\320\260\321\204\320\265\320\264\321\200\320\260", nullptr));
-        label_2->setText(QCoreApplication::translate("Kaf_Rasp", "\320\224\320\270\321\201\321\206\320\270\320\277\320\273\320\270\320\275\320\260", nullptr));
+        label_2->setText(QCoreApplication::translate("Kaf_Rasp", "\320\241\320\277\320\265\321\206\320\270\320\260\320\273\321\214\320\275\320\276\321\201\321\202\321\214", nullptr));
     } // retranslateUi
 
 };

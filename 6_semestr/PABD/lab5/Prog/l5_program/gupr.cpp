@@ -72,7 +72,6 @@ void Gupr::Update()
     ui->guprTableView->hideColumn(3);
 
     connect(ui->gupr_elTableView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex, QModelIndex)), this, SLOT(currentGuprChanged(QModelIndex, QModelIndex)));
-
 }
 
 void Gupr::SetDB(QSqlDatabase _db)
@@ -113,6 +112,7 @@ void Gupr::on_addButton_clicked()
     formAdd->Set("Длительность", "Курс", "Количество недель", "Элемент ГУПР");
     formAdd->SetInput(0, 0, 0, 1);
     formAdd->SetCombo(3, "gupr_elem", "name_gupr_elem");
+    formAdd->SetAddName("Добавить ГУПР");
     formAdd->show();
 }
 

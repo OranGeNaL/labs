@@ -59,7 +59,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QComboBox" name="disciplineCombo">
+  <widget class="QComboBox" name="specialityCombo">
    <property name="geometry">
     <rect>
      <x>380</x>
@@ -87,12 +87,12 @@
     <rect>
      <x>380</x>
      <y>20</y>
-     <width>101</width>
+     <width>111</width>
      <height>19</height>
     </rect>
    </property>
    <property name="text">
-    <string>Дисциплина</string>
+    <string>Специальность</string>
    </property>
   </widget>
  </widget>

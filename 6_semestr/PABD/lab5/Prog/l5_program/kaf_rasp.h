@@ -5,6 +5,7 @@
 #include <QSqlDatabase>
 #include <QSqlRelationalTableModel>
 #include <QSqlRelation>
+#include <QSqlQuery>
 
 #include <extensibleadd.h>
 
@@ -20,8 +21,12 @@ public:
     explicit Kaf_Rasp(QSqlDatabase _db, QWidget *parent = nullptr);
     ~Kaf_Rasp();
     void Update();
+    void SetDB(QSqlDatabase _db);
+    ExtensibleAdd* formAdd;
 
 private slots:
+    void Add();
+    void Dismiss();
     void on_addButton_clicked();
 
     void on_delButton_clicked();
