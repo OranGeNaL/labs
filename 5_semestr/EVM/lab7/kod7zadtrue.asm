@@ -1,3 +1,11 @@
+ADI 80
+LXI H, 08F0
+MOV M, A
+XRA A
+ADI 01
+INX H
+MOV M, A
+
 LDA 08FF
 MOV C, A
 begz:
