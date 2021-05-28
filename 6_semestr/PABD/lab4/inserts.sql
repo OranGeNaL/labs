@@ -10,11 +10,18 @@
 
 --Вставка в Discipline
 CREATE OR REPLACE FUNCTION insertIntoDiscipline(VARCHAR(50))
-RETURNS VOID AS $$
+RETURNS INT AS $RESULT$
 BEGIN
+  IF EXISTS(SELECT 1 FROM discipline WHERE discipline.name_disc=$1)
+  THEN
+  RETURN 1;
+  ELSE
   INSERT INTO Log_Users(User_Name, TimeAction, TableAction, Action)
   VALUES (current_user, now(), 'discipline', 'INSERT');
   INSERT INTO Discipline (name_disc) VALUES ($1);
+  RETURN 0;
+  END IF;
+  RETURN;
 END;
 $$ LANGUAGE plpgsql;
 

@@ -51,7 +51,7 @@ void Gupr::Update()
 
     guprTable->setEditStrategy(QSqlTableModel::OnManualSubmit);
 
-    guprTable->setHeaderData(0, Qt::Horizontal, QObject::tr("Длительность"), Qt::DisplayRole);
+    guprTable->setHeaderData(0, Qt::Horizontal, QObject::tr("Начало периода"), Qt::DisplayRole);
     guprTable->setHeaderData(1, Qt::Horizontal, QObject::tr("Курс"), Qt::DisplayRole);
     guprTable->setHeaderData(2, Qt::Horizontal, QObject::tr("Количество недель"), Qt::DisplayRole);
     guprTable->setHeaderData(3, Qt::Horizontal, QObject::tr("Наименование ГУПР"), Qt::DisplayRole);

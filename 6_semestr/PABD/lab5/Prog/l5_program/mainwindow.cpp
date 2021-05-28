@@ -260,33 +260,40 @@ void MainWindow::on_addButton_clicked()
 
 void MainWindow::Add()
 {
+    QSqlQuery query;
     switch (const_hash(selectedTable.toStdString().c_str())) {
 
         case 3566738188: //selectTable("course");
-            db.exec("select insertintocourse(" + formAdd->arg1 + ")");
+            query.exec("select insertintocourse(" + formAdd->arg1 + ")");
             break;
         case 34458455: //selectTable("discipline");
-            db.exec("select insertintodiscipline('" + formAdd->arg1 + "')");
+            query.exec("select insertintodiscipline('" + formAdd->arg1 + "')");
             break;
         case 2821064468: //selectTable("speciality");
-            db.exec("select insertintospeciality('" + formAdd->arg1 + "')");
+            query.exec("select insertintospeciality('" + formAdd->arg1 + "')");
             break;
         case 2581877950: //selectTable("gupr_elem");
-            db.exec("select insertintogupr_elem('" + formAdd->arg1 + "')");
+            query.exec("select insertintogupr_elem('" + formAdd->arg1 + "')");
             break;
         case 1202426404:
             //selectTable("kafedra");
-            db.exec("select insertintokafedra('" + formAdd->arg1 + "')");
+            query.exec("select insertintokafedra('" + formAdd->arg1 + "')");
             break;
         case 4111733963:
             //selectTable("number_weeks");
-            db.exec("select insertintonumber_weeks('" + formAdd->arg1 + "')");
+            query.exec("select insertintonumber_weeks('" + formAdd->arg1 + "')");
             break;
         case 3415898536:
             //selectTable("semestr");
-            db.exec("select insertintosemestr('" + formAdd->arg1 + "')");
+            query.exec("select insertintosemestr('" + formAdd->arg1 + "')");
             break;
     }
+
+    query.next();
+
+    //qDebug() << query.value(0).toString();
+    if(query.value(0).toString() == "1")
+        QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
 
     formAdd->hide();
     table->select();
