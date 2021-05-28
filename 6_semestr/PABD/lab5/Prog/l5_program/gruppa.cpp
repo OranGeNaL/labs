@@ -95,8 +95,12 @@ void Gruppa::on_specialityCombo_currentIndexChanged(int index)
 
 void Gruppa::on_uch_planCombo_currentIndexChanged(int index)
 {
-
-    gruppaTable->setFilter("gruppa.uch_plan_id_uch=" + uchPlanBox->record(index).field("id_uch").value().toString() + " and gruppa.speciality_id_spec=" + specialityBox->record(ui->specialityCombo->currentIndex()).field("id_spec").value().toString());
+    QString filter;
+    if(ui->uch_planCombo->currentText() == "")
+        filter ="gruppa.uch_plan_id_uch=-1 and gruppa.speciality_id_spec=" + specialityBox->record(ui->specialityCombo->currentIndex()).field("id_spec").value().toString();
+    else
+        filter = "gruppa.uch_plan_id_uch=" + uchPlanBox->record(index).field("id_uch").value().toString() + " and gruppa.speciality_id_spec=" + specialityBox->record(ui->specialityCombo->currentIndex()).field("id_spec").value().toString();
+    gruppaTable->setFilter(filter);
     gruppaTable->select();
     //Update();
 }

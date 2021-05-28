@@ -57,6 +57,7 @@ MainWindow::MainWindow(QWidget *parent)
     formGruppa = new Gruppa(db);
     formAdd = new ExtensibleAdd();
     formKaf = new Kaf_Rasp(db);
+    formUch_Load = new Uch_Load(db);
 
     connect(formAutorization, SIGNAL(sendConnect()), this,
     SLOT(Connect()));
@@ -80,7 +81,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::OpenF(QAction* a)
 {
-//    qDebug() << const_hash(a->text().toStdString().c_str());
     selectedTable = a->text();
     switch (const_hash(selectedTable.toStdString().c_str())) {
         case 1105689965: formAutorization->show();
@@ -109,21 +109,19 @@ void MainWindow::OpenF(QAction* a)
         break;
     case 1436716544:
         formGupr->SetDB(db);
-        //formGupr->Update();
         formGupr->show();
-        //selectTable("kafedra");
         break;
     case 3862366129:
         formGruppa->SetDB(db);
-        //formGruppa->Update();
         formGruppa->show();
         break;
      case 2958382714:
         formKaf->SetDB(db);
-        //formKaf->Update();
         formKaf->show();
         break;
     case 625336143:
+        formUch_Load->SetDB(db);
+        formUch_Load->show();
         break; //Учебная нагрузка
     }
 
@@ -164,6 +162,7 @@ void MainWindow::selectTable(QString nameTable)
     else if(nameTable == "gupr_elem")
     {
         table->setHeaderData(1, Qt::Horizontal, QObject::tr("Элемент ГУПР"), Qt::DisplayRole);
+        ui->tableView->hideColumn(0);
     }
 
     else if(nameTable == "kafedra")

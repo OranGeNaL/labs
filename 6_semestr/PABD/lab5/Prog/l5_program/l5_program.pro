@@ -18,6 +18,7 @@ SOURCES += \
     kaf_rasp.cpp \
     main.cpp \
     mainwindow.cpp \
+    uch_load.cpp \
     uch_plan.cpp
 
 HEADERS += \
@@ -27,6 +28,7 @@ HEADERS += \
     gupr.h \
     kaf_rasp.h \
     mainwindow.h \
+    uch_load.h \
     uch_plan.h
 
 FORMS += \
@@ -36,6 +38,7 @@ FORMS += \
     gupr.ui \
     kaf_rasp.ui \
     mainwindow.ui \
+    uch_load.ui \
     uch_plan.ui
 
 # Default rules for deployment.

@@ -5,7 +5,11 @@
 #include <QSqlDatabase>
 #include <QSqlRelationalTableModel>
 #include <QSqlRelation>
+#include <QSqlRecord>
+#include <QSqlField>
 #include <QSqlQuery>
+#include <QMessageBox>
+#include <QSqlError>
 
 #include <extensibleadd.h>
 
@@ -31,10 +35,15 @@ private slots:
 
     void on_delButton_clicked();
 
+    void on_kafedraCombo_currentIndexChanged(int index);
+
+    void on_specialityCombo_currentIndexChanged(int index);
+
 private:
     Ui::Kaf_Rasp *ui;
 
     QSqlDatabase db;
+    void UpdateFilter();
 
     QSqlRelationalTableModel* kaf_raspTable;
 

@@ -17,6 +17,7 @@
 #include <gruppa.h>
 #include <extensibleadd.h>
 #include <kaf_rasp.h>
+#include <uch_load.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -37,6 +38,7 @@ public:
     Gruppa* formGruppa;
     ExtensibleAdd* formAdd;
     Kaf_Rasp* formKaf;
+    Uch_Load* formUch_Load;
 
     QMenu* mainMenu;
     QMenu* mainMenuTables;
