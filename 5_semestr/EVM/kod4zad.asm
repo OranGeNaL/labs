@@ -1,12 +1,22 @@
-LDA 0880
+LDA 08FF
 MOV C, A
 beg:
-LXI H, 0880
+LXI H, 08FF
 MOV A, L
 ADD C
 MOV L, A
+INR H
 MOV A, M
 MOV D, A
+LXI H, 08F0
+
+MOV E, M
+ANA E
+JPO bz
+
+LXI H, 08F1
+MOV E, M
+MOV A, D
 ANA E
 JPE even
 ANA E
@@ -15,16 +25,15 @@ moved:
 DCR C
 JNZ beg
 
-CALL sEven
-CALL sOdd
-
 HLT
 
-
-
 even:
-LXI H, 08DF
+LXI H, 08FE
+MOV A, M
 INR M
+LXI H, 0980
+ADD L
+MOV L, A
 MOV B, D
 MOV A, M
 ADD L
@@ -33,8 +42,12 @@ MOV M, B
 JMP moved
 
 odd:
-LXI H, 08EF
+LXI H, 08FD
+MOV A, M
 INR M
+LXI H, 0A00
+ADD L
+MOV L, A
 MOV B, D
 MOV A, M
 ADD L
@@ -42,44 +55,16 @@ MOV L, A
 MOV M, B
 JMP moved
 
-sEven:
-LXI H, 08DF
-MOV C, M
-nextE:	lxi H,08E0
-mov d,c
-moveE: mov a,m
-inx h
-sub m
-jnc endifE
-add m
-mov b,m
-mov m,a
-dcx h
-mov m,b
-inx h
-endifE: dcr d
-jnz moveE
-dcr c
-jnz nextE
-RET
-
-
-sOdd:
-LXI H, 08EF
-MOV C, M
-next:	lxi H,08F0
-mov d,c
-move: mov a,m
-inx h
-CMP M
-jc endif
-mov b,m
-mov m,a
-dcx h
-mov m,b
-inx h
-endif: dcr d
-jnz move
-dcr c
-jnz next
-RET
+bz:
+LXI H, 08FC
+MOV A, M
+INR M
+LXI H, 0A80
+ADD L
+MOV L, A
+MOV B, D
+MOV A, M
+ADD L
+MOV L, A
+MOV M, B
+JMP moved
