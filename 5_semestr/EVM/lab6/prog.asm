@@ -1,0 +1,64 @@
+LXI H, 0920
+MOV A,M
+ANI 7F
+INX H
+MOV M, A
+ANI F0
+RRC
+RRC
+RRC
+RRC
+MOV B, A
+MOV A, M
+ANI 0F
+MOV D, A
+
+LXI H, 0930
+MOV C, M
+INX H
+MOV E, M
+
+XRA A
+
+beginii:
+RLC
+ADI 01
+DCR B
+JZ endi
+DCR C
+JNZ beginii
+
+beginio:
+RLC
+DCR B
+JZ endi
+DCR E
+
+endi:
+LXI H, 0940
+MOV M, A
+
+LXI H, 0930
+MOV C, M
+INX H
+MOV E, M
+XRA A
+
+begindi:
+RLC
+ADI 01
+DCR D
+JZ endd
+DCR C
+JNZ begindi
+
+begindo:
+RLC
+DCR D
+JZ endd
+DCR E
+
+endd:
+LXI H, 0941
+MOV M, A
+HLT
