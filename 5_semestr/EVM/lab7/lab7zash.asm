@@ -40,6 +40,39 @@ JNZ begz
 LXI H, 08FE
 MOV M, B
 
+
+sEven:
+LXI H, 08FE
+MOV C, M
+
+nextE:
+
+LDA 08FF
+MOV D, A
+LXI H, 08FF
+MOV A, L
+ADD D
+INR H
+INR A
+MOV L, A
+
+mov d,c
+moveE: mov a,m
+inx h
+sub m
+jnc endifE
+add m
+mov b,m
+mov m,a
+dcx h
+mov m,b
+inx h
+endifE: dcr d
+jnz moveE
+dcr c
+jnz nextE
+
+gainingEven:
 XRA A
 MOV B, A
 
@@ -86,6 +119,7 @@ JNZ bege
 LXI H, 08FD
 MOV M, B
 
+gainingOdd:
 XRA A
 MOV B, A
 
