@@ -48,6 +48,9 @@ void Uch_Load::Update()
     ui->discCombo->setModelColumn(1);
     ui->uch_loadTableView->setModel(uch_loadTable);
 
+    uch_loadTable->setHeaderData(0, Qt::Horizontal, QObject::tr("Часы"), Qt::DisplayRole);
+    uch_loadTable->setHeaderData(3, Qt::Horizontal, QObject::tr("Семестр"), Qt::DisplayRole);
+
     ui->uch_loadTableView->hideColumn(1);
     ui->uch_loadTableView->hideColumn(2);
     ui->uch_loadTableView->hideColumn(4);
@@ -104,7 +107,7 @@ void Uch_Load::Add()
 //    query.next();
 //    QString str = query.value(0).toString();
 
-    db.exec("select insertintouch_load(" + formAdd->arg1 + ", " + QString::number(idPlan) + ", " + QString::number(idSpec) + ", " + formAdd->arg2 + ", " + QString::number(idDisc) + ")");
+    db.exec("select insertintouch_load('" + formAdd->arg1 + "', " + QString::number(idPlan) + ", " + QString::number(idSpec) + ", " + formAdd->arg2 + ", " + QString::number(idDisc) + ")");
 
     UpdateFilter();
 
@@ -113,7 +116,7 @@ void Uch_Load::Add()
 
 void Uch_Load::Dismiss()
 {
-
+    formAdd->hide();
 }
 
 void Uch_Load::on_discCombo_currentIndexChanged(int index)
@@ -124,10 +127,10 @@ void Uch_Load::on_discCombo_currentIndexChanged(int index)
 
 void Uch_Load::UpdateFilter()
 {
-    QString filter = "uch_load.Uch_Plan_id_uch=" + QString::number(idPlan) + " AND uch_load.Speciality_id_spec=" + QString::number(idDisc) +
+    QString filter = "uch_load.Uch_Plan_id_uch=" + QString::number(idPlan) + " AND uch_load.Speciality_id_spec=" + QString::number(idSpec) +
             " AND uch_load.Discipline_id_disc=" + QString::number(idDisc);
 
-    //qDebug() << filter;
+    qDebug() << filter;
 
     uch_loadTable->setFilter(filter);
     uch_loadTable->select();
@@ -144,6 +147,18 @@ void Uch_Load::on_addButton_clicked()
 
 void Uch_Load::on_delButton_clicked()
 {
+    QModelIndex ind;
+    QModelIndexList uch_loadList = ui->uch_loadTableView->selectionModel()->selectedRows(0);
+    if(uch_loadList.count() > 0)
+    {
+        int row = uch_loadList.first().row();
+        //qDebug() << row;
+        uch_loadTable->removeRow(row, ind);
 
+        if(!uch_loadTable->submitAll())
+        {
+            QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+        }
+    }
 }
 

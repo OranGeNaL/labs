@@ -112,7 +112,6 @@ void Uch_Plan::on_addButton_clicked()
 
 void Uch_Plan::on_delButton_clicked()
 {
-
     QModelIndex ind;
     QModelIndexList uch_planList = ui->uch_planTableView->selectionModel()->selectedRows(0);
     if(uch_planList.count() > 0)

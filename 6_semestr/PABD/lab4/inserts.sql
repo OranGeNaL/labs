@@ -14,6 +14,7 @@ RETURNS INT AS $$
 BEGIN
   IF EXISTS(SELECT 1 FROM discipline WHERE discipline.name_disc=$1)
   THEN
+  RAISE EXCEPTION 'Такая дисциплина уже существует!';
   RETURN 1;
   ELSE
   INSERT INTO Log_Users(User_Name, TimeAction, TableAction, Action)
@@ -21,7 +22,6 @@ BEGIN
   INSERT INTO Discipline (name_disc) VALUES ($1);
   RETURN 0;
   END IF;
-  RETURN;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -106,7 +106,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 --Вставка в Uch_Load
-CREATE OR REPLACE FUNCTION insertIntoUch_Load(INT, INT, INT, INT, INT)
+CREATE OR REPLACE FUNCTION insertIntoUch_Load(VARCHAR(50), INT, INT, INT, INT)
 RETURNS VOID AS $$
 BEGIN
   INSERT INTO Log_Users(User_Name, TimeAction, TableAction, Action)

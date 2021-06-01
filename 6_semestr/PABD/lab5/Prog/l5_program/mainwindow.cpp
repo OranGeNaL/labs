@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent)
     //otherMenuTables->addAction(actGupr);
     otherMenuTables->addAction(actGupr_elem);
     otherMenuTables->addAction(actKafedra);
-    otherMenuTables->addAction(actSemestr);
+    //otherMenuTables->addAction(actSemestr);
     //otherMenuTables->addAction(actNumber_Weeks);
 
     ui->menubar->addMenu(mainMenu);
@@ -103,7 +103,7 @@ void MainWindow::OpenF(QAction* a)
         selectTable("number_weeks");
         break;
     case 3415898536:
-        selectTable("semestr");
+        //selectTable("semestr");
         break;
     case 3862366129:
         formGruppa->SetDB(db);
@@ -194,6 +194,8 @@ void MainWindow::Connect()
     tr("Соединение установлено! Выберите таблицу для работы"));*/
     model = new QSqlRelationalTableModel(0, db);
     ui->tableView->setModel(model);
+    selectedTable = "&Дисциплина";
+    selectTable("discipline");
 }
 
 void MainWindow::Disconnect()
@@ -210,38 +212,45 @@ void MainWindow::on_addButton_clicked()
 
         case 3566738188: //selectTable("course");
             formAdd->Set("Номер курса", "", "", "");
+            formAdd->SetAddName("Добавить курс");
             formAdd->SetInput(0, 0, 0, -1);
             formAdd->show();
             break;
         case 34458455: //selectTable("discipline");
             formAdd->Set("Наименование дисциплины", "", "", "");
+            formAdd->SetAddName("Добавить дисциплину");
             formAdd->SetInput(0, -1, -1, -1);
             formAdd->show();
             break;
         case 2821064468: //selectTable("speciality");
             formAdd->Set("Наименование специальности", "", "", "");
+            formAdd->SetAddName("Добавить специальность");
             formAdd->SetInput(0, -1, -1, -1);
             formAdd->show();
             break;
         case 2581877950: //selectTable("gupr_elem");
             formAdd->Set("Наименование ГУПР", "", "", "");
+            formAdd->SetAddName("Добавить элемент ГУПР");
             formAdd->SetInput(0, -1, -1, -1);
             formAdd->show();
             break;
         case 1202426404:
             //selectTable("kafedra");
             formAdd->Set("Наименование Кафедры", "", "", "");
+            formAdd->SetAddName("Добавить кафедру");
             formAdd->SetInput(0, -1, -1, -1);
             formAdd->show();
             break;
         case 4111733963:
             //selectTable("number_weeks");
             formAdd->Set("Количество недель", "", "", "");
+            formAdd->SetAddName("Добавить курс");
             formAdd->show();
             break;
         case 3415898536:
             //selectTable("semestr");
             formAdd->Set("Номер семестра", "", "", "");
+            formAdd->SetAddName("Добавить курс");
             formAdd->SetInput(0, -1, -1, -1);
             formAdd->show();
             break;
@@ -282,7 +291,7 @@ void MainWindow::Add()
     query.next();
 
     //qDebug() << query.value(0).toString();
-    if(query.value(0).toString() == "1")
+    if(query.value(0).toString() != "0")
         QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
 
     formAdd->hide();
