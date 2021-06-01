@@ -23,7 +23,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTableView" name="gupr_elTableView">
+  <widget class="QTableView" name="guprCourse">
    <property name="geometry">
     <rect>
      <x>10</x>

@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS Gupr_elem (id_gupr_elem SERIAL, name_gupr_elem VARCHA
 
 --CREATE TABLE IF NOT EXISTS Gupr (duration INTEGER, Gupr_elem_id_gupr_elem INTEGER,  FOREIGN KEY (Gupr_elem_id_gupr_elem) REFERENCES Gupr_elem (id_gupr_elem) ON DELETE CASCADE ON UPDATE RESTRICT);
 
-CREATE TABLE IF NOT EXISTS Gupr (duration INTEGER, number_course INTEGER, number_weeks INTEGER, Gupr_elem_id_gupr_elem INTEGER,  FOREIGN KEY (Gupr_elem_id_gupr_elem) REFERENCES Gupr_elem (id_gupr_elem) ON DELETE CASCADE ON UPDATE RESTRICT);
+CREATE TABLE IF NOT EXISTS Gupr (duration INTEGER, number_course INTEGER, number_weeks INTEGER, Gupr_elem_id_gupr_elem INTEGER, uch_plan_id_gupr INTEGER,  FOREIGN KEY (Gupr_elem_id_gupr_elem) REFERENCES Gupr_elem (id_gupr_elem) ON DELETE CASCADE ON UPDATE RESTRICT, FOREIGN KEY (uch_plan_id_gupr) REFERENCES Uch_Plan (id_uch) ON DELETE CASCADE ON UPDATE RESTRICT);
 
 CREATE TABLE IF NOT EXISTS Kafedra (id_kaf SERIAL, name_kaf VARCHAR(50) UNIQUE NOT NULL, PRIMARY KEY (id_kaf));
 

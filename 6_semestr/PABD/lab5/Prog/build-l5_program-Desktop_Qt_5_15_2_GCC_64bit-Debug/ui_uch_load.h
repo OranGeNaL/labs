@@ -28,6 +28,10 @@ public:
     QPushButton *delButton;
     QComboBox *discCombo;
     QLabel *label;
+    QLabel *label_2;
+    QLabel *label_3;
+    QLabel *planLabel;
+    QLabel *specLabel;
 
     void setupUi(QDialog *Uch_Load)
     {
@@ -49,6 +53,18 @@ public:
         label = new QLabel(Uch_Load);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(10, 20, 211, 19));
+        label_2 = new QLabel(Uch_Load);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(390, 20, 66, 19));
+        label_3 = new QLabel(Uch_Load);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(390, 50, 111, 19));
+        planLabel = new QLabel(Uch_Load);
+        planLabel->setObjectName(QString::fromUtf8("planLabel"));
+        planLabel->setGeometry(QRect(510, 20, 301, 19));
+        specLabel = new QLabel(Uch_Load);
+        specLabel->setObjectName(QString::fromUtf8("specLabel"));
+        specLabel->setGeometry(QRect(510, 50, 301, 19));
 
         retranslateUi(Uch_Load);
 
@@ -61,6 +77,10 @@ public:
         addButton->setText(QCoreApplication::translate("Uch_Load", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214", nullptr));
         delButton->setText(QCoreApplication::translate("Uch_Load", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214", nullptr));
         label->setText(QCoreApplication::translate("Uch_Load", "\320\224\320\270\321\201\321\206\320\270\320\277\320\273\320\270\320\275\320\260", nullptr));
+        label_2->setText(QCoreApplication::translate("Uch_Load", "\320\237\320\273\320\260\320\275:", nullptr));
+        label_3->setText(QCoreApplication::translate("Uch_Load", "\320\241\320\277\320\265\321\206\320\270\320\260\320\273\321\214\320\275\320\276\321\201\321\202\321\214: ", nullptr));
+        planLabel->setText(QCoreApplication::translate("Uch_Load", "TextLabel", nullptr));
+        specLabel->setText(QCoreApplication::translate("Uch_Load", "TextLabel", nullptr));
     } // retranslateUi
 
 };

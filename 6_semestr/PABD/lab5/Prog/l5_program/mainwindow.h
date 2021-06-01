@@ -34,11 +34,9 @@ public:
 
     Authorization* formAutorization;
     Uch_Plan* formUch_Plan;
-    Gupr* formGupr;
     Gruppa* formGruppa;
     ExtensibleAdd* formAdd;
     Kaf_Rasp* formKaf;
-    Uch_Load* formUch_Load;
 
     QMenu* mainMenu;
     QMenu* mainMenuTables;

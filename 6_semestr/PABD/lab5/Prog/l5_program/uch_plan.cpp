@@ -9,6 +9,8 @@ Uch_Plan::Uch_Plan(QSqlDatabase _db, QWidget *parent) : QDialog(parent), ui(new 
 {
     ui->setupUi(this);
     db = _db;
+    formUch_Load = new Uch_Load(db);
+    formGupr = new Gupr(db);
 
     formAdd = new ExtensibleAdd();
 
@@ -25,6 +27,7 @@ Uch_Plan::Uch_Plan(QSqlDatabase _db, QWidget *parent) : QDialog(parent), ui(new 
     ui->uch_planTableView->setModel(uch_planTable);
 
     ui->uch_planTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->specialityTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
 
     connect(formAdd, SIGNAL(sendPositive()), this,
     SLOT(Add()));
@@ -56,6 +59,8 @@ void Uch_Plan::Update()
 
 
     uch_planTable->setRelation(2, QSqlRelation("speciality", "id_spec", "name_spec"));
+
+    ui->specialityTableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
     uch_planTable->select();
     specTable->select();
@@ -109,13 +114,17 @@ void Uch_Plan::on_delButton_clicked()
 {
 
     QModelIndex ind;
-    int row = ui->uch_planTableView->selectionModel()->selectedRows(0).first().row();
-    qDebug() << row;
-    uch_planTable->removeRow(row, ind);
-
-    if(!uch_planTable->submitAll())
+    QModelIndexList uch_planList = ui->uch_planTableView->selectionModel()->selectedRows(0);
+    if(uch_planList.count() > 0)
     {
-        QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+        int row = uch_planList.first().row();
+        qDebug() << row;
+        uch_planTable->removeRow(row, ind);
+
+        if(!uch_planTable->submitAll())
+        {
+            QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+        }
     }
 }
 
@@ -133,3 +142,37 @@ void Uch_Plan::currentUch_PlanChanged(QModelIndex cur_ind, QModelIndex)
         uch_planTable->setFilter("Speciality_id_spec=-1");
     }
 }
+
+void Uch_Plan::on_redLoadButton_clicked()
+{
+    QModelIndexList specList = ui->specialityTableView->selectionModel()->selectedRows(0);
+    QModelIndexList planList = ui->uch_planTableView->selectionModel()->selectedRows(0);
+
+    if (specList.count() > 0 && planList.count() > 0)
+    {
+        int spec = specTable->record(specList.first().row()).field(0).value().toInt();
+        int plan = uch_planTable->record(planList.first().row()).field(0).value().toInt();
+
+        formUch_Load->SetDB(db);
+        formUch_Load->SetParams(spec, plan);
+        formUch_Load->show();
+    }
+}
+
+
+void Uch_Plan::on_redGuprButton_clicked()
+{
+    QModelIndexList specList = ui->specialityTableView->selectionModel()->selectedRows(0);
+    QModelIndexList planList = ui->uch_planTableView->selectionModel()->selectedRows(0);
+
+    if (specList.count() > 0 && planList.count() > 0)
+    {
+        int spec = specTable->record(specList.first().row()).field(0).value().toInt();
+        int plan = uch_planTable->record(planList.first().row()).field(0).value().toInt();
+        formGupr->SetDB(db);
+        formGupr->SetParams(spec, plan);
+        formGupr->show();
+    }
+
+}
+

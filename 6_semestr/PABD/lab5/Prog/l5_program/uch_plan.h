@@ -7,6 +7,9 @@
 #include <QSqlRecord>
 
 #include <extensibleadd.h>
+#include <uch_load.h>
+#include <gupr.h>
+#include <QException>
 
 namespace Ui {
 class Uch_Plan;
@@ -21,6 +24,8 @@ public:
     ~Uch_Plan();
     void Update();
     void SetDB(QSqlDatabase _db);
+    Uch_Load* formUch_Load;
+    Gupr* formGupr;
 
 private slots:
     void Add();
@@ -30,6 +35,10 @@ private slots:
     void on_addButton_clicked();
 
     void on_delButton_clicked();
+
+    void on_redLoadButton_clicked();
+
+    void on_redGuprButton_clicked();
 
 private:
     Ui::Uch_Plan *ui;

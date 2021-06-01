@@ -30,15 +30,15 @@ MainWindow::MainWindow(QWidget *parent)
 
     mainMenu->addAction(actAuthorisation);
 
-    mainMenuTables->addAction(actUch_Load);
+    //mainMenuTables->addAction(actUch_Load);
     mainMenuTables->addAction(actGruppa);
     mainMenuTables->addAction(actKaf_Rasp);
+    mainMenuTables->addAction(actUch_Plan);
 
     //otherMenuTables->addAction(actCourse);
     otherMenuTables->addAction(actDiscipline);
     otherMenuTables->addAction(actSpeciality);
-    otherMenuTables->addAction(actUch_Plan);
-    otherMenuTables->addAction(actGupr);
+    //otherMenuTables->addAction(actGupr);
     otherMenuTables->addAction(actGupr_elem);
     otherMenuTables->addAction(actKafedra);
     otherMenuTables->addAction(actSemestr);
@@ -53,11 +53,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     formAutorization = new Authorization();
     formUch_Plan = new Uch_Plan(db);
-    formGupr = new Gupr(db);
     formGruppa = new Gruppa(db);
     formAdd = new ExtensibleAdd();
     formKaf = new Kaf_Rasp(db);
-    formUch_Load = new Uch_Load(db);
 
     connect(formAutorization, SIGNAL(sendConnect()), this,
     SLOT(Connect()));
@@ -107,10 +105,6 @@ void MainWindow::OpenF(QAction* a)
     case 3415898536:
         selectTable("semestr");
         break;
-    case 1436716544:
-        formGupr->SetDB(db);
-        formGupr->show();
-        break;
     case 3862366129:
         formGruppa->SetDB(db);
         formGruppa->show();
@@ -119,10 +113,6 @@ void MainWindow::OpenF(QAction* a)
         formKaf->SetDB(db);
         formKaf->show();
         break;
-    case 625336143:
-        formUch_Load->SetDB(db);
-        formUch_Load->show();
-        break; //Учебная нагрузка
     }
 
 }
@@ -308,13 +298,18 @@ void MainWindow::Dismiss()
 void MainWindow::on_deleteButton_clicked()
 {
     QModelIndex ind;
-    int row = ui->tableView->selectionModel()->selectedRows(0).first().row();
-    qDebug() << row;
-    table->removeRow(row, ind);
+    QModelIndexList selectionList = ui->tableView->selectionModel()->selectedRows(0);
 
-    if(!table->submitAll())
+    if(selectionList.count() > 0)
     {
-        QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+        int row = selectionList.first().row();
+        qDebug() << row;
+        table->removeRow(row, ind);
+
+        if(!table->submitAll())
+        {
+            QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+        }
     }
 }
 

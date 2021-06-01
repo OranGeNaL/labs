@@ -10,7 +10,7 @@
 
 --Вставка в Discipline
 CREATE OR REPLACE FUNCTION insertIntoDiscipline(VARCHAR(50))
-RETURNS INT AS $RESULT$
+RETURNS INT AS $$
 BEGIN
   IF EXISTS(SELECT 1 FROM discipline WHERE discipline.name_disc=$1)
   THEN
@@ -66,12 +66,12 @@ END;
 $$ LANGUAGE plpgsql;
 
 --Вставка в Gupr
-CREATE OR REPLACE FUNCTION insertIntoGupr(INT, INT, INT, INT)
+CREATE OR REPLACE FUNCTION insertIntoGupr(INT, INT, INT, INT, INT)
 RETURNS VOID AS $$
 BEGIN
   INSERT INTO Log_Users(User_Name, TimeAction, TableAction, Action)
   VALUES (current_user, now(), 'gupr', 'INSERT');
-  INSERT INTO Gupr (duration, number_course, number_weeks, Gupr_elem_id_gupr_elem) VALUES ($1, $2, $3, $4);
+  INSERT INTO Gupr (duration, number_course, number_weeks, Gupr_elem_id_gupr_elem, uch_plan_id_gupr) VALUES ($1, $2, $3, $4, $5);
 END;
 $$ LANGUAGE plpgsql;
 

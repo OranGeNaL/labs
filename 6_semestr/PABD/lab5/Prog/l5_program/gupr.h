@@ -5,6 +5,7 @@
 #include <QSqlDatabase>
 #include <QSqlRecord>
 #include <QSqlRelationalTableModel>
+#include <QSqlQueryModel>
 
 #include <extensibleadd.h>
 
@@ -21,6 +22,13 @@ public:
     ~Gupr();
     void Update();
     void SetDB(QSqlDatabase _db);
+    void SetHeader(QString plan, QString speciality);
+    void SetParams(int spec, int plan);
+    void UpdateFilter();
+    int idSpec;
+    int idPlan;
+    int idDisc;
+    int currentCourse;
 
     QSqlDatabase db;
 
@@ -40,6 +48,7 @@ private:
 
     QSqlRelationalTableModel* guprTable;
     QSqlRelationalTableModel* gupr_elTable;
+    QSqlQueryModel* coursesTable;
 };
 
 #endif // GUPR_H

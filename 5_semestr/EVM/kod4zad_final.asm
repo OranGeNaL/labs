@@ -7,8 +7,10 @@ ADD C
 MOV L, A
 MOV A, M
 MOV D, A
+MVI E, 01
 ANA E
 JPE even
+MOV A, D
 ANA E
 JPO odd
 moved:

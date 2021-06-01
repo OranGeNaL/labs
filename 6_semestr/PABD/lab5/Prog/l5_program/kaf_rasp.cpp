@@ -146,13 +146,18 @@ void Kaf_Rasp::UpdateFilter()
 void Kaf_Rasp::on_delButton_clicked()
 {
     QModelIndex ind;
-    int row = ui->kaf_raspTableView->selectionModel()->selectedRows(0).first().row();
-    qDebug() << row;
-    kaf_raspTable->removeRow(row, ind);
+    QModelIndexList kafList = ui->kaf_raspTableView->selectionModel()->selectedRows(0);
 
-    if(!kaf_raspTable->submitAll())
+    if (kafList.count() > 0)
     {
-        QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+        int row = kafList.first().row();
+        qDebug() << row;
+        kaf_raspTable->removeRow(row, ind);
+
+        if(!kaf_raspTable->submitAll())
+        {
+            QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+        }
     }
 }
 

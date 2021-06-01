@@ -84,7 +84,7 @@ void Gruppa::on_specialityCombo_currentIndexChanged(int index)
 {
 
     QMessageBox msg;
-    msg.setText("uch_plan.speciality_id_spec=" + specialityBox->record(index).field("id_spec").value().toString());
+    //msg.setText("uch_plan.speciality_id_spec=" + specialityBox->record(index).field("id_spec").value().toString());
     //msg.exec();
     uchPlanBox->setFilter("uch_plan.speciality_id_spec=" + specialityBox->record(index).field("id_spec").value().toString());
     uchPlanBox->select();
@@ -148,13 +148,18 @@ void Gruppa::Dismiss()
 void Gruppa::on_delButton_clicked()
 {
     QModelIndex ind;
-    int row = ui->groupTableView->selectionModel()->selectedRows(0).first().row();
-    qDebug() << row;
-    gruppaTable->removeRow(row, ind);
+    QModelIndexList gruppaList = ui->groupTableView->selectionModel()->selectedRows(0);
 
-    if(!gruppaTable->submitAll())
+    if(gruppaList.count() > 0)
     {
-        QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+        int row = gruppaList.first().row();
+        qDebug() << row;
+        gruppaTable->removeRow(row, ind);
+
+        if(!gruppaTable->submitAll())
+        {
+            QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+        }
     }
 }
 
