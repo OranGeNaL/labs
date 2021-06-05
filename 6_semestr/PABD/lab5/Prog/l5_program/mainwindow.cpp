@@ -187,8 +187,12 @@ void MainWindow::Connect()
     db.setPassword(formAutorization->password);
     formAutorization->hide();
     if(!db.open())
+    {
         QMessageBox::critical(this, tr("ERROR!"),
         db.lastError().databaseText());
+        formAutorization->show();
+    }
+
     /*else
     QMessageBox::information(this, tr("SUCCESS!"),
     tr("Соединение установлено! Выберите таблицу для работы"));*/
@@ -292,7 +296,7 @@ void MainWindow::Add()
 
     //qDebug() << query.value(0).toString();
     if(query.value(0).toString() != "0")
-        QMessageBox::critical(this, tr("ERROR!"), db.lastError().databaseText());
+        QMessageBox::critical(this, tr("ERROR!"), query.lastError().text());
 
     formAdd->hide();
     table->select();

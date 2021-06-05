@@ -100,7 +100,7 @@ void Gupr::SetDB(QSqlDatabase _db)
 void Gupr::Add()
 {
     QSqlQuery query("select id_gupr_elem from gupr_elem where name_gupr_elem='" + formAdd->arg3 + "';");
-    qDebug() << "select id_gupr_elem from gupr_elem where name_gupr_elem='" + formAdd->arg3 + "';";
+    //qDebug() << "select id_gupr_elem from gupr_elem where name_gupr_elem='" + formAdd->arg3 + "';";
     query.next();
     QString str = query.value(0).toString();/*
     int pos = str.lastIndexOf(QChar('"'));
@@ -147,7 +147,7 @@ void Gupr::on_delButton_clicked()
     if(guprList.count() > 0)
     {
         int row = guprList.first().row();
-        qDebug() << row;
+        //qDebug() << row;
         guprTable->removeRow(row, ind);
 
         if(!guprTable->submitAll())
@@ -162,10 +162,10 @@ void Gupr::currentGuprChanged(QModelIndex cur_ind, QModelIndex)
     //qDebug() << "CHANGED";
     if(cur_ind.isValid())
     {
-        QSqlRecord record = gupr_elTable->record(cur_ind.row());
-        currentCourse = record.value("number_course").toInt();
+        //QSqlRecord record = gupr_elTable->record(cur_ind.row());
+        currentCourse = cur_ind.row() + 1;//record.value("number_course").toInt();
         //QString id = record.value("");
-        //qDebug() << QString("gupr.number_course=%1").arg(record.value("number_course").toInt());
+        //qDebug() << QString("gupr.number_course=%1").arg(currentCourse) << cur_ind.row();
         //guprTable->setFilter(QString("gupr.number_course=%1").arg(record.value("number_course").toInt()));
     }
     else
@@ -207,7 +207,7 @@ void Gupr::SetParams(int spec, int plan)
 void Gupr::UpdateFilter()
 {
     QString filter = "gupr.uch_plan_id_gupr=" + QString::number(idPlan) + " AND gupr.number_course=" + QString::number(currentCourse);
-    qDebug() << filter;
+    //qDebug() << filter;
     guprTable->setFilter(filter);
     guprTable->select();
 }
