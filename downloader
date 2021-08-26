@@ -1,0 +1,79 @@
+#!/bin/bash
+########################
+########################
+#Если версия системы одна из последних, например Ubuntu 20.4, можно спокойно устанавливать последние версии либ.
+#Последняя версия readline: 8.1
+#Последняя версия ncurses: 6.2
+#Версии readline:
+#8.1 - 2021
+#7.0 - 2016
+#6.3 - 2014
+#6.2 - 2011
+#Версии ncurses:
+#6.2 - 2020
+#6.0 - 2015
+#5.9 - 2011
+########################
+########################
+
+cd $HOME
+mkdir sources
+cd sources
+postvers=9.3.5
+post=postgresql-$postvers
+nc=ncurses-6.2
+readl=readline-8.1
+targz=.tar.gz
+dest=$HOME/Post
+
+if ["$1" != ""]
+then
+dest=$HOME/Post
+else
+dest=$1
+fi
+
+export CPPFLAGS="-P"
+
+wget "https://ftp.postgresql.org/pub/source/v$postvers/$post$targz"
+wget "http://ftp.gnu.org/pub/gnu/ncurses/$nc$targz"
+wget "http://ftp.gnu.org/pub/gnu/readline/$readl$targz"
+
+tar -xf $post$targz
+tar -xf $nc$targz
+tar -xf $readl$targz
+
+rm $post$targz
+rm $nc$targz
+rm $readl$targz
+
+cd $post
+mkdir lib
+mkdir include
+mkdir share
+
+cd ../$nc
+./configure --prefix=$HOME/sources/comp/nc
+make
+make install
+
+cd $HOME/sources/comp/nc
+cp -r share/* $HOME/sources/$post/share
+cp -r lib/* $HOME/sources/$post/lib
+cp -r include/* $HOME/sources/$post/include
+
+cd $HOME/sources/$readl
+./configure --prefix=$HOME/sources/comp/rl
+make
+make install
+
+cd $HOME/sources/comp/rl
+cp -r lib/* $HOME/sources/$post/lib
+cp -r include/* $HOME/sources/$post/include
+
+cd $HOME/sources/$post
+
+./configure --prefix=$dest --with-libraries=$HOME/sources/$post/lib --with-includes=$HOME/sources/$post/include --without-zlib
+make
+make install
+
