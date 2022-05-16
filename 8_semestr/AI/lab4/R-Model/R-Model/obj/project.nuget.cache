@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "M93qmyfwid9Yt1928SQE55PVOhpXcqnRbZAV9O0Wb7dk5FVSQ59TJvzA3XXQ9IDUmVT7NlSi6M9zq1YDDA3D5w==",
+  "success": true,
+  "projectFilePath": "D:\\AI\\lab4\\R-Model\\R-Model\\R-Model.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pshen\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.23\\microsoft.netcore.app.host.win-x64.3.1.23.nupkg.sha512",
+    "C:\\Users\\pshen\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\pshen\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\pshen\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

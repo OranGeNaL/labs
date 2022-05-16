@@ -1,0 +1,70 @@
+D:\optimization\optimization\bin\Debug\optimization.exe.config
+D:\optimization\optimization\bin\Debug\optimization.exe
+D:\optimization\optimization\bin\Debug\optimization.pdb
+D:\optimization\optimization\obj\Debug\optimization.csprojAssemblyReference.cache
+D:\optimization\optimization\obj\Debug\optimization.Form1.resources
+D:\optimization\optimization\obj\Debug\optimization.Properties.Resources.resources
+D:\optimization\optimization\obj\Debug\optimization.csproj.GenerateResource.cache
+D:\optimization\optimization\obj\Debug\optimization.csproj.CoreCompileInputs.cache
+D:\optimization\optimization\obj\Debug\optimization.exe
+D:\optimization\optimization\obj\Debug\optimization.pdb
+G:\optimization\optimization\bin\Debug\optimization.exe.config
+G:\optimization\optimization\bin\Debug\optimization.exe
+G:\optimization\optimization\bin\Debug\optimization.pdb
+G:\optimization\optimization\obj\Debug\optimization.csprojAssemblyReference.cache
+G:\optimization\optimization\obj\Debug\optimization.Form1.resources
+G:\optimization\optimization\obj\Debug\optimization.Properties.Resources.resources
+G:\optimization\optimization\obj\Debug\optimization.csproj.GenerateResource.cache
+G:\optimization\optimization\obj\Debug\optimization.csproj.CoreCompileInputs.cache
+G:\optimization\optimization\obj\Debug\optimization.exe
+G:\optimization\optimization\obj\Debug\optimization.pdb
+E:\modeling\simplex\optimization\bin\Debug\optimization.exe.config
+E:\modeling\simplex\optimization\bin\Debug\optimization.exe
+E:\modeling\simplex\optimization\bin\Debug\optimization.pdb
+E:\modeling\simplex\optimization\obj\Debug\optimization.csprojAssemblyReference.cache
+E:\modeling\simplex\optimization\obj\Debug\optimization.Form1.resources
+E:\modeling\simplex\optimization\obj\Debug\optimization.Properties.Resources.resources
+E:\modeling\simplex\optimization\obj\Debug\optimization.csproj.GenerateResource.cache
+E:\modeling\simplex\optimization\obj\Debug\optimization.csproj.CoreCompileInputs.cache
+E:\modeling\simplex\optimization\obj\Debug\optimization.exe
+E:\modeling\simplex\optimization\obj\Debug\optimization.pdb
+E:\modeling\simplex2\optimization\bin\Debug\optimization.exe.config
+E:\modeling\simplex2\optimization\bin\Debug\optimization.exe
+E:\modeling\simplex2\optimization\bin\Debug\optimization.pdb
+E:\modeling\simplex2\optimization\obj\Debug\optimization.csprojAssemblyReference.cache
+E:\modeling\simplex2\optimization\obj\Debug\optimization.Form1.resources
+E:\modeling\simplex2\optimization\obj\Debug\optimization.Properties.Resources.resources
+E:\modeling\simplex2\optimization\obj\Debug\optimization.csproj.GenerateResource.cache
+E:\modeling\simplex2\optimization\obj\Debug\optimization.csproj.CoreCompileInputs.cache
+E:\modeling\simplex2\optimization\obj\Debug\optimization.exe
+E:\modeling\simplex2\optimization\obj\Debug\optimization.pdb
+C:\Users\kateb\OneDrive\Рабочий стол\simplex-maga\simplex2\optimization\bin\Debug\optimization.exe.config
+C:\Users\kateb\OneDrive\Рабочий стол\simplex-maga\simplex2\optimization\bin\Debug\optimization.exe
+C:\Users\kateb\OneDrive\Рабочий стол\simplex-maga\simplex2\optimization\bin\Debug\optimization.pdb
+C:\Users\kateb\OneDrive\Рабочий стол\simplex-maga\simplex2\optimization\obj\Debug\optimization.csprojAssemblyReference.cache
+C:\Users\kateb\OneDrive\Рабочий стол\simplex-maga\simplex2\optimization\obj\Debug\optimization.Form1.resources
+C:\Users\kateb\OneDrive\Рабочий стол\simplex-maga\simplex2\optimization\obj\Debug\optimization.Properties.Resources.resources
+C:\Users\kateb\OneDrive\Рабочий стол\simplex-maga\simplex2\optimization\obj\Debug\optimization.csproj.GenerateResource.cache
+C:\Users\kateb\OneDrive\Рабочий стол\simplex-maga\simplex2\optimization\obj\Debug\optimization.csproj.CoreCompileInputs.cache
+C:\Users\kateb\OneDrive\Рабочий стол\simplex-maga\simplex2\optimization\obj\Debug\optimization.exe
+C:\Users\kateb\OneDrive\Рабочий стол\simplex-maga\simplex2\optimization\obj\Debug\optimization.pdb
+\\Mac\Home\Desktop\simplex2\optimization\obj\Debug\optimization.csprojAssemblyReference.cache
+\\Mac\Home\Desktop\simplex2\optimization\obj\Debug\optimization.Form1.resources
+\\Mac\Home\Desktop\simplex2\optimization\obj\Debug\optimization.Properties.Resources.resources
+\\Mac\Home\Desktop\simplex2\optimization\obj\Debug\optimization.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\simplex2\optimization\obj\Debug\optimization.exe
+\\Mac\Home\Desktop\simplex2\optimization\obj\Debug\optimization.pdb
+\\Mac\Home\Desktop\simplex2\optimization\bin\Debug\optimization.exe.config
+\\Mac\Home\Desktop\simplex2\optimization\bin\Debug\optimization.exe
+\\Mac\Home\Desktop\simplex2\optimization\bin\Debug\optimization.pdb
+D:\OptimizationMethods\simplex2\optimization\bin\Debug\optimization.exe.config
+D:\OptimizationMethods\simplex2\optimization\bin\Debug\optimization.exe
+D:\OptimizationMethods\simplex2\optimization\bin\Debug\optimization.pdb
+D:\OptimizationMethods\simplex2\optimization\obj\Debug\optimization.csproj.AssemblyReference.cache
+D:\OptimizationMethods\simplex2\optimization\obj\Debug\optimization.csproj.SuggestedBindingRedirects.cache
+D:\OptimizationMethods\simplex2\optimization\obj\Debug\optimization.Form1.resources
+D:\OptimizationMethods\simplex2\optimization\obj\Debug\optimization.Properties.Resources.resources
+D:\OptimizationMethods\simplex2\optimization\obj\Debug\optimization.csproj.GenerateResource.cache
+D:\OptimizationMethods\simplex2\optimization\obj\Debug\optimization.csproj.CoreCompileInputs.cache
+D:\OptimizationMethods\simplex2\optimization\obj\Debug\optimization.exe
+D:\OptimizationMethods\simplex2\optimization\obj\Debug\optimization.pdb

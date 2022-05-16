@@ -1,0 +1,14 @@
+B:\Rezak\Lab4\Lab4\Lab4\bin\Debug\netcoreapp3.1\Lab4.exe
+B:\Rezak\Lab4\Lab4\Lab4\bin\Debug\netcoreapp3.1\Lab4.deps.json
+B:\Rezak\Lab4\Lab4\Lab4\bin\Debug\netcoreapp3.1\Lab4.runtimeconfig.json
+B:\Rezak\Lab4\Lab4\Lab4\bin\Debug\netcoreapp3.1\Lab4.runtimeconfig.dev.json
+B:\Rezak\Lab4\Lab4\Lab4\bin\Debug\netcoreapp3.1\Lab4.dll
+B:\Rezak\Lab4\Lab4\Lab4\bin\Debug\netcoreapp3.1\Lab4.pdb
+B:\Rezak\Lab4\Lab4\Lab4\obj\Debug\netcoreapp3.1\Lab4.csproj.AssemblyReference.cache
+B:\Rezak\Lab4\Lab4\Lab4\obj\Debug\netcoreapp3.1\Lab4.GeneratedMSBuildEditorConfig.editorconfig
+B:\Rezak\Lab4\Lab4\Lab4\obj\Debug\netcoreapp3.1\Lab4.AssemblyInfoInputs.cache
+B:\Rezak\Lab4\Lab4\Lab4\obj\Debug\netcoreapp3.1\Lab4.AssemblyInfo.cs
+B:\Rezak\Lab4\Lab4\Lab4\obj\Debug\netcoreapp3.1\Lab4.csproj.CoreCompileInputs.cache
+B:\Rezak\Lab4\Lab4\Lab4\obj\Debug\netcoreapp3.1\Lab4.dll
+B:\Rezak\Lab4\Lab4\Lab4\obj\Debug\netcoreapp3.1\Lab4.pdb
+B:\Rezak\Lab4\Lab4\Lab4\obj\Debug\netcoreapp3.1\Lab4.genruntimeconfig.cache

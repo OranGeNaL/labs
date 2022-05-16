@@ -1,0 +1,32 @@
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\bin\Debug\net5.0\MO_lab2.exe
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\bin\Debug\net5.0\MO_lab2.deps.json
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\bin\Debug\net5.0\MO_lab2.runtimeconfig.json
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\bin\Debug\net5.0\MO_lab2.runtimeconfig.dev.json
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\bin\Debug\net5.0\MO_lab2.dll
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\bin\Debug\net5.0\ref\MO_lab2.dll
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\bin\Debug\net5.0\MO_lab2.pdb
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.csproj.AssemblyReference.cache
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.AssemblyInfoInputs.cache
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.AssemblyInfo.cs
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.csproj.CoreCompileInputs.cache
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.dll
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\obj\Debug\net5.0\ref\MO_lab2.dll
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.pdb
+C:\Users\alway\Desktop\Лабы ьекущее\Методы оптимизации\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.genruntimeconfig.cache
+D:\OptimizationMethods\MO_lab2\MO_lab2\bin\Debug\net5.0\MO_lab2.exe
+D:\OptimizationMethods\MO_lab2\MO_lab2\bin\Debug\net5.0\MO_lab2.deps.json
+D:\OptimizationMethods\MO_lab2\MO_lab2\bin\Debug\net5.0\MO_lab2.runtimeconfig.json
+D:\OptimizationMethods\MO_lab2\MO_lab2\bin\Debug\net5.0\MO_lab2.runtimeconfig.dev.json
+D:\OptimizationMethods\MO_lab2\MO_lab2\bin\Debug\net5.0\MO_lab2.dll
+D:\OptimizationMethods\MO_lab2\MO_lab2\bin\Debug\net5.0\MO_lab2.pdb
+D:\OptimizationMethods\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.csproj.AssemblyReference.cache
+D:\OptimizationMethods\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.GeneratedMSBuildEditorConfig.editorconfig
+D:\OptimizationMethods\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.AssemblyInfoInputs.cache
+D:\OptimizationMethods\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.AssemblyInfo.cs
+D:\OptimizationMethods\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.csproj.CoreCompileInputs.cache
+D:\OptimizationMethods\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.dll
+D:\OptimizationMethods\MO_lab2\MO_lab2\obj\Debug\net5.0\refint\MO_lab2.dll
+D:\OptimizationMethods\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.pdb
+D:\OptimizationMethods\MO_lab2\MO_lab2\obj\Debug\net5.0\MO_lab2.genruntimeconfig.cache
+D:\OptimizationMethods\MO_lab2\MO_lab2\obj\Debug\net5.0\ref\MO_lab2.dll

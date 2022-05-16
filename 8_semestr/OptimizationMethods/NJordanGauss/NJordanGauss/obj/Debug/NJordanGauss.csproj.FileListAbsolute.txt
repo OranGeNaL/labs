@@ -1,0 +1,14 @@
+D:\NJordanGauss\NJordanGauss\bin\Debug\NJordanGauss.exe
+D:\NJordanGauss\NJordanGauss\bin\Debug\NJordanGauss.pdb
+D:\NJordanGauss\NJordanGauss\obj\Debug\NJordanGauss.csproj.AssemblyReference.cache
+D:\NJordanGauss\NJordanGauss\obj\Debug\NJordanGauss.csproj.SuggestedBindingRedirects.cache
+D:\NJordanGauss\NJordanGauss\obj\Debug\NJordanGauss.csproj.CoreCompileInputs.cache
+D:\NJordanGauss\NJordanGauss\obj\Debug\NJordanGauss.exe
+D:\NJordanGauss\NJordanGauss\obj\Debug\NJordanGauss.pdb
+D:\OptimizationMethods\NJordanGauss\NJordanGauss\bin\Debug\NJordanGauss.exe
+D:\OptimizationMethods\NJordanGauss\NJordanGauss\bin\Debug\NJordanGauss.pdb
+D:\OptimizationMethods\NJordanGauss\NJordanGauss\obj\Debug\NJordanGauss.csproj.AssemblyReference.cache
+D:\OptimizationMethods\NJordanGauss\NJordanGauss\obj\Debug\NJordanGauss.csproj.SuggestedBindingRedirects.cache
+D:\OptimizationMethods\NJordanGauss\NJordanGauss\obj\Debug\NJordanGauss.csproj.CoreCompileInputs.cache
+D:\OptimizationMethods\NJordanGauss\NJordanGauss\obj\Debug\NJordanGauss.exe
+D:\OptimizationMethods\NJordanGauss\NJordanGauss\obj\Debug\NJordanGauss.pdb
